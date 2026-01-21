@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @layer base {
-  .para {
+  /* .para {
     @apply text-lg text-[#67777E] font-sans font-semibold;
-  }
+  } */
 }
 
 :root {
@@ -14,8 +14,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-cormorant);
+  --font-inter: var(--font-inter);
+  --font-cormorant: var(--font-cormorant);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,5 +28,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter),sans-serif;
+  font-family: var(--font-inter, --font-cormorant);
 }

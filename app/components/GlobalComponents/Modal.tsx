@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import AltairaLogo from "../../../public/images/logo/AltairaLogo.webp";
+import AltairaLogo1 from "../../../public/images/logo/AltairaLogo1.webp";
 import { X } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -28,9 +28,9 @@ const Modal = ({ onClose }: ModalProps) => {
         <div className="w-full md:h-[10vh] flex items-center justify-between p-5 md:p-14">
           <Image
             onClick={() => handleNavigation("/")}
-            src={AltairaLogo}
+            src={AltairaLogo1}
             alt="altaira logo"
-            className="w-[20vw] h-[10vh] md:w-[15vw] md:h-[10vh] lg:w-[6vw] lg:h-[10vh] cursor-pointer"
+            className="w-[40vw] h-[10vh] md:w-[15vw] md:h-[10vh] lg:w-[6vw] lg:h-[10vh] cursor-pointer"
           />
 
           <button
@@ -44,14 +44,11 @@ const Modal = ({ onClose }: ModalProps) => {
 
         <ul className="px-5 md:px-14 pt-5 space-y-8 text-white text-lg">
           <li onClick={() => handleNavigation("/")} className="cursor-pointer">Home</li>
-          <li onClick={() => handleNavigation("/about")} className="cursor-pointer">About Altaira</li>
           <li onClick={() => handleNavigation("/resort")} className="cursor-pointer">Resort</li>
           <li onClick={() => handleNavigation("/residences")} className="cursor-pointer">Residences</li>
-          <li onClick={() => handleNavigation("/experiences")} className="cursor-pointer">Experiences</li>
           <li onClick={() => handleNavigation("/timeline")} className="cursor-pointer">Timeline</li>
-          <li onClick={() => handleNavigation("/blogs")} className="cursor-pointer">Blogs</li>
           <li onClick={() => handleNavigation("/contact")} className="cursor-pointer">Contact</li>
-          <li onClick={() => handleNavigation("/faq")} className="cursor-pointer">FAQ's</li>
+          {/* <li onClick={() => handleNavigation("/agents")} className="cursor-pointer">Agents</li> */}
         </ul>
       </div>
     </div>

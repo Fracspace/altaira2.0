@@ -6,10 +6,10 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-import teaEstate from "../../../public/images/resort/teaEstate.webp";
-import cloudWalkways from "../../../public/images/resort/cloudWalkways.webp";
-import infinityPool from "../../../public/images/resort/infinityPool.webp";
-import rainForestSpa from "../../../public/images/resort/rainForestSpa.webp";
+import teaEstateImg from "../../../public/images/resort/teaEstateImg.webp";
+import cloudWalkwaysImage from "../../../public/images/resort/cloudWalkwaysImage.webp";
+import infinityPoolImage from "../../../public/images/resort/infinityPoolmage.webp"
+import rainForestImg from "../../../public/images/resort/rainForestImg.webp"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,32 +21,47 @@ export default function ShapedByLand() {
     gsap.from(shapedByLandRef.current, {
       opacity: 0,
       y: 80,
-      duration: 1.2,
+      duration: 0.8,
       ease: "power3.out",
       scrollTrigger: {
         trigger: shapedByLandRef.current,
-        start: "top 85%",
+        start: "top bottom",
+        toggleActions: "play none none none"
       },
     });
 
     // EACH ROW APPEARS ONE BY ONE
     gsap.utils.toArray<HTMLElement>(".experience-row").forEach((row) => {
-      gsap.from(row, {
+      gsap.from(row.children, {
         opacity: 0,
         y: 80,
         duration: 1,
         ease: "power3.out",
+        stagger: 0.12,
+        clearProps: "all",
         scrollTrigger: {
           trigger: row,
-          start: "top 80%",
-          toggleActions: "play none none reverse",
+          start: "top bottom",
+          toggleActions: "play none none none",
+          once: true,
+        },
+      });
+      gsap.from(row.querySelectorAll(".experience-content > *"), {
+        opacity: 0,
+        y: 40,
+        stagger: 0.12,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: row,
+          start: "top bottom",
         },
       });
     });
 
     // IMAGE PARALLAX
     gsap.to(".experience-image", {
-      y: 60,
+      // y: 60,
       ease: "none",
       scrollTrigger: {
         trigger: shapedByLandRef.current,
@@ -56,12 +71,16 @@ export default function ShapedByLand() {
       },
     });
 
-    // HOVER ZOOM (INSIDE FRAME)
     gsap.utils.toArray<HTMLImageElement>(".experience-image").forEach((img) => {
       const wrapper = img.parentElement as HTMLElement;
       if (!wrapper) return;
 
       gsap.set(wrapper, { overflow: "hidden" });
+
+      gsap.set(img, {
+        transformOrigin: "center center",
+        willChange: "transform"
+      })
 
       const enter = () =>
         gsap.to(img, {
@@ -83,107 +102,132 @@ export default function ShapedByLand() {
   }, []);
 
   return (
-    <div ref={shapedByLandRef} className="bg-[#F5F3F0]">
+    <div ref={shapedByLandRef} className="bg-[#F5F3F0] mt-10">
       {/* HEADER */}
       <div className="p-10">
         <div className="flex flex-col gap-5 text-center">
-          <p className="text-[#AD9273] font-sans">EXPERIENCES</p>
-          <h2 className="font-serif text-3xl font-bold">
+          <p className="text-[#AD9273] font-inter">EXPERIENCES</p>
+          <h2 className="font-cormorant text-2xl md:text-3xl font-bold">
             Shaped by Land, Elevation, and Time
           </h2>
-          <p className="font-sans text-lg text-[#67777E] mx-auto">
+          <p className="font-inter font-normal text-[#67777E] mx-auto">
             Some experiences invite movement. Others invite stillness. At Altaira,
             every experience is guided by the terrain - unfolding naturally through
             forest paths, open skies, and quiet valleys.
           </p>
         </div>
-      </div>
 
-      {/* ROW 1 */}
-      <div className="experience-row flex flex-col p-10 md:flex-row gap-10">
-        <div className="overflow-hidden rounded-md md:w-[50vw]">
-          <Image
-            src={teaEstate}
-            alt="Tea Estate"
-            className="experience-image hidden md:block w-full object-cover h-[50vh] md:h-[50vh]"
-          />
-        </div>
-        <div className="flex flex-col gap-5">
-          <p className="text-[#AD9273] font-sans">PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
-          <h2 className="font-serif text-2xl font-bold">Tea Estate Trails</h2>
-          <p className="para leading-relaxed">
-           Walk through living tea landscapes, where mist, elevation, and heritage meet under open skies. Each step reveals the rhythm of the land, shaped by seasons, slopes, and generations of craft.
-          </p>
-          <em className="para">Where the land tells its story</em>
-            <Image
-            src={teaEstate}
-            alt="Tea Estate"
-            className="experience-image block md:hidden w-full object-cover h-[50vh] md:h-[50vh]"
-          />
-        </div>
-      </div>
+        <div className="flex flex-col md:pt-20 pt-10 gap-10">
+          <div className="experience-row flex flex-col md:flex-row md:items-stretch gap-2 md:gap-10">
+            <div className="overflow-hidden rounded-md md:w-[50vw] flex">
+              <Image
+                src={teaEstateImg}
+                alt="Tea Estate"
+                className="hidden experience-image md:block w-full h-[50vh] object-cover"
+              />
+            </div>
+            <div className="experience-content flex flex-col md:w-[50vw] gap-5">
+              <p className="text-[#AD9273] font-inter">PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
+              <h2 className="font-cormorant text-2xl font-bold">Tea Estate Trails</h2>
+              <p className="para leading-relaxed">
+                Walk through living tea landscapes, where mist, elevation, and heritage meet under open skies.
+                Each step reveals the rhythm of the land, shaped by seasons, slopes, and generations of craft.
+              </p>
+              <div className="flex items-center gap-2">
+                <div className="w-1 h-7 rounded bg-[#AD9273]"></div>
+                <i className="para ">Where the land tells its story</i>
+              </div>
 
-      {/* ROW 2 */}
-      <div className="experience-row flex flex-col p-10 md:flex-row gap-10">
-        <div className="flex flex-col gap-5">
-          <p className="text-[#AD9273] font-sans">PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
-          <h2 className="font-serif text-2xl font-bold">Cloud Walkways</h2>
-          <p className="para leading-relaxed">
-           Suspended pathways that float above the valley - designed for unhurried walks, sunrise moments, and night-lit reflections. Here, movement slows, and the horizon becomes part of the journey.
-          </p>
-          <em className="para">Walk among the clouds</em>
-           <Image
-            src={cloudWalkways}
-            alt="Cloud Walkways"
-            className="experience-image block md:hidden w-full object-cover h-[50vh] md:h-[50vh]"
-          />
-        </div>
-        <div className="overflow-hidden rounded-md md:w-[50vw]">
-          <Image
-            src={cloudWalkways}
-            alt="Cloud Walkways"
-            className="experience-image hidden md:block w-full object-cover h-[50vh] md:h-[50vh]"
-          />
-        </div>
-      </div>
+              {/* Mobile image */}
+              <Image
+                src={teaEstateImg}
+                alt="Tea Estate"
+                className="block md:hidden w-full h-[50vh] object-cover rounded-md"
+              />
+            </div>
+          </div>
 
-      {/* ROW 3 */}
-      <div className="experience-row flex flex-col p-10 md:flex-row gap-2 md:gap-10">
-        <div className="overflow-hidden rounded-md md:w-[50vw]">
-          <Image
-            src={infinityPool}
-            alt="Infinity Pool"
-            className="experience-image hidden md:block w-full object-cover h-auto md:h-[50vh]"
-          />
-        </div>
-        <div className="flex flex-col gap-5">
-          <p className="text-[#AD9273] font-sans">PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
-          <h2 className="font-serif text-2xl font-bold">Infinity Pool</h2>
-          <p className="para leading-relaxed">
-           An edge-less pool where water meets sky, overlooking layered hills and endless horizon. Time dissolves as the landscape stretches beyond the pool's edge.
-          </p>
-          <em className="para">Where horizons disappear</em>
-          <Image
-            src={infinityPool}
-            alt="Infinity Pool"
-            className="experience-image block md:hidden w-full object-cover h-[50vh] md:h-[50vh]"
-          />
-        </div>
-      </div>
+          {/* ROW 2 */}
+          <div className="experience-row flex flex-col md:flex-row md:items-stretch gap-2 md:gap-10">
+            <div className="experience-content flex flex-col md:w-[50vw] gap-5">
+              <p className="text-[#AD9273] font-inter">PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
+              <h2 className="font-cormorant text-2xl font-bold">Cloud Walkways</h2>
+              <p className="para leading-relaxed">
+                Suspended pathways that float above the valley - designed for unhurried walks,
+                sunrise moments, and night-lit reflections. Here, movement slows, and the horizon
+                becomes part of the journey.
+              </p>
+              <div className="flex items-center gap-2">
+                <div className="w-1 h-7 rounded bg-[#AD9273]"></div>
+              <i className="para">Walk among the clouds</i>
+              </div>
 
-      <div className="experience-row flex flex-col p-10 md:flex-row gap-2 md:gap-10">
-        <div className="flex flex-col gap-5">
-          <p className="text-[#AD9273] font-sans">PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
-          <h2 className="font-serif text-2xl font-bold">Rainforest Spa & Onsen</h2>
-          <p className="para leading-relaxed">A forest sanctuary with a temperature-controlled onsen for deep relaxation and renewal. Guided by nature and ritual, each moment restores balance to body and mind. </p>
-          <em className="para">Wellness in its purest form</em>
-        </div>
-        <div className="overflow-hidden rounded-md md:w-[50vw]">
-          <Image
-            src={rainForestSpa}
-            alt="Rainforest Spa"
-            className="experience-image w-full object-cover h-[50vh] md:h-[50vh]"
-          />
+              {/* Mobile image */}
+              <Image
+                src={cloudWalkwaysImage}
+                alt="Cloud Walkways"
+                className="block md:hidden w-full h-[50vh] object-cover"
+              />
+            </div>
+
+            {/* Desktop image */}
+            <div className="overflow-hidden rounded-md md:w-[50vw] md:h-[50vh] flex">
+              <Image
+                src={cloudWalkwaysImage}
+                alt="Cloud Walkways"
+                className="experience-image hidden md:block w-full h-[50vh] object-cover"
+              />
+            </div>
+          </div>
+
+          {/* ROW 3 */}
+          <div className="experience-row flex flex-col md:flex-row md:items-stretch gap-2 md:gap-10">
+            <div className="overflow-hidden rounded-md md:w-[50vw] flex">
+              <Image
+                src={infinityPoolImage}
+                alt="Infinity Pool"
+                className="experience-image hidden md:block w-full h-[50vh] object-cover"
+              />
+            </div>
+            <div className="experience-content flex flex-col gap-5 md:w-[50vw]">
+              <p className="text-[#AD9273] font-inter">PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
+              <h2 className="font-cormorant text-2xl font-bold">Infinity Pool</h2>
+              <p className="para leading-relaxed">
+                An edge-less pool where water meets sky, overlooking layered hills and endless horizon. Time dissolves as the landscape stretches beyond the pool's edge.
+              </p>
+              <div className="flex items-center gap-2">
+                <div className="w-1 h-7 rounded bg-[#AD9273]"></div>
+              <i className="para">Where horizons disappear</i>
+              </div>
+              <Image
+                src={infinityPoolImage}
+                alt="Infinity Pool"
+                className="block md:hidden w-full object-cover h-[50vh]"
+              />
+            </div>
+          </div>
+
+          <div className="experience-row flex flex-col md:flex-row items-stretch gap-2 md:gap-10">
+            <div className="experience-content flex flex-col gap-5 md:w-[50vw]">
+              <p className="text-[#AD9273] font-inter">PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
+              <h2 className="font-cormorant text-2xl font-bold">Rainforest Spa & Onsen</h2>
+              <p className="para leading-relaxed">
+                A forest sanctuary with a temperature-controlled onsen for deep relaxation and renewal.
+                Guided by nature and ritual, each moment restores balance to body and mind.
+              </p>
+              <div className="flex items-center gap-2">
+                <div className="w-1 h-7 rounded bg-[#AD9273]"></div>
+              <i className="para">Wellness in its purest form</i>
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-md md:w-[50vw] h-[50vh] flex">
+              <Image
+                src={rainForestImg}
+                alt="Rainforest Spa"
+                className="w-full experience-image h-full object-cover"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import Image from "next/image";
-import resortImage from "../../../public/images/homepage/resort2.webp";
+import resortImage from "../../../public/images/homepage/resort4.webp";
 import Icon1 from "../../../public/images/homepage/icon1.png";
 import Icon2 from "../../../public/images/homepage/icon2.png";
 import Icon3 from "../../../public/images/homepage/icon3.png";

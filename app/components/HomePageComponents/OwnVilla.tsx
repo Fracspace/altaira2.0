@@ -1,15 +1,40 @@
-import React from "react";
-import villaImg from "../../../public/images/homepage/villa.webp";
+import React, { useRef } from "react";
+import villaImg from "../../../public/images/homepage/villa2.webp";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 function OwnVilla() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      contentRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: "power2.in",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 50%",
+          end: "bottom top",
+          toggleActions: "play none none none"
+        }
+      }
+    );
+  }, []);
+
   return (
-    <div className="mt-10">
+    <div className="mt-10" ref={containerRef}>
       <div
         style={{ backgroundImage: `url(${villaImg.src})` }}
         className="relative w-[100%] h-[80vh] bg-cover bg-center flex items-center justify-center"
       >
         <div className="absolute inset-0 bg-black/20"></div>
-        <div className="z-10">
+        <div ref={contentRef} className="z-10">
           <h3 className="text-center font-inter text-white">
             EXCLUSIVE VALLEY VIEW VILLA
           </h3>

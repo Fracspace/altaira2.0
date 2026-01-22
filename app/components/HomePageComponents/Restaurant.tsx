@@ -1,15 +1,43 @@
-import React from "react";
-import restaurantImg from "../../../public/images/homepage/restaurantImg.webp";
+import React, { useRef } from "react";
+import restaurantImg from "../../../public/images/homepage/restaurantImg2.webp";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 function Restaurant() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      contentRef.current,
+      { opacity: 0, y: 90 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: "power2.in",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%",
+          end: "bottom top",
+          toggleActions: "play none none none"
+        }
+      }
+    );
+  }, []);
+
   return (
-    <div className="mt-8">
+    <div ref={containerRef} className="mt-8">
       <h2></h2>
       <div
         style={{ backgroundImage: `url(${restaurantImg.src})` }}
         className="relative w-[90vw] h-[80vh] ml-[5vw] mr-[5vw] pt-6 bg-cover bg-center"
       >
-        <div className="w-[40vw] h-[70vh] bg-black/30 ml-8 mt-4 rounded-lg z-20">
+        <div
+          ref={contentRef}
+          className="w-[40vw] h-[70vh] bg-black/30 ml-8 mt-4 rounded-lg z-20"
+        >
           <div className="text-[#E7D2AD] text-4xl text-center pt-6 z-10">
             Gather. Savour. Linger
           </div>

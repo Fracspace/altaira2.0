@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import Image from "next/image";
-import resortImg from "../../../public/images/homepage/resortmain.webp";
+import resortImg from "../../../public/images/homepage/resort3.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {

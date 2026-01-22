@@ -1,5 +1,5 @@
 import React from "react";
-import helipadImg from "../../../public/images/homepage/helipad.webp";
+import helipadImg from "../../../public/images/homepage/helipad2.webp";
 import Image from "next/image";
 
 function ElevatedArrival() {

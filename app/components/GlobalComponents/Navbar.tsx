@@ -49,7 +49,7 @@ const Navbar = () => {
           </Link>
         ) : (
           <Image
-            src={AltairaLogo}
+            src={AltairaLogo1}
             alt="logo"
             className={`${scrolled ? "h-[10vh] w-[20vw]" : "w-[30vw] h-[10vh]"} md:w-[20vw] md:h-[10vh] lg:w-[12vw] lg:h-[10vh] cursor-pointer`}
           />

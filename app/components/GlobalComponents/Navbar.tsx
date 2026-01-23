@@ -60,8 +60,8 @@ const Navbar = () => {
                     <Modal onClose={() => setMobileMenu(false)} />
                 )}
 
-            <span onClick={() => setMobileMenu(!mobileMenu)} className="md:rounded-lg text-white flex items-center gap-2 hover:bg-[#C6A667] px-6 py-2 cursor-pointer">
-                <span className="block md:hidden">  <Menu size={25} /></span>
+            <span onClick={() => setMobileMenu(!mobileMenu)} className="md:rounded-lg block md:hidden text-white flex items-center gap-2 hover:bg-[#C6A667] px-6 py-2 cursor-pointer">
+                <span><Menu size={25} /></span>
             </span>
 
             <div className="hidden md:block text-white">

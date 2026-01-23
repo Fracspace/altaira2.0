@@ -76,7 +76,7 @@ const AdventureZone = () => {
     return (
         <div ref={sectionRef} className="p-10">
             <div className="relative overflow-hidden rounded-md">
-                <Image src={adventureZoneImage} alt="adventure zone" className="adventure-bg object-cover h-[80vh] rounded-md w-full" />
+                <Image src={adventureZoneImage} alt="adventure zone" className="adventure-bg object-cover h-[100vh] rounded-md w-full" />
                 <div ref={textRef} className="absolute flex flex-col w-full text-center top-10 hidden md:block">
                     <div className="flex flex-col items-center gap-2">
                         <p className="text-[#4C3D2D] font-inter">THE ADVENTURE ZONE</p>

@@ -15,7 +15,7 @@ const Footer = () => {
         <div className='bg-[#0E2019] text-white p-10'>
             <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr_1fr] gap-10">
                 <div className="flex flex-col gap-5">
-                    <Image onClick={() => router.push("/")} src={AltairaLogo1} alt="altaira logo" className="md:w-[15vw] md:h-[10vh] lg:w-[10vw] lg:h-[10vh] h-[10vh] w-[30vw] cursor-pointer" />
+                    <Image onClick={() => router.push("/")} src={AltairaLogo1} alt="altaira logo" className="md:w-[15vw] md:h-[10vh] lg:w-[10vw] lg:h-[10vh] h-[10vh] w-[40vw] cursor-pointer" />
                     <p className="font-montserrat leading-loose">Altaira is a luxury hilltop resort and residence destination set nearly 2,000 feet above sea level. Designed for stillness, discovery, and elevated living, Altaira blends nature, wellness, and adventure into one timeless experience.</p>
                 </div>
                 <div className="flex flex-col gap-3">

@@ -75,7 +75,7 @@ const VillaOwnership = () => {
                     <div className="overflow-hidden w-full">
                         <Image ref={villaImgRef} src={villaOwnershipImage} alt="villa img" className="w-full animate-item rounded-md object-cover md:h-[80vh] h-[50vh]" />
                     </div>
-                    <h2 className="font-cormorant late-text text-3xl md:text-6xl text-[#67777E]">More than a villa. A way of <br /> <i className="text-[#A3A4A8]">living above the valley.</i></h2>
+                    <h2 className="font-cormorant late-text text-2xl md:text-6xl text-[#67777E]">More than a villa. A way of <br /> <i className="text-[#A3A4A8]">living above the valley.</i></h2>
                 </div>
             </div>
         </div>

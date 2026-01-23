@@ -102,7 +102,7 @@ export default function ShapedByLand() {
   }, []);
 
   return (
-    <div ref={shapedByLandRef} className="bg-[#F5F3F0] mt-10">
+    <div ref={shapedByLandRef} className="bg-[#F5F3F0]">
       {/* HEADER */}
       <div className="p-10">
         <div className="flex flex-col gap-5 text-center">

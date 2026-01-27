@@ -123,7 +123,7 @@ export default function ShapedByLand() {
               <Image
                 src={teaEstateImg}
                 alt="Tea Estate"
-                className="hidden experience-image md:block w-full h-[50vh] object-cover"
+                className="hidden experience-image md:block w-full h-[40vh] lg:h-[50vh] object-cover"
               />
             </div>
             <div className="experience-content flex flex-col md:w-[50vw] gap-5">
@@ -142,7 +142,7 @@ export default function ShapedByLand() {
               <Image
                 src={teaEstateImg}
                 alt="Tea Estate"
-                className="block md:hidden w-full h-[50vh] object-cover rounded-md"
+                className="block md:hidden w-full h-[50vh] md:h-[40vh] lg:h-[50vh] object-cover rounded-md"
               />
             </div>
           </div>
@@ -166,16 +166,16 @@ export default function ShapedByLand() {
               <Image
                 src={cloudWalkwaysImage}
                 alt="Cloud Walkways"
-                className="block md:hidden w-full h-[50vh] object-cover"
+                className="block md:hidden w-full h-[50vh] md:h-[40vh] lg:h-[50vh] object-cover"
               />
             </div>
 
             {/* Desktop image */}
-            <div className="overflow-hidden rounded-md md:w-[50vw] md:h-[50vh] flex">
+            <div className="overflow-hidden rounded-md md:w-[50vw] lg:h-[50vh] flex">
               <Image
                 src={cloudWalkwaysImage}
                 alt="Cloud Walkways"
-                className="experience-image hidden md:block w-full h-[50vh] object-cover"
+                className="experience-image hidden md:block w-full h-[50vh] md:h-[40vh] lg:h-[50vh] object-cover"
               />
             </div>
           </div>
@@ -186,7 +186,7 @@ export default function ShapedByLand() {
               <Image
                 src={infinityPoolImage}
                 alt="Infinity Pool"
-                className="experience-image hidden md:block w-full h-[50vh] object-cover"
+                className="experience-image hidden md:block w-full h-[50vh] md:h-[40vh] lg:h-[50vh] object-cover"
               />
             </div>
             <div className="experience-content flex flex-col gap-5 md:w-[50vw]">
@@ -202,7 +202,7 @@ export default function ShapedByLand() {
               <Image
                 src={infinityPoolImage}
                 alt="Infinity Pool"
-                className="block md:hidden w-full object-cover h-[50vh]"
+                className="block md:hidden w-full object-cover h-[50vh] md:h-[40vh] lg:h-[50vh]"
               />
             </div>
           </div>
@@ -220,7 +220,7 @@ export default function ShapedByLand() {
               <i className="para">Wellness in its purest form</i>
               </div>
             </div>
-            <div className="overflow-hidden rounded-md md:w-[50vw] h-[50vh] flex">
+            <div className="overflow-hidden rounded-md md:w-[50vw] h-[50vh] md:h-[40vh] lg:h-[50vh] flex">
               <Image
                 src={rainForestImg}
                 alt="Rainforest Spa"

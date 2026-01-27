@@ -9,7 +9,6 @@ import Image from "next/image"
 
 import adventureZoneImage from "../../../public/images/resort/adventureZoneImage.webp"
 import bungeeJump from "../../../public/images/resort/bungeeJump.webp"
-import ziplineImg from "../../../public/images/resort/ziplineImg.webp"
 import atvTrails from "../../../public/images/resort/atvTrails.webp"
 import ziplineRuns from "../../../public/images/resort/ziplineRuns.webp"
 
@@ -76,7 +75,7 @@ const AdventureZone = () => {
     return (
         <div ref={sectionRef} className="p-10">
             <div className="relative overflow-hidden rounded-md">
-                <Image src={adventureZoneImage} alt="adventure zone" className="adventure-bg object-cover h-[100vh] rounded-md w-full" />
+                <Image src={adventureZoneImage} alt="adventure zone" className="adventure-bg object-cover h-[100vh] md:h-[50vh] lg:h-[70vh] rounded-md w-full" />
                 <div ref={textRef} className="absolute flex flex-col w-full text-center top-10 hidden md:block">
                     <div className="flex flex-col items-center gap-2">
                         <p className="text-[#4C3D2D] font-inter">THE ADVENTURE ZONE</p>

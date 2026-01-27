@@ -109,7 +109,7 @@ const AboveNoise = () => {
               // ref={imageRef}
               src={ridgeSuites1}
               alt="ridge suites"
-              className="w-full experience-image rounded-md object-cover h-[50vh] md:h-full"
+              className="w-full experience-image rounded-md object-cover h-[50vh] lg:h-full"
             />
           </div>
           <div className="flex flex-col gap-5 md:w-[50vw]">

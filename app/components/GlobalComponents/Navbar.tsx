@@ -51,7 +51,7 @@ const Navbar = () => {
                 <Link href="/"><Image
                     src={AltairaLogo1}
                     alt="logo"
-                    className={`${scrolled ? "h-[10vh] w-[40vw]" : "w-[40vw] h-[10vh]"} md:w-[15vw] md:h-[10vh] lg:w-[10vw] lg:h-[10vh] cursor-pointer`}
+                    className={`${scrolled ? "h-[10vh] w-[40vw]" : "w-[40vw] h-[10vh]"} md:w-[20vw] md:h-[10vh] lg:w-[10vw] lg:h-[10vh] cursor-pointer`}
                 /></Link>
             </div>
 

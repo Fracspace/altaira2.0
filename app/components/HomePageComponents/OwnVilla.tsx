@@ -15,12 +15,12 @@ function OwnVilla() {
       {
         opacity: 1,
         y: 0,
-        duration: 1.2,
+        duration: 1,
         ease: "power2.in",
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 50%",
-          end: "bottom top",
+          start: "top 60%",
+          end: "bottom 30%",
           toggleActions: "play none none none"
         }
       }

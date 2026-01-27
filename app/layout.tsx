@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import Navbar from "./components/GlobalComponents/Navbar";
+import Footer from "./components/GlobalComponents/Footer";
 
 import { Cormorant_Garamond, Inter } from "next/font/google";
 
@@ -18,8 +19,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Altaira-home",
-  description: "Altaira Home"
+  title: "Altaira",
+  description: "Altaira luxury resort and private residences offer hilltop villas, wellness experiences, fine dining, and panoramic valley views.",
 };
 
 export default function RootLayout({
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         {children}
+        <Footer/>
       </body>
     </html>
   );

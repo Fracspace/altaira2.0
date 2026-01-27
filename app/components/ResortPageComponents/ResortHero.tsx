@@ -1,6 +1,6 @@
 "use client"
 
-import resortImg from "../../../public/images/resort/resortImg.webp"
+import resortHeroImage from "../../../public/images/resort/resortHeroImage.webp"
 
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react";
@@ -13,41 +13,33 @@ gsap.registerPlugin(ScrollTrigger)
 import Image from "next/image"
 
 const Resort = () => {
-    const heroSectionRef = useRef<HTMLDivElement>(null);
+  const heroSectionRef = useRef<HTMLDivElement>(null);
 
-    useGSAP(
-    () => {
-      gsap.fromTo(
-        heroSectionRef.current,
-        {
-          opacity: 0,
-          y: 30,
-          scale: 0.98,
-          filter: "blur(8px)",
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          filter: "blur(0px)",
-          duration: 1.2,
-          ease: "power3.out",
-        }
-      );
-    },
-    { scope: heroSectionRef }
-  );
-    return (
-        <div className="min-h-screen w-full">
-            <div className="relative">
-                <Image src={resortImg} alt="resort img" className="object-cover min-h-screen" />
-                <div ref={heroSectionRef} className="absolute flex flex-col gap-1 w-full md:w-auto p-10 md:p-0 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2">
-                    <h2 className="font-bold font-serif md:text-4xl text-2xl text-white">A Resort Carved Into the Hills</h2>
-                    <em className="font-semibold font-sans text-xl md:text-xl text-white md:pl-10 md:pr-10">A Hilltop World, Thoughtfully Composed</em>
-                </div>
-            </div>
+  useGSAP(() => {
+    if (!heroSectionRef.current) return;
+    const items = gsap.utils.toArray<HTMLElement>(heroSectionRef.current.children)
+    gsap.from(
+      items, {
+      opacity: 0,
+      y: 30,
+      filter: "blur(8px)",
+      duration: 1,
+      stagger: 0.2,
+      ease: "power3.out",
+    });
+  }, { scope: heroSectionRef });
+
+  return (
+    <div className="min-h-screen w-full relative">
+      <Image src={resortHeroImage} alt="resort img" fill priority className="object-cover" />
+      <div className="absolute w-full flex items-center justify-center text-center px-5 inset-0">
+        <div ref={heroSectionRef} className="text-white flex flex-col items-center justify-center max-w-4xl">
+          <h2 className="font-bold font-cormorant md:text-6xl text-2xl">A Resort Carved Into the Hills</h2>
+          <i className="block mt-3 font-normal font-inter text-xl md:text-2xl">A Hilltop World, Thoughtfully Composed</i>
         </div>
-    )
+      </div>
+    </div>
+  )
 }
 
 export default Resort

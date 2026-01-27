@@ -1,11 +1,35 @@
-import React from "react";
+import React, { useRef } from "react";
 import helipadImg from "../../../public/images/homepage/helipad2.webp";
 import Image from "next/image";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 function ElevatedArrival() {
+  const contentRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      contentRef.current,
+      { opacity: 0, y: 120 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 40%",
+          end: "bottom top",
+          toggleActions: "play none none none"
+        }
+      }
+    );
+  }, []);
+
   return (
     <section>
-      <div className="flex ml-[5vw] mr-[5vw] mt-6">
+      <div ref={containerRef} className="flex ml-[5vw] mr-[5vw] mt-6">
         <div>
           <Image
             src={helipadImg}
@@ -32,9 +56,13 @@ function ElevatedArrival() {
           </div>
         </div>
       </div>
-      <div className="mt-12 flex items-center justify-center">
-        <h2 className="w-[70vw] text-[#67777E] text-center text-6xl font-cormorant">
-          A place where the land leads and time slows down.
+      <div className="mt-12 mb-12 flex items-center justify-center">
+        <h2
+          ref={contentRef}
+          className="w-[60vw] text-[#67777E] text-center text-6xl font-cormorant"
+        >
+          A place where the land leads <br></br>
+          <span className="text-gray-400"> and time slows down. </span>
         </h2>
       </div>
     </section>

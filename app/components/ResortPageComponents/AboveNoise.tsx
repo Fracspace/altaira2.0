@@ -1,5 +1,5 @@
 "use client"
-import ridgeSuites from "../../../public/images/resort/ridgeSuites.webp"
+import ridgeSuites1 from "../../../public/images/resort/ridgeSuites1.webp"
 
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
@@ -27,8 +27,8 @@ const AboveNoise = () => {
         ease: "power3.out",
         scrollTrigger: {
           trigger: aboveNoiseSectionRef.current,
-          start: "top 80%",
-          toggleActions: "play none none reverse",
+          start: "top bottom",
+          toggleActions: "play none none none",
         },
       }
     );
@@ -100,22 +100,22 @@ const AboveNoise = () => {
     <div ref={aboveNoiseSectionRef}>
       <div className='p-10'>
         <div className='flex flex-col gap-2'>
-          <h2 className='text-xl font-serif md:text-3xl text-center font-bold'>Above the Noise, Beyond the Ordinary</h2>
+          <h2 className='text-2xl font-cormorant md:text-4xl text-center font-bold'>Above the Noise, Beyond the Ordinary</h2>
           <p className='para'>Designed as a slow-living resort with immersive landscapes, Altaira blends luxury stays, curated wellness, and high-adrenaline adventure - all shaped by elevation, forest, and sky.</p>
         </div>
-        <div className='flex flex-col md:flex-row gap-10'>
-          <div className="overflow-hidden rounded-md md:w-[50vw]" ref={imageWrapperRef}>
+        <div className='flex flex-col md:h-[60vh] mt-10 md:flex-row md:items-stretch gap-10'>
+          <div className="overflow-hidden rounded-md md:w-[50vw] flex" >
             <Image
-              ref={imageRef}
-              src={ridgeSuites}
+              // ref={imageRef}
+              src={ridgeSuites1}
               alt="ridge suites"
-              className="parallax-image w-full rounded-md object-cover h-auto md:h-[60vh]"
+              className="w-full experience-image rounded-md object-cover h-[50vh] md:h-full"
             />
           </div>
-          <div className="parallax-text flex flex-col gap-5">
-            <div className='flex flex-col gap-5'>
-              <p className='text-[#AD9273] font-sans'>PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
-              <h2 className='font-serif text-3xl font-bold'>Ridge Suites</h2>
+          <div className="flex flex-col gap-5 md:w-[50vw]">
+            <div className='flex flex-col gap-3'>
+              <p className='text-[#AD9273] font-inter'>PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
+              <h2 className='font-cormorant text-3xl font-bold'>Ridge Suites</h2>
               <p className='para leading-relaxed'>The Ridge Suites are positioned along the natural contours of the hill, offering uninterrupted valley views and complete privacy.</p>
               <p className='para leading-relaxed'>Designed for slow mornings and quiet evenings, each suite opens to forest light, drifting mist, and the changing moods of the landscape. Interiors are understated, refined, and fully serviced - allowing nature to remain the hero.</p>
               <p className='para'>Highlights (light list, not feature dump)</p>

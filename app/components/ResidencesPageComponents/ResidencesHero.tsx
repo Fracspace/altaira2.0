@@ -1,6 +1,38 @@
+"use client";
+
 import React from "react";
 import carousalImgOne from "../../../public/images/residences/carousalImg1.webp";
+import carousalImgTwo from "../../../public/images/residences/villaImgOne.webp";
+import carousalImgThree from "../../../public/images/residences/villaImgTwo.webp";
 import Image from "next/image";
+
+
+import "react-multi-carousel/lib/styles.css";
+
+import dynamic from "next/dynamic";
+
+// Dynamically import carousel only on client
+const Carousel = dynamic(() => import("react-multi-carousel"), { ssr: false });
+
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 1
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 1
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 1
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
+};
 
 function ResidencesHero() {
   return (
@@ -15,8 +47,45 @@ function ResidencesHero() {
         luxury hilltop resort ecosystem - combining the calm of private living
         with the privileges of a destination retreat.
       </p>
-      <div className="mt-8">
-        <Image src={carousalImgOne} alt="carousal image one" />
+      <div>
+        <div className="mt-8">
+          {/* <Image src={carousalImgOne} alt="carousal image one" /> */}
+          <Carousel
+            swipeable={false}
+            draggable={false}
+            showDots={true}
+            responsive={responsive}
+            ssr={true} // means to render carousel on server-side.
+            infinite={true}
+            // autoPlay={this.props.deviceType !== "mobile" ? true : false}
+            autoPlaySpeed={1000}
+            keyBoardControl={true}
+            customTransition="all .5"
+            transitionDuration={500}
+            containerClass="carousel-container"
+            removeArrowOnDeviceType={["tablet", "mobile"]}
+            // deviceType={this.props.deviceType}
+            dotListClass="custom-dot-list-style"
+            itemClass="carousel-item-padding-40-px"
+          >
+            {[carousalImgOne, carousalImgTwo, carousalImgThree].map(
+              (img, index) => (
+                <div key={index} className="flex justify-center">
+                  <div className="relative w-[90vw] h-[80vh] md:h-[80vh]">
+                    <Image
+                      src={img}
+                      alt={`Carousel Image ${index + 1}`}
+                      fill
+                      style={{ objectFit: "cover" }}
+                      className="rounded-xl w-[90vw] h-[80vh]"
+                    />
+                  </div>
+                </div>
+              )
+            )}
+          </Carousel>
+          ;
+        </div>
       </div>
     </div>
   );

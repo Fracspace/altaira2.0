@@ -30,11 +30,11 @@ function ElevatedArrival() {
   return (
     <section>
       <div ref={containerRef} className="flex ml-[5vw] mr-[5vw] mt-6">
-        <div>
+        <div className="w-[50vw]">
           <Image
             src={helipadImg}
             alt="helipad image"
-            className="w-[50vw] h-[60vh]"
+            className="w-full h-[clamp(400px,50vh,600px)] max-w-[800px]"
           />
         </div>
         <div className="mt-12">
@@ -59,7 +59,7 @@ function ElevatedArrival() {
       <div className="mt-12 mb-12 flex items-center justify-center">
         <h2
           ref={contentRef}
-          className="w-[60vw] text-[#67777E] text-center text-6xl font-cormorant"
+          className="lg:w-[80vw] text-[#67777E] text-center text-6xl font-cormorant"
         >
           A place where the land leads <br></br>
           <span className="text-gray-400"> and time slows down. </span>

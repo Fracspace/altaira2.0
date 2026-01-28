@@ -34,9 +34,10 @@ function VillaOwnership() {
         </div>
       </div>
 
-      <div className="mt-5 flex items-center justify-center">
-        <h2 className="text-5xl text-gray-600 w-[60vw] text-center leading-[1.5]">
-          More than a villa. A way of living above the valley.
+      <div className="mt-8 mb-10 flex items-center justify-center">
+        <h2 className="text-5xl text-[#67777E] w-[60vw] text-center leading-[1.3]">
+          More than a villa. A way of <br></br>
+          <span className="text-gray-400">living above the valley.</span>
         </h2>
       </div>
     </div>

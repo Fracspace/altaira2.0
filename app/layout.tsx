@@ -8,14 +8,14 @@ import { Cormorant_Garamond, Inter } from "next/font/google";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
-  weight:["300","400","500","600","700"],
-  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"]
 });
 
 const inter = Inter({
   variable: "--font-inter",
-  weight:["300","400","500","600","700"],
-  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"]
 });
 
 export const metadata: Metadata = {
@@ -24,15 +24,14 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
-      <body
-      >
-        <Navbar/>
+      <body>
+        <Navbar />
         {children}
         <Footer/>
       </body>

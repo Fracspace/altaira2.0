@@ -35,8 +35,8 @@ const Footer = () => {
                         <li className={contactClasses} onClick={() => window.open("mailto:altaira.lk@fracspace.com")}>Email: altaira.lk@fracspace.com</li>
                         <li className={contactClasses} onClick={() => window.open("tel:+919880626111")}>Phone: +91 9880626111</li>
                         <li onClick={() => router.push("/privacypolicy")} className={contactClasses}>Privacy Policy</li>
-                        <li className={contactClasses}>Terms of Service</li>
-                        <li className={contactClasses}>Refund Policy</li>
+                        <li onClick={()=>router.push("/terms-and-conditions")} className={contactClasses}>Terms of Service</li>
+                        <li onClick={()=>router.push("/refunds")} className={contactClasses}>Refund Policy</li>
                     </ul>
                 </div>
                 {/* <div className="md:h-[40vh] h-[50vh] responsiveMapWidth responsiveMapHeight lg:h-auto">

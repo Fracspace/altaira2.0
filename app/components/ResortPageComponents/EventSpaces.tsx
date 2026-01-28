@@ -141,7 +141,7 @@ const EventSpaces = () => {
             </div>
             <div className="pt-10">
                 <div className="p-10 rounded-xl shadow-md">
-                    <div className="flex text-animate flex-col w-full gap-15 md:divide-y md:divide-y-0 md:divide-x divide-[#AD9273] md:flex-row">
+                    <div className="flex text-animate flex-col w-full gap-5 lg:gap-10 md:divide-y md:divide-y-0 md:divide-x divide-[#AD9273] md:flex-row">
                         <div className="flex flex-col w-full md:w-[30vw] gap-5 text-item">
                             <h2 className="font-cormorant text-2xl font-bold">Weddings</h2>
                             <p className="font-inter text-[#67777E]">Intimate hilltop ceremonies and celebrations framed by forest, sky, and open light.</p>

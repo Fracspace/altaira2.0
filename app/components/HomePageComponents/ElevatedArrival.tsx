@@ -41,11 +41,11 @@ function ElevatedArrival() {
           <h2 className="text-4xl font-cormorant text-center">
             An Elivated Arrival
           </h2>
-          <p className="mt-6 ml-8 mr-3 w-[40vw]">
+          <p className="mt-6 md:ml-8 mr-3 w-full md:w-[40vw]">
             Altaira is easily accessible by road - and those who value time and
             perspective, by helicopter.
           </p>
-          <p className="mt-4 ml-8 mr-3 w-[40vw]">
+          <p className="mt-4 md:ml-8 mr-3 w-full md:w-[40vw]">
             Dedicated helipad access allows select guests and owners to arrive
             directly above the clouds.
           </p>

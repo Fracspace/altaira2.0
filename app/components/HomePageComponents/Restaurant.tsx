@@ -36,7 +36,7 @@ function Restaurant() {
       >
         <div
           ref={contentRef}
-          className="w-[40vw] h-[70vh] bg-black/30 ml-8 mt-4 rounded-lg z-20"
+          className="w-full md:w-[40vw] h-[70vh] bg-black/30 ml-0 md:ml-8 mt-4 rounded-lg z-20"
         >
           <div className="text-[#E7D2AD] text-4xl text-center pt-6 z-10">
             Gather. Savour. Linger

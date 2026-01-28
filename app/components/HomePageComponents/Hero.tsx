@@ -83,12 +83,18 @@ const Hero = () => {
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/30"></div>
 
+<<<<<<< HEAD
         {/* Text */}
         <div ref={textSectionRef} className="relative z-10">
           <h2 className="font-cormorant text-6xl text-white font-500 text-center w-[60vw] ml-[20vw] mr-[20vw] pt-[40vh] leading-[1.3]">
+=======
+        <div ref={textSectionRef} className="relative z-10 ">
+          <h2 className="font-cormorant text-3xl md:text-6xl text-white font-500 text-center w-full md:w-[60vw] md:ml-[20vw] md:mr-[20vw] pt-[40vh] leading-[1.3] ">
+            {" "}
+>>>>>>> f571c068c313ee5f90ef558619b929e0bfe9df21
             Above The Clouds. Rooted in Nature.
           </h2>
-          <h3 className="font-inter text-white text-center italic text-xl pt-4">
+          <h3 className="font-inter text-white text-center italic text-lg pt-4">
             A hilltop destination where nature, stay, and experience come
             together
           </h3>

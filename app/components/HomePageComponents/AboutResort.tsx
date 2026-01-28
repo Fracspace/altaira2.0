@@ -153,7 +153,7 @@ function AboutResort() {
         <div
           ref={subContainerRef}
           style={{ backgroundImage: `url(${resortImage.src})` }}
-          className="relative h-[100vh] w-[100%] mt-10 bg-center bg-cover"
+          className="relative h-[140vh] md:h-[100vh] w-[100%] mt-10 bg-center bg-cover"
         >
           <div className="absolute inset-0 bg-black/40"></div>
           <div className="relative ">
@@ -168,10 +168,10 @@ function AboutResort() {
               retreat, exploration, and elevation.
             </h3>
 
-            <div className="flex items-center justify-between ml-15 mr-15 mt-[15%]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 ml-15 mr-15 mt-[15%]">
               <div
                 ref={resortAmenity1Ref}
-                className="w-[16vw] bg-black/60 rounded-lg pl-2 pr-2"
+                className="w-full md:w-[40vw] lg:w-[16vw] bg-black/60 rounded-lg pl-2 pr-2"
               >
                 <div className="flex items-center justify-center pt-8">
                   <div className="bg-[#4C3D2D] p-4 rounded-[50%]">
@@ -188,7 +188,7 @@ function AboutResort() {
 
               <div
                 ref={resortAmenity2Ref}
-                className="w-[16vw] bg-black/60 rounded-lg pl-2 pr-2"
+                className="w-full md:w-[40vw] lg:w-[16vw] bg-black/60 rounded-lg pl-2 pr-2"
               >
                 <div className="flex items-center justify-center pt-8">
                   <div className="bg-[#4C3D2D] p-4 rounded-[50%]">
@@ -205,7 +205,7 @@ function AboutResort() {
 
               <div
                 ref={resortAmenity3Ref}
-                className="w-[16vw] bg-black/60 rounded-lg pl-2 pr-2"
+                className="w-full md:w-[40vw] lg:w-[16vw] bg-black/60 rounded-lg pl-2 pr-2"
               >
                 <div className="flex items-center justify-center pt-8">
                   <div className="bg-[#4C3D2D] p-4 rounded-[50%]">
@@ -222,7 +222,7 @@ function AboutResort() {
 
               <div
                 ref={resortAmenity4Ref}
-                className="w-[16vw] bg-black/60 rounded-lg pl-2 pr-2"
+                className="w-full md:w-[40vw] lg:w-[16vw] bg-black/60 rounded-lg pl-2 pr-2"
               >
                 <div className="flex items-center justify-center pt-8">
                   <div className="bg-[#4C3D2D] p-4 rounded-[50%]">

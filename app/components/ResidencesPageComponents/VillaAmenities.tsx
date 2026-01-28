@@ -9,8 +9,8 @@ import carParkIcon from "../../../public/images/residences/carParkingIcon.png";
 function VillaAmenities() {
   return (
     <div className="mt-8">
-      <div className="flex ml-[2vw] mr-[2vw]">
-        <div className="w-[40vw] ">
+      <div className="flex flex-col md:flex-row ml-[2vw] mr-[2vw]">
+        <div className="w-full md:w-[40vw]">
           <h2 className="mt-5 text-center text-[#AD9273] font-semibold">
             VALLEY VIEW VILLA AMENITIES
           </h2>
@@ -19,9 +19,9 @@ function VillaAmenities() {
               <Image
                 src={poolIcon}
                 alt="pool icon"
-                className="w-[8vw] h-[15vh] border-2 border-[#AD9273] p-4"
+                className="w-[30vw] md:w-[8vw] h-[15vh] border-2 border-[#AD9273] p-4"
               />
-              <p className="mt-2 w-[12vw] text-gray-500 text-center">
+              <p className="mt-2 w-[30vw] md:w-[12vw] text-gray-500 text-center">
                 Valley Facing Plunge Pool
               </p>
             </div>
@@ -30,9 +30,9 @@ function VillaAmenities() {
               <Image
                 src={furnishedHomeIcon}
                 alt="pool icon"
-                className="w-[8vw] h-[15vh] border-2 border-[#AD9273] p-4"
+                className="w-[30vw] md:w-[8vw] h-[15vh] border-2 border-[#AD9273] p-4"
               />
-              <p className="w-[12vw] mt-2 text-gray-500 text-center">
+              <p className="w-[30vw] md:w-[12vw] mt-2 text-gray-500 text-center">
                 Fully Furnished Homes
               </p>
             </div>
@@ -42,9 +42,9 @@ function VillaAmenities() {
               <Image
                 src={smartHomeIcon}
                 alt="pool icon"
-                className="w-[8vw] h-[15vh] border-2 border-[#AD9273] p-4"
+                className="w-[30vw] md:w-[8vw] h-[15vh] border-2 border-[#AD9273] p-4"
               />
-              <p className="w-[12vw] mt-2 text-gray-500 text-center">
+              <p className="w-[30vw] md:w-[12vw] mt-2 text-gray-500 text-center">
                 Fully Automated Smart Homes
               </p>
             </div>
@@ -53,9 +53,9 @@ function VillaAmenities() {
               <Image
                 src={carParkIcon}
                 alt="pool icon"
-                className="w-[8vw] h-[15vh] border-2 border-[#AD9273] p-4"
+                className="w-[30vw] md:w-[8vw] h-[15vh] border-2 border-[#AD9273] p-4"
               />
-              <p className="w-[12vw] mt-2 text-gray-500 text-center">
+              <p className="w-[30vw] md:w-[12vw] mt-2 text-gray-500 text-center">
                 2 Dedicated Car Parks
               </p>
             </div>
@@ -65,7 +65,7 @@ function VillaAmenities() {
           <Image
             src={amenitiesImg}
             alt="amenities"
-            className="w-[58vw] h-[70vh]"
+            className="w-full md:w-[58vw] h-[50vh] md:h-[70vh]"
           />
         </div>
       </div>

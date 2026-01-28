@@ -41,7 +41,7 @@ const Hero = () => {
         ref={headerTextRef}
         className="absolute w-full flex items-center justify-center text-center px-5 inset-0"
       >
-        <div className="text-white flex flex-col items-center justify-center max-w-4xl">
+        {/* <div className="text-white flex flex-col items-center justify-center max-w-4xl">
           <h2 className="font-bold font-cormorant md:text-6xl text-2xl">
             Altaira Private Residences
           </h2>
@@ -49,7 +49,7 @@ const Hero = () => {
             A limited collection of private ridge villas, where ownership <br />{" "}
             meets elevation, privacy, and uninterrupted views.
           </i>
-        </div>
+        </div> */}
       </div>
     </div>
   );

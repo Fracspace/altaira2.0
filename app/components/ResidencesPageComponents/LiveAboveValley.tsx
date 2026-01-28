@@ -111,15 +111,15 @@ const LiveAboveValley = () => {
                 </div>
                 <div className="relative">
                     <Image src={liveAboveValleyImage} alt="live above valley Img" className="w-full h-[80vh] object-cover" />
-                    <div ref={textRef} className="absolute w-full md:w-[50vw] text-center top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+                    <div ref={textRef} className="absolute w-full lg:w-[50vw] text-center top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
                         <div className="flex flex-col text-white gap-5 p-5">
                             <h2 className="text-3xl font-bold md:text-5xl font-cormorant">Private Villas, Thoughtfully Positioned</h2>
                             <p className="leading-relaxed font-normal font-inter">Altaira’s Private Residences are set along the ridge, designed for those who value space, silence, and a deeper connection with the landscape.</p>
                         </div>
                     </div>
                 </div>
-                <div ref={privateResidencesRef} className="flex p-10 flex-col md:flex-row gap-5">
-                    <div className="flex flex-col gap-5 md:w-[50vw] residences-content">
+                <div ref={privateResidencesRef} className="flex p-10 flex-col lg:flex-row gap-5">
+                    <div className="flex flex-col gap-5 w-full lg:w-[50vw] residences-content">
                         <p className="text-[#AD9273] para">PRIVATE RESIDENCES</p>
                         <h2 className="font-bold text-2xl md:text-3xl font-cormorant">A Higher Way of Living</h2>
                         <p className="para">Set apart from the resort’s active zones, the villas enjoy a sense of calm and seclusion, while remaining deeply connected to the surrounding landscape. The positioning ensures that every home opens toward light, air, and uninterrupted valley horizons.</p>
@@ -153,8 +153,8 @@ const LiveAboveValley = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-auto md:w-[50vw] overflow-hidden">
-                        <Image ref={imageEl} src={higherWayOfLivingImage} alt="higher way of living" className="w-full h-auto md:w-[50vw] md:h-[80vh] object-cover" />
+                    <div className="w-auto lg:w-[50vw] overflow-hidden">
+                        <Image ref={imageEl} src={higherWayOfLivingImage} alt="higher way of living" className="w-full h-auto md:h-[70vh] lg:w-[50vw] lg:h-[80vh] object-cover" />
                     </div>
                 </div>
             </div>

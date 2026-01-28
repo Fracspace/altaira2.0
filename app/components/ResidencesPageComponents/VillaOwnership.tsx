@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react";
 function VillaOwnership() {
   return (
     <div className="mt-14">
-      <h2 className="text-center text-[#AD9273]">PURCHASE A VILLA</h2>
+      <h2 className="text-center text-xl text-[#AD9273]">PURCHASE A VILLA</h2>
       <h3 className="text-center mt-2 text-4xl font-cormorant">
         Villa Ownership at Altaira
       </h3>
@@ -20,11 +20,11 @@ function VillaOwnership() {
       </p>
       <div
         style={{ backgroundImage: `url(${villaOwnershipImg.src})` }}
-        className="relative w-[95vw] h-[90vh] ml-[2vw] mr-[2vw] bg-cover bg-center mt-12 "
+        className="relative w-[95vw] h-[50vh] md:h-[90vh] ml-[2vw] mr-[2vw] bg-cover bg-center mt-12 "
       >
-        <div className="absolute w-full h-full bg-black/20 "></div>
-        <div className="absolute left-1/2 -translate-x-1/2 translate-y-90 z-20 ">
-          <h2 className="text-center text-white text-6xl">Begin Your Ascent</h2>
+        <div className="absolute w-full h-full bg-black/20"></div>
+        <div className="absolute w-full left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-20">
+          <h2 className="text-center text-white text-xl md:text-6xl">Begin Your Ascent</h2>
           <div className="flex items-center justify-center">
             <button className="flex cursor-pointer items-center justify-between text-center mt-8 bg-white pl-2 pr-2 pt-1 pb-1 rounded-lg">
               Register Your Interest

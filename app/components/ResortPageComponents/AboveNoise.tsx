@@ -103,13 +103,13 @@ const AboveNoise = () => {
           <h2 className='text-2xl font-cormorant md:text-4xl text-center font-bold'>Above the Noise, Beyond the Ordinary</h2>
           <p className='para'>Designed as a slow-living resort with immersive landscapes, Altaira blends luxury stays, curated wellness, and high-adrenaline adventure - all shaped by elevation, forest, and sky.</p>
         </div>
-        <div className='flex flex-col md:h-[60vh] mt-10 md:flex-row md:items-stretch gap-10'>
+        <div className='flex flex-col md:h-auto mt-10 md:flex-row md:items-stretch gap-10'>
           <div className="overflow-hidden rounded-md md:w-[50vw] flex" >
             <Image
               // ref={imageRef}
               src={ridgeSuites1}
               alt="ridge suites"
-              className="w-full experience-image rounded-md object-cover h-[50vh] lg:h-full"
+              className="w-full experience-image rounded-md object-cover h-[50vh] md:h-auto lg:h-full"
             />
           </div>
           <div className="flex flex-col gap-5 md:w-[50vw]">

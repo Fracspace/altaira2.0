@@ -1,14 +1,7 @@
 "use client"
-
-import Image from "next/image"
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { useEffect, useState, useRef, useCallback, ChangeEvent, FormEvent } from "react"
-import location from '../../../public/images/contact/location.webp'
-import phoneIcon from '../../../public/images/contact/phoneIcon.webp'
-import emailIcon from "../../../public/images/contact/emailIcon.webp"
-import hours from "../../../public/images/contact/hours.webp"
-
-// import gsap from "gsap"
-// import { useGSAP } from "@gsap/react"
+import InvestmentForm from '../GlobalComponents/InvestmentForm';
 
 import PhoneInput from "react-phone-input-2"
 import "react-phone-input-2/lib/style.css"
@@ -37,20 +30,7 @@ const Contact = () => {
     const [value, setValue] = useState<CountryOption | null>(null);
     const [options, setOptions] = useState<CountryOption[]>([]);
     const [selectedCategory, setSelectedCategory] = useState<string>("general");
-    const contactUsRef =useRef<HTMLDivElement>(null);
-    // useGSAP(()=>{
-    //     gsap.from(".contact-item",{
-    //         opacity:0,
-    //         y:60,
-    //         duration:0.7,
-    //         ease:"power3.out",
-    //         scrollTrigger:{
-    //             trigger:contactUsRef.current,
-    //             start:"top 75%",
-    //             once:true
-    //         }
-    //     })
-    // })
+    const contactUsRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
         const countryOptions = countryList().getData() as CountryOption[];
         setOptions(countryOptions);
@@ -88,12 +68,12 @@ const Contact = () => {
             console.log("form data", payload);
             alert("Form data submitted successfully");
             setFormData({
-                firstName:"",
-                lastName:"",
-                emailId:"",
-                phoneNumber:"",
-                countryCode:"",
-                message:"",
+                firstName: "",
+                lastName: "",
+                emailId: "",
+                phoneNumber: "",
+                countryCode: "",
+                message: "",
             })
         } catch (error) {
             console.log(error, "error while submitting form")
@@ -120,7 +100,7 @@ const Contact = () => {
                             <p className="font-inter text-base">Agents</p>
                         </button>
                     </div>
-                    <form onSubmit={onSubmit}>
+                    {selectedCategory === "general" || selectedCategory === "agents" ? <form onSubmit={onSubmit}>
                         {error && (
                             <div className="p-3 bg-red-100 border border-red-400 text-red-700 rounded-md">
                                 {error}
@@ -189,43 +169,43 @@ const Contact = () => {
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form> : <InvestmentForm />}
                 </div>
                 <div ref={contactUsRef} className="md:w-[50vw] flex flex-col gap-5">
                     <h2 className="font-inter text-[#AD9273]">CONTACT US</h2>
                     <p className="font-cormorant text-xl font-bold md:text-4xl">We'd Love to Hear From You</p>
                     <p className="font-normal font-inter text-gray-500 leading-loose">Whether you're interested in staying, investing, or <br /> hosting an event, our team is here to help you explore all possibilities at Altaira.</p>
                     <div className="space-y-10">
-                        <div className="contact-item flex flex-row items-center gap-5">
+                        <div className="flex flex-row items-center gap-5">
                             <div className="w-10 h-10 rounded-full bg-[#AD927399] flex items-center justify-center">
-                                <Image src={location} className="w-5 h-5 object-contain" alt="location" />
+                                <MapPin style={{ color: '#AD927399' }} />
                             </div>
                             <div className="flex flex-col gap-1">
                                 <h2 className="font-inter font-normal text-gray-500">Location</h2>
                                 <p className="font-inter">Bulathkohupitiya, Sri Lanka</p>
                             </div>
                         </div>
-                        <div className="contact-item flex flex-row items-center gap-5">
+                        <div className="flex flex-row items-center gap-5">
                             <div className="w-10 h-10 rounded-full bg-[#AD927399] flex items-center justify-center">
-                                <Image src={phoneIcon} className="w-5 h-5 object-contain" alt="phone" />
+                                <Phone style={{ color: "#AD927399" }} />
                             </div>
                             <div className="flex flex-col gap-1">
                                 <h2 className="font-inter font-normal text-gray-500">Phone</h2>
                                 <p className="font-inter">+94 77 123 4567</p>
                             </div>
                         </div>
-                        <div className="contact-item flex flex-row items-center gap-5">
+                        <div className="flex flex-row items-center gap-5">
                             <div className="w-10 h-10 rounded-full bg-[#AD927399] flex items-center justify-center">
-                                <Image src={emailIcon} className="w-5 h-5 object-contain" alt="email" />
+                                <Mail style={{ color: "#AD927399" }} />
                             </div>
                             <div className="flex flex-col gap-1">
                                 <h2 className="font-inter font-normal text-gray-500">Email</h2>
                                 <p onClick={() => window.open("mailto:altaira@fracspace.com")} className="font-inter cursor-pointer">altaira@fracspace.com</p>
                             </div>
                         </div>
-                        <div className="contact-item flex flex-row items-center gap-5">
+                        <div className="flex flex-row items-center gap-5">
                             <div className="w-10 h-10 rounded-full bg-[#AD927399] flex items-center justify-center">
-                                <Image src={hours} className="w-5 h-5 object-contain" alt="hours" />
+                                <Clock style={{ color: "#AD927399" }} />
                             </div>
                             <div className="flex flex-col gap-1">
                                 <h2 className="font-inter font-normal text-gray-500">Hours</h2>
@@ -235,7 +215,7 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
-            <div className="md:h-[40vh] h-[50vh] responsiveMapWidth responsiveMapHeight lg:h-[70vh] p-10 pt-0 rounded-md">
+            <div className="md:h-[40vh] h-[50vh] responsiveMapWidth responsiveMapHeight lg:h-[70vh] p-5 md:p-10 pt-0 rounded-md">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7918.357570206037!2d80.3310226383134!3d7.1052682180792655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae30efe5a2e1cab%3A0x66e4b8966396e2ea!2sBulathkohupitiya%2C%20Sri%20Lanka!5e0!3m2!1sen!2sin!4v1764817133800!5m2!1sen!2sin"
                     width="100%"

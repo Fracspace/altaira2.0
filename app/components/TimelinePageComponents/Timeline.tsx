@@ -1,5 +1,6 @@
 "use client"
-import { useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
+import { ArrowUp } from 'lucide-react';
 import Image from 'next/image'
 import timelineImg1 from "../../../public/images/timeline/timelineImg1.webp"
 import timelineImg2 from "../../../public/images/timeline/timelineImg2.webp"
@@ -12,6 +13,24 @@ import timelineImg44 from "../../../public/images/timeline/timelineImg44.webp"
 
 const Timeline = () => {
     const [selectedYear, setSelectedYear] = useState<string | null>(null);
+    const [showScrollButton, setShowScrollButton] = useState(false);
+    const timelineRef =useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setShowScrollButton(window.scrollY > 300);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    const scrollToSection = () => {
+        timelineRef.current?.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        })
+    }
+
     const months = [
         "January", "February", "March", "April",
         "May", "June", "July", "August",
@@ -19,7 +38,7 @@ const Timeline = () => {
     ];
     return (
         <div className='p-10'>
-            <div className='flex flex-col items-center justify-center gap-5'>
+            <div ref={timelineRef} className='flex flex-col items-center justify-center gap-5'>
                 <h2 className='font-inter text-[#AD9273]'>DEVELOPMENT JOURNEY</h2>
                 <p className='font-cormorant font-bold text-2xl md:text-4xl'>Crafting a Destination in the Clouds</p>
                 <p className='font-inter text-gray-500 max-w-4xl font-normal'>
@@ -96,42 +115,50 @@ const Timeline = () => {
                     />
                 </div>
             </div>
-               {selectedYear && (
-                <div className="p-10 relative">
-                    <button
-                        onClick={() => setSelectedYear(null)}
-                        className="absolute top-10 right-10 z-10
-                 text-white text-2xl hover:text-[#C6A667]
-                 transition cursor-pointer"
-                        aria-label="Close"
-                    >
-                        ✕
-                    </button>
-                    <div className="bg-[#244936] p-5 rounded-md">
-                        <div className="md:w-[80vw] h-auto">
-                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                                {months.map((month) => (
-                                    <button
-                                        key={month}
-                                        className="text-xl cursor-pointer text-white
-                         hover:text-[#C6A667]
-                         transition-transform hover:scale-105 duration-300
-                         font-montserrat py-2 rounded-md"
-                                    >
-                                        {month}
-                                    </button>
-                                ))}
-                            </div>
+            {selectedYear && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4">
+                    <div className="relative bg-[#244936] p-5 rounded-md w-full max-w-3xl max-h-[80vh] overflow-y-auto">
+                        <button
+                            onClick={() => setSelectedYear(null)}
+                            className="absolute top-3 right-3 text-white text-2xl hover:text-[#C6A667] transition"
+                            aria-label="Close"
+                        >
+                            ✕
+                        </button>
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-6">
+                            {months.map((month) => (
+                                <button
+                                    key={month}
+                                    className="text-xl cursor-pointer text-white
+              hover:text-[#C6A667]
+              transition-transform hover:scale-105 duration-300
+              font-montserrat py-2 rounded-md"
+                                >
+                                    {month}
+                                </button>
+                            ))}
                         </div>
                     </div>
                 </div>
             )}
+            {showScrollButton && (
+                <button
+                    onClick={scrollToSection}
+                    className="fixed bottom-6 right-6 z-30
+      bg-[#244936] text-white p-3 rounded-full
+      shadow-lg hover:bg-[#C6A667]
+      transition-all duration-300 cursor-pointer"
+                    aria-label="Scroll to top"
+                >
+                    <ArrowUp/>
+                </button>
+            )}
             <div>
-                <div>
-                    <h2 className='text-xl md:text-2xl mb-2 font-montserrat text-white text-center'>Crafting a Destination in the Clouds</h2>
-                    <p className='text-lg md:text-xl font-poppins text-white text-center'>From concept to completion, Altaira is being built with care, precision, and a vision to redefine mountain living.</p>
-                </div>
-                <ul className="relative max-w-6xl mx-auto">
+                {/* <div>
+                    <h2 className='text-xl md:text-2xl mb-2 font-cormorant text-center'>Crafting a Destination in the Clouds</h2>
+                    <p className='text-lg md:text-xl font-poppins text-center'>From concept to completion, Altaira is being built with care, precision, and a vision to redefine mountain living.</p>
+                </div> */}
+                <ul className="relative mt-10 max-w-6xl mx-auto">
                     <span className="hidden md:block absolute left-1/2 top-0 h-full w-[1px] bg-gray-300 -translate-x-1/2"></span>
                     <li className="relative grid-cols-1 md:grid grid-cols-2 gap-20 pb-16">
                         <div className="relative">
@@ -144,12 +171,13 @@ const Timeline = () => {
                                 />
                             </div>
                         </div>
-                        <div className='flex flex-col p-5 rounded-md border border-[#AD9273] p-5 gap-3'>
+                        <div className='flex flex-col p-5 rounded-md border border-[#AD9273] gap-3'>
                             <p className='font-inter rounded-full bg-[#C6A66799] w-fit px-2 py-1 text-white'>Q1 2026</p>
                             <h4 className="text-xl md:text-2xl font-cormorant font-semibold">Land Acquisition Complete</h4>
                             <p className="text-gray-500 font-inter">
                                 26 acres secured in the pristine hilltops of Bulathkohupitiya.
                             </p>
+                            <button className='text-left rounded-md border border-[#AD9273] px-6 py-2 w-fit cursor-pointer shadow-md'>Read More</button>
                         </div>
                         <span className="hidden md:block absolute left-1/2 top-2 h-4 w-4 bg-[#BFC4BE] rounded-full -translate-x-1/2 z-10"></span>
                     </li>
@@ -161,6 +189,7 @@ const Timeline = () => {
                             <p className="text-gray-500 font-inter">
                                 Feb 14 2026, Altaira is unveiled to the world, opening investment participation.
                             </p>
+                            <button className='text-left rounded-md border border-[#AD9273] px-6 py-2 w-fit cursor-pointer shadow-md'>Read More</button>
                         </div>
                         <div className="group relative">
                             <div className="w-full h-full overflow-hidden rounded-full">
@@ -192,6 +221,7 @@ const Timeline = () => {
                             <p className="text-gray-500 font-inter">
                                 The mountain resort is completed, offering guests immersive stays above the clouds.
                             </p>
+                            <button className='text-left rounded-md border border-[#AD9273] px-6 py-2 w-fit cursor-pointer shadow-md'>Read More</button>
                         </div>
                         <span className="hidden md:block absolute left-1/2 top-2 h-4 w-4 bg-[#BFC4BE] rounded-full -translate-x-1/2 z-10"></span>
                     </li>
@@ -202,6 +232,7 @@ const Timeline = () => {
                             <p className="font-normal text-gray-500 font-inter">
                                 Each villa is delivered fully furnished - with plunge pool, view decks & access to Resort.
                             </p>
+                            <button className='text-left rounded-md border border-[#AD9273] px-6 py-2 w-fit cursor-pointer shadow-md'>Read More</button>
                         </div>
                         <div className="group relative">
                             <div className="w-full h-full overflow-hidden rounded-full">

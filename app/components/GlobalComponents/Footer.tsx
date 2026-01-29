@@ -12,10 +12,10 @@ const contactClasses = "hover:text-[#C6A667]"
 const Footer = () => {
     const router = useRouter();
     return (
-        <div className='bg-[#0E2019] text-white p-10'>
+        <div className='bg-[#221E1F] text-white p-10'>
             <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr_1fr] gap-10">
                 <div className="flex flex-col gap-5">
-                    <Image onClick={() => router.push("/")} src={AltairaLogo1} alt="altaira logo" className="md:w-[20vw] md:h-[10vh] lg:w-[10vw] lg:h-[10vh] h-[10vh] w-[40vw] cursor-pointer" />
+                    <Image onClick={() => router.push("/")} src={AltairaLogo1} alt="altaira logo" className="md:w-[20vw] md:h-[10vh] ipadProImageWidth lg:w-[10vw] lg:h-[10vh] h-[10vh] w-[40vw] cursor-pointer" />
                     <p className="font-montserrat leading-loose">Altaira is a luxury hilltop resort and residence destination set nearly 2,000 feet above sea level. Designed for stillness, discovery, and elevated living, Altaira blends nature, wellness, and adventure into one timeless experience.</p>
                 </div>
                 <div className="flex flex-col gap-3">
@@ -35,8 +35,8 @@ const Footer = () => {
                         <li className={contactClasses} onClick={() => window.open("mailto:altaira.lk@fracspace.com")}>Email: altaira.lk@fracspace.com</li>
                         <li className={contactClasses} onClick={() => window.open("tel:+919880626111")}>Phone: +91 9880626111</li>
                         <li onClick={() => router.push("/privacypolicy")} className={contactClasses}>Privacy Policy</li>
-                        <li onClick={()=>router.push("/terms-and-conditions")} className={contactClasses}>Terms of Service</li>
-                        <li onClick={()=>router.push("/refunds")} className={contactClasses}>Refund Policy</li>
+                        <li onClick={() => router.push("/terms-and-conditions")} className={contactClasses}>Terms of Service</li>
+                        <li onClick={() => router.push("/refunds")} className={contactClasses}>Refund Policy</li>
                     </ul>
                 </div>
                 {/* <div className="md:h-[40vh] h-[50vh] responsiveMapWidth responsiveMapHeight lg:h-auto">
@@ -50,6 +50,11 @@ const Footer = () => {
                         title="Location Map"
                     />
                 </div> */}
+            </div>
+            <hr className="w-full mt-10 hidden md:block" />
+            <div className="flex flex-col gap-5 md:flex-row items-start md:items-center mt-5 justify-between">
+                <h2 className="font-inter">© Copyright 2026, All Rights Reserved by Altaira</h2>
+                <p className="font-inter">A Fracspace Development</p>
             </div>
         </div>
     )

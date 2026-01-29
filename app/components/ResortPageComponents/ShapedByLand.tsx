@@ -119,7 +119,7 @@ export default function ShapedByLand() {
 
         <div className="flex flex-col md:pt-20 pt-10 gap-10">
           <div className="experience-row flex flex-col md:flex-row md:items-stretch gap-2 md:gap-10">
-            <div className="overflow-hidden rounded-md md:w-[50vw] flex">
+            <div className="overflow-hidden ipadProHeight rounded-md md:w-[50vw] flex">
               <Image
                 src={teaEstateImg}
                 alt="Tea Estate"
@@ -171,7 +171,7 @@ export default function ShapedByLand() {
             </div>
 
             {/* Desktop image */}
-            <div className="overflow-hidden rounded-md md:w-[50vw] lg:h-[50vh] flex">
+            <div className="overflow-hidden ipadProHeight rounded-md md:w-[50vw] lg:h-[50vh] flex">
               <Image
                 src={cloudWalkwaysImage}
                 alt="Cloud Walkways"
@@ -182,7 +182,7 @@ export default function ShapedByLand() {
 
           {/* ROW 3 */}
           <div className="experience-row flex flex-col md:flex-row md:items-stretch gap-2 md:gap-10">
-            <div className="overflow-hidden rounded-md md:w-[50vw] flex">
+            <div className="overflow-hidden ipadProHeight rounded-md md:w-[50vw] flex">
               <Image
                 src={infinityPoolImage}
                 alt="Infinity Pool"
@@ -220,7 +220,7 @@ export default function ShapedByLand() {
               <i className="para">Wellness in its purest form</i>
               </div>
             </div>
-            <div className="overflow-hidden rounded-md md:w-[50vw] h-[50vh] md:h-[40vh] lg:h-[50vh] flex">
+            <div className="overflow-hidden ipadProHeight rounded-md md:w-[50vw] h-[50vh] md:h-[40vh] lg:h-[50vh] flex">
               <Image
                 src={rainForestImg}
                 alt="Rainforest Spa"

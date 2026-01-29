@@ -30,12 +30,12 @@ const Modal = ({ onClose }: ModalProps) => {
             onClick={() => handleNavigation("/")}
             src={AltairaLogo1}
             alt="altaira logo"
-            className="w-[40vw] h-[10vh] md:w-[15vw] md:h-[10vh] lg:w-[6vw] lg:h-[10vh] cursor-pointer"
+            className="w-[40vw] h-[10vh] md:w-[20vw] md:h-[10vh] lg:w-[6vw] lg:h-[10vh] cursor-pointer"
           />
 
           <button
             onClick={onClose}
-            className="md:rounded-lg text-white flex items-center gap-2 px-6 py-2 cursor-pointer"
+            className="md:rounded-lg text-white flex items-center justify-between gap-2 px-6 py-2 cursor-pointer"
           >
             <span className="hidden md:block"></span>
             <X size={24} />

@@ -1,21 +1,55 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
 import villaDetails from "../../../public/images/residences/villaDetails.webp";
 import Image from "next/image";
 
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 function VillaDimensions() {
+  const contentRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      contentRef.current,
+      { opacity: 0, y: 120 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 50%",
+          end: "bottom top",
+          toggleActions: "play none none none"
+        }
+      }
+    );
+  }, []);
+
   return (
-    <div>
+    <div ref={containerRef}>
       <div className="p-10 flex flex-col md:flex-row">
         <div>
           <Image
             src={villaDetails}
             alt="villa details"
-            className="w-full md:w-[50vw] h-[50vh] md:h-[75vh] ml-[2vw]"
+            className="w-full max-h-[800px] md:w-[50vw] h-[50vh] md:h-[75vh] ml-[2vw]"
           />
         </div>
-        <div className="w-full md:w-[40vw] mt-4 md:ml-5 md:mr-5">
-          <h2 className="text-3xl md:text-4xl font-cormorant">A Higher Way Of Living</h2>
-          <p className="mt-4 leading-[2]">
+        <div
+          ref={contentRef}
+          className="w-full md:w-[40vw] mt-4 md:ml-[5vw] md:mr-[2vw]"
+        >
+          <h2 className="text-3xl md:text-4xl font-cormorant">
+            A Higher Way Of Living
+          </h2>
+          <p className="mt-4 text-md xl:text-lg leading-[2]">
             Set apart from the resort’s active zones, the villas enjoy a sense
             of calm & seclusion, while remaining deeply connected to the
             surrounding landscape. The positioning ensures that every home opens

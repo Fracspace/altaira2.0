@@ -13,10 +13,10 @@ function page() {
         style={{ backgroundImage: `url(${heroImg.src})` }}
       >
         <div className="absolute inset-0 bg-black/20 "></div>
-        <h2 className="absolute w-full text-center font-cormorant text-6xl text-white left-1/2 -translate-x-1/2 pt-[30%]  z-10">
+        <h2 className="absolute w-full text-center font-cormorant text-5xl md:text-6xl text-white pt-[50%] left-1/2 -translate-x-1/2 md:pt-[30%]  z-10">
           Altaira Private Residences
         </h2>
-        <h3 className="absolute w-full text-center font-inter text-xl text-white left-1/2 -translate-x-1/2 pt-[37%] z-10">
+        <h3 className="absolute w-full text-center font-inter text-lg md:text-xl text-white pt-[90%] left-1/2 -translate-x-1/2 md:pt-[37%] z-10">
           A limited collection of private ridge villas, where ownership meets
           elevation, privacy, and uninterrupted views.
         </h3>

@@ -11,8 +11,8 @@ const Hero = () => {
             <div className="absolute inset-0 bg-black/50 z-10"></div>
             <div className="absolute z-20 w-full flex items-center justify-center text-center inset-0 px-5">
                 <div className="text-white flex flex-col items-center justify-center max-w-4xl">
-                    <h2 className="font-cormorant font-bold text-3xl md:text-6xl">Project Timeline</h2>
-                    <i className="mt-5 text-lg md:text-xl font-inter">Watch Altaira rise from vision to reality</i>
+                    <h2 className="font-cormorant md:text-6xl text-5xl">Project Timeline</h2>
+                    <i className="mt-5 text-lg md:text-xl font-inter xl:text-xl">Watch Altaira rise from vision to reality</i>
                 </div>
             </div>
         </div>

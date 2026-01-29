@@ -100,8 +100,8 @@ const AboveNoise = () => {
     <div ref={aboveNoiseSectionRef}>
       <div className='p-10'>
         <div className='flex flex-col gap-2'>
-          <h2 className='text-2xl font-cormorant md:text-4xl text-center font-bold'>Above the Noise, Beyond the Ordinary</h2>
-          <p className='para'>Designed as a slow-living resort with immersive landscapes, Altaira blends luxury stays, curated wellness, and high-adrenaline adventure - all shaped by elevation, forest, and sky.</p>
+          <h2 className='text-3xl font-cormorant md:text-4xl xl:text-5xl text-center'>Above the Noise, Beyond the Ordinary</h2>
+          <p className='xl:text-xl'>Designed as a slow-living resort with immersive landscapes, Altaira blends luxury stays, curated wellness, and high-adrenaline adventure - all shaped by elevation, forest, and sky.</p>
         </div>
         <div className='flex flex-col md:h-auto mt-10 md:flex-row md:items-stretch gap-10'>
           <div className="overflow-hidden rounded-md md:w-[50vw] flex" >
@@ -114,16 +114,16 @@ const AboveNoise = () => {
           </div>
           <div className="flex flex-col gap-5 md:w-[50vw]">
             <div className='flex flex-col gap-3'>
-              <p className='text-[#AD9273] font-inter'>PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
-              <h2 className='font-cormorant text-3xl font-bold'>Ridge Suites</h2>
-              <p className='para leading-relaxed'>The Ridge Suites are positioned along the natural contours of the hill, offering uninterrupted valley views and complete privacy.</p>
-              <p className='para leading-relaxed'>Designed for slow mornings and quiet evenings, each suite opens to forest light, drifting mist, and the changing moods of the landscape. Interiors are understated, refined, and fully serviced - allowing nature to remain the hero.</p>
-              <p className='para'>Highlights (light list, not feature dump)</p>
-              <ul className='list-disc md:pl-5 leading-relaxed'>
-                <li className='para'>Valley-facing layouts</li>
-                <li className='para'>Private plunge pools</li>
-                <li className='para'>Fully serviced resort living</li>
-                <li className='para'>Seamless access to all experiences</li>
+              <p className='text-[#AD9273] font-inter xl:text-xl'>PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
+              <h2 className='font-cormorant text-3xl xl:text-3xl'>Ridge Suites</h2>
+              <p className='text-lg xl:text-xl leading-relaxed'>The Ridge Suites are positioned along the natural contours of the hill, offering uninterrupted valley views and complete privacy.</p>
+              <p className='text-lg xl:text-xl leading-relaxed'>Designed for slow mornings and quiet evenings, each suite opens to forest light, drifting mist, and the changing moods of the landscape. Interiors are understated, refined, and fully serviced - allowing nature to remain the hero.</p>
+              <p className='text-lg xl:text-xl'>Highlights (light list, not feature dump)</p>
+              <ul className='list-disc text-lg xl:text-xl md:pl-5 leading-relaxed'>
+                <li>Valley-facing layouts</li>
+                <li>Private plunge pools</li>
+                <li>Fully serviced resort living</li>
+                <li>Seamless access to all experiences</li>
               </ul>
             </div>
           </div>

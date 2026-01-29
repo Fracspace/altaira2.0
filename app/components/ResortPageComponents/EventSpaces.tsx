@@ -128,8 +128,8 @@ const EventSpaces = () => {
     return (
         <div className="p-10" ref={eventSpacesRef}>
             <div className="flex flex-col gap-2">
-                <p className="text-center text-xl text-[#AD9273] font-inter">EVENT SPACES</p>
-                <h2 className="text-center font-bold text-3xl font-cormorant">Gather Above the World</h2>
+                <p className="text-center text-lg text-[#AD9273] xl:text-xl font-inter">EVENT SPACES</p>
+                <h2 className="text-center text-3xl xl:text-5xl font-cormorant">Gather Above the World</h2>
             </div>
             <div className="flex flex-col pt-10 md:flex-row gap-5">
                 <div className="w-full md:w-[50vw]">
@@ -143,16 +143,16 @@ const EventSpaces = () => {
                 <div className="p-10 rounded-xl shadow-md">
                     <div className="flex text-animate flex-col w-full gap-5 lg:gap-10 md:divide-y md:divide-y-0 md:divide-x divide-[#AD9273] md:flex-row">
                         <div className="flex flex-col w-full md:w-[30vw] gap-5 text-item">
-                            <h2 className="font-cormorant text-2xl font-bold">Weddings</h2>
-                            <p className="font-inter text-[#67777E]">Intimate hilltop ceremonies and celebrations framed by forest, sky, and open light.</p>
+                            <h2 className="font-cormorant text-2xl xl:text-2xl font-bold">Weddings</h2>
+                            <p className="font-inter text-[#67777E] xl:text-lg">Intimate hilltop ceremonies and celebrations framed by forest, sky, and open light.</p>
                         </div>
                         <div className="flex flex-col w-full md:w-[30vw] gap-5 text-item">
-                            <h2 className="font-cormorant text-2xl font-bold">Private Gatherings</h2>
-                            <p className="font-inter text-[#67777E]">Birthdays, anniversaries, and milestone moments, hosted in spaces that feel personal and unhurried.</p>
+                            <h2 className="font-cormorant text-2xl xl:text-2xl font-bold">Private Gatherings</h2>
+                            <p className="font-inter text-[#67777E] xl:text-lg">Birthdays, anniversaries, and milestone moments, hosted in spaces that feel personal and unhurried.</p>
                         </div>
                         <div className="flex flex-col w-full md:w-[30vw] gap-5 text-item">
-                            <h2 className="font-cormorant text-2xl font-bold">Retreats</h2>
-                            <p className="font-inter text-[#67777E]">A quiet setting for wellness, leadership, and creative retreats - designed for focus and flow.</p>
+                            <h2 className="font-cormorant text-2xl xl:text-2xl font-bold">Retreats</h2>
+                            <p className="font-inter text-[#67777E] xl:text-lg">A quiet setting for wellness, leadership, and creative retreats - designed for focus and flow.</p>
                         </div>
                     </div>
                 </div>

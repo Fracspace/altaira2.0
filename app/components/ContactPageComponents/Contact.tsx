@@ -88,16 +88,16 @@ const Contact = () => {
         <div className="rounded-md shadow-xl">
             <div className="flex flex-col md:flex-row gap-6 md:gap-10 p-5 md:p-10">
                 <div className="flex md:w-[50vw] rounded-md shadow-md flex-col gap-5 p-10">
-                    <h2 className="font-inter text-base">I'm interested in</h2>
+                    <h2 className="font-inter xl:text-xl text-base">I'm interested in</h2>
                     <div className="flex flex-row gap-1 md:gap-3 overflow-x-auto md:overflow-x-visible">
                         <button onClick={() => handleCategoryChange("general")} className={`rounded-full min-w-[48%] md:min-w-fit  ${selectedCategory !== "general" ? "bg-[#ffffff] text-black border boder-black-200" : "bg-[#AD9273] text-white"} cursor-pointer px-4 py-2`}>
-                            <p className="font-inter text-base">General</p>
+                            <p className="font-inter xl:text-xl text-base">General</p>
                         </button>
                         <button onClick={() => handleCategoryChange("investment")} className={`rounded-full min-w-[48%] md:min-w-fit px-4 ${selectedCategory === "investment" ? "bg-[#AD9273] text-white" : "bg-[#ffffff]"} cursor-pointer py-2 border`}>
-                            <p className="font-inter text-base">Investment</p>
+                            <p className="font-inter xl:text-xl text-base">Investment</p>
                         </button>
                         <button onClick={() => handleCategoryChange("agents")} className={`rounded-full px-4 ${selectedCategory === "agents" ? "bg-[#AD9273] text-white" : "bg-[#ffffff]"} cursor-pointer py-2 border`}>
-                            <p className="font-inter text-base">Agents</p>
+                            <p className="font-inter xl:text-xl text-base">Agents</p>
                         </button>
                     </div>
                     {selectedCategory === "general" || selectedCategory === "agents" ? <form onSubmit={onSubmit}>
@@ -173,16 +173,16 @@ const Contact = () => {
                 </div>
                 <div ref={contactUsRef} className="md:w-[50vw] flex flex-col gap-5">
                     <h2 className="font-inter text-[#AD9273]">CONTACT US</h2>
-                    <p className="font-cormorant text-xl font-bold md:text-4xl">We'd Love to Hear From You</p>
-                    <p className="font-normal font-inter text-gray-500 leading-loose">Whether you're interested in staying, investing, or <br /> hosting an event, our team is here to help you explore all possibilities at Altaira.</p>
+                    <p className="font-cormorant text-xl md:text-4xl xl:text-4xl">We'd Love to Hear From You</p>
+                    <p className="font-normal font-inter xl:text-xl text-gray-500 leading-relaxed">Whether you're interested in staying, investing, or <br /> hosting an event, our team is here to help you explore all possibilities at Altaira.</p>
                     <div className="space-y-10">
                         <div className="flex flex-row items-center gap-5">
                             <div className="w-10 h-10 rounded-full bg-[#AD927399] flex items-center justify-center">
                                 <MapPin style={{ color: '#AD927399' }} />
                             </div>
                             <div className="flex flex-col gap-1">
-                                <h2 className="font-inter font-normal text-gray-500">Location</h2>
-                                <p className="font-inter">Bulathkohupitiya, Sri Lanka</p>
+                                <h2 className="font-inter font-normal xl:text-xl text-gray-500">Location</h2>
+                                <p className="font-inter xl:text-xl">Bulathkohupitiya, Sri Lanka</p>
                             </div>
                         </div>
                         <div className="flex flex-row items-center gap-5">
@@ -190,8 +190,8 @@ const Contact = () => {
                                 <Phone style={{ color: "#AD927399" }} />
                             </div>
                             <div className="flex flex-col gap-1">
-                                <h2 className="font-inter font-normal text-gray-500">Phone</h2>
-                                <p className="font-inter">+94 77 123 4567</p>
+                                <h2 className="font-inter xl:text-xl text-gray-500">Phone</h2>
+                                <p className="font-inter xl:text-xl">+94 77 123 4567</p>
                             </div>
                         </div>
                         <div className="flex flex-row items-center gap-5">
@@ -199,8 +199,8 @@ const Contact = () => {
                                 <Mail style={{ color: "#AD927399" }} />
                             </div>
                             <div className="flex flex-col gap-1">
-                                <h2 className="font-inter font-normal text-gray-500">Email</h2>
-                                <p onClick={() => window.open("mailto:altaira@fracspace.com")} className="font-inter cursor-pointer">altaira@fracspace.com</p>
+                                <h2 className="font-inter xl:text-xl text-gray-500">Email</h2>
+                                <p onClick={() => window.open("mailto:altaira@fracspace.com")} className="font-inter xl:text-xl cursor-pointer">altaira@fracspace.com</p>
                             </div>
                         </div>
                         <div className="flex flex-row items-center gap-5">
@@ -208,8 +208,8 @@ const Contact = () => {
                                 <Clock style={{ color: "#AD927399" }} />
                             </div>
                             <div className="flex flex-col gap-1">
-                                <h2 className="font-inter font-normal text-gray-500">Hours</h2>
-                                <p className="font-inter">Mon - Sun:  9:00 AM to 7:00 PM</p>
+                                <h2 className="font-inter xl:text-xl text-gray-500">Hours</h2>
+                                <p className="font-inter xl:text-xl">Mon - Sun:  9:00 AM to 7:00 PM</p>
                             </div>
                         </div>
                     </div>

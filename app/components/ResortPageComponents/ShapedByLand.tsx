@@ -106,11 +106,11 @@ export default function ShapedByLand() {
       {/* HEADER */}
       <div className="p-10">
         <div className="flex flex-col gap-5 text-center">
-          <p className="text-[#AD9273] font-inter">EXPERIENCES</p>
-          <h2 className="font-cormorant text-2xl md:text-3xl font-bold">
+          <p className="text-[#AD9273] text-lg xl:text-xl font-inter">EXPERIENCES</p>
+          <h2 className="font-cormorant text-3xl md:text-3xl xl:text-5xl">
             Shaped by Land, Elevation, and Time
           </h2>
-          <p className="font-inter font-normal text-[#67777E] mx-auto">
+          <p className="font-inter font-normal text-[#67777E] text-lg xl:text-xl mx-auto">
             Some experiences invite movement. Others invite stillness. At Altaira,
             every experience is guided by the terrain - unfolding naturally through
             forest paths, open skies, and quiet valleys.
@@ -127,15 +127,15 @@ export default function ShapedByLand() {
               />
             </div>
             <div className="experience-content flex flex-col md:w-[50vw] gap-5">
-              <p className="text-[#AD9273] font-inter">PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
-              <h2 className="font-cormorant text-2xl font-bold">Tea Estate Trails</h2>
-              <p className="para leading-relaxed">
+              <p className="text-[#AD9273] font-inter text-lg xl:text-xl">PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
+              <h2 className="font-cormorant text-3xl xl:text-3xl font-bold">Tea Estate Trails</h2>
+              <p className="para xl:text-xl text-lg leading-relaxed">
                 Walk through living tea landscapes, where mist, elevation, and heritage meet under open skies.
                 Each step reveals the rhythm of the land, shaped by seasons, slopes, and generations of craft.
               </p>
               <div className="flex items-center gap-2">
                 <div className="w-1 h-7 rounded bg-[#AD9273]"></div>
-                <i className="para ">Where the land tells its story</i>
+                <i className="text-lg xl:text-xl">Where the land tells its story</i>
               </div>
 
               {/* Mobile image */}
@@ -150,16 +150,16 @@ export default function ShapedByLand() {
           {/* ROW 2 */}
           <div className="experience-row flex flex-col md:flex-row md:items-stretch gap-2 md:gap-10">
             <div className="experience-content flex flex-col md:w-[50vw] gap-5">
-              <p className="text-[#AD9273] font-inter">PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
-              <h2 className="font-cormorant text-2xl font-bold">Cloud Walkways</h2>
-              <p className="para leading-relaxed">
+              <p className="text-[#AD9273] text-lg xl:text-2xl font-inter">PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
+              <h2 className="font-cormorant text-3xl xl:text-3xl font-bold">Cloud Walkways</h2>
+              <p className="text-lg xl:text-xl leading-relaxed">
                 Suspended pathways that float above the valley - designed for unhurried walks,
                 sunrise moments, and night-lit reflections. Here, movement slows, and the horizon
                 becomes part of the journey.
               </p>
               <div className="flex items-center gap-2">
                 <div className="w-1 h-7 rounded bg-[#AD9273]"></div>
-              <i className="para">Walk among the clouds</i>
+              <i className="text-lg xl:text-xl">Walk among the clouds</i>
               </div>
 
               {/* Mobile image */}
@@ -190,14 +190,14 @@ export default function ShapedByLand() {
               />
             </div>
             <div className="experience-content flex flex-col gap-5 md:w-[50vw]">
-              <p className="text-[#AD9273] font-inter">PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
-              <h2 className="font-cormorant text-2xl font-bold">Infinity Pool</h2>
-              <p className="para leading-relaxed">
+              <p className="text-[#AD9273] font-inter text-lg xl:text-xl">PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
+              <h2 className="font-cormorant text-3xl xl:text-3xl font-bold">Infinity Pool</h2>
+              <p className="text-lg xl:text-xl leading-relaxed">
                 An edge-less pool where water meets sky, overlooking layered hills and endless horizon. Time dissolves as the landscape stretches beyond the pool's edge.
               </p>
               <div className="flex items-center gap-2">
                 <div className="w-1 h-7 rounded bg-[#AD9273]"></div>
-              <i className="para">Where horizons disappear</i>
+              <i className="text-lg xl:text-xl">Where horizons disappear</i>
               </div>
               <Image
                 src={infinityPoolImage}
@@ -209,15 +209,15 @@ export default function ShapedByLand() {
 
           <div className="experience-row flex flex-col md:flex-row items-stretch gap-2 md:gap-10">
             <div className="experience-content flex flex-col gap-5 md:w-[50vw]">
-              <p className="text-[#AD9273] font-inter">PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
-              <h2 className="font-cormorant text-2xl font-bold">Rainforest Spa & Onsen</h2>
-              <p className="para leading-relaxed">
+              <p className="text-[#AD9273] font-inter text-lg xl:text-xl">PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
+              <h2 className="font-cormorant text-3xl xl:text-3xl font-bold">Rainforest Spa & Onsen</h2>
+              <p className="text-lg xl:text-xl leading-relaxed">
                 A forest sanctuary with a temperature-controlled onsen for deep relaxation and renewal.
                 Guided by nature and ritual, each moment restores balance to body and mind.
               </p>
               <div className="flex items-center gap-2">
                 <div className="w-1 h-7 rounded bg-[#AD9273]"></div>
-              <i className="para">Wellness in its purest form</i>
+              <i className="text-lg xl:text-xl">Wellness in its purest form</i>
               </div>
             </div>
             <div className="overflow-hidden ipadProHeight rounded-md md:w-[50vw] h-[50vh] md:h-[40vh] lg:h-[50vh] flex">

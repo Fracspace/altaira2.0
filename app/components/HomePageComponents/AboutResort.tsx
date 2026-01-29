@@ -141,10 +141,10 @@ function AboutResort() {
   return (
     <div ref={containerRef} className="mt-10">
       <div>
-        <h2 className="text-center text-4xl">
+        <h2 className="text-center text-3xl md:text-5xl font-cormorant">
           A Hilltop Destination Close to Nature
         </h2>
-        <div className="text-center ml-[15vw] mr-[15vw] w-[70vw] mt-5 ">
+        <div className="ml-[2vw] mr-[2vw] text-center text-content md:ml-[10vw] md:mr-[10vw] md:w-[80vw] mt-5 ">
           Altaira unfolds as a complete hilltop retreat. A 5-acre luxury resort
           with ridge-facing suites, wellness spaces, and a limited collection of
           private villas, all connected by nature trails, open skies, and
@@ -153,17 +153,20 @@ function AboutResort() {
         <div
           ref={subContainerRef}
           style={{ backgroundImage: `url(${resortImage.src})` }}
-          className="relative h-[140vh] md:h-[100vh] w-[100%] mt-10 bg-center bg-cover"
+          className="relative h-auto pb-5 md:h-[100vh] w-[100%] mt-10 bg-center bg-cover"
         >
           <div className="absolute inset-0 bg-black/40"></div>
           <div className="relative ">
             <h2
               ref={headerText}
-              className="text-white text-center text-5xl pt-15 font-cormorant"
+              className="text-3xl text-white text-center md:text-5xl pt-15 font-cormorant"
             >
               Surrounded By What Matters
             </h2>
-            <h3 ref={subHeader} className="text-white text-center mt-2">
+            <h3
+              ref={subHeader}
+              className="text-white md:text-content xl:text-xl text-center mt-2"
+            >
               Altaira unfolds as a series of connected realms - arrival,
               retreat, exploration, and elevation.
             </h3>
@@ -178,10 +181,10 @@ function AboutResort() {
                     <Image src={Icon1} alt="resort icon" />
                   </div>
                 </div>
-                <div className="text-center font-semibold text-white font-cormorant mt-2">
+                <div className="text-center text-lg xl:text-2xl font-semibold text-white font-cormorant mt-2">
                   Resort 26 Acres
                 </div>
-                <div className="text-center text-white  font-cormorant pb-6">
+                <div className="text-center text-sm xl:text-md text-white 2xl:text-lg font-inter pb-6">
                   Pristine hilltop sanctuary surrounded by untouched nature
                 </div>
               </div>
@@ -195,10 +198,10 @@ function AboutResort() {
                     <Image src={Icon2} alt="resort icon" />
                   </div>
                 </div>
-                <div className="text-center font-semibold text-white font-cormorant mt-2">
+                <div className="text-center font-semibold text-lg xl:text-2xl text-white font-cormorant mt-2">
                   Exclusive Villa
                 </div>
-                <div className="text-center text-white  font-cormorant pb-6">
+                <div className="text-center text-white text-sm xl:text-md 2xl:text-lg font-inter pb-6">
                   Pristine hilltop sanctuary surrounded by untouched nature
                 </div>
               </div>
@@ -212,10 +215,10 @@ function AboutResort() {
                     <Image src={Icon3} alt="resort icon" />
                   </div>
                 </div>
-                <div className="text-center font-semibold text-white font-cormorant mt-2">
+                <div className="text-center font-semibold xl:text-2xl text-white text-lg font-cormorant mt-2">
                   World Class Dining
                 </div>
-                <div className="text-center text-white  font-cormorant pb-6">
+                <div className="text-center text-white xl:text-md 2xl:text-lg text-sm font-inter pb-6">
                   Pristine hilltop sanctuary surrounded by untouched nature
                 </div>
               </div>
@@ -229,10 +232,10 @@ function AboutResort() {
                     <Image src={Icon4} alt="resort icon" />
                   </div>
                 </div>
-                <div className="text-center font-semibold text-white font-cormorant mt-2">
+                <div className="text-center font-semibold text-white xl:text-2xl text-lg font-cormorant mt-2">
                   Curated Experiences
                 </div>
-                <div className="text-center text-white  font-cormorant pb-6">
+                <div className="text-center text-white text-sm xl:text-md 2xl:text-lg font-inter pb-6">
                   Pristine hilltop sanctuary surrounded by untouched nature
                 </div>
               </div>

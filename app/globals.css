@@ -22,7 +22,7 @@
 
 @media (max-width:380px) {
   .imageResponsiveHeight {
-    height: 100vh !important;
+    height: 120vh !important;
   }
 
   .responsiveMarginTop {
@@ -50,4 +50,21 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter, --font-cormorant);
+}
+
+@layer utilities {
+  .text-content {
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
+    font-family: var(--font-inter);
+  }
+
+  .text-header {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-family: var(--font-cormorant);
+  }
+
+  .text-subheader {
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
+    font-family: var(--font-inter);
+  }
 }

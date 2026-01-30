@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import AltairaLogo from "../../../public/images/logo/AltairaLogo.webp";
 import AltairaLogo1 from "../../../public/images/logo/AltairaLogo1.webp";
 import { Menu } from "lucide-react";
 // import { useRouter } from "next/navigation";
@@ -92,9 +91,6 @@ const Navbar = () => {
           </Link>
           <Link href="/contact">
             <span className="text-lg text-white">Contact</span>
-          </Link>
-          <Link href="/agents">
-            <span className="text-lg text-white">Agents</span>
           </Link>
         </div>
       </div>

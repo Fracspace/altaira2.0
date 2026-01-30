@@ -1,7 +1,6 @@
 "use client"
 import AltairaLogo1 from "../../../public/images/logo/AltairaLogo1.webp"
 import Image from "next/image"
-import { useRouter } from "next/navigation"
 
 import Link from "next/link"
 
@@ -10,16 +9,17 @@ const linkClasses = "cursor-pointer hover:text-[#C6A667]"
 const contactClasses = "hover:text-[#C6A667]"
 
 const Footer = () => {
-    const router = useRouter();
     return (
         <div className='bg-[#221E1F] text-white p-10'>
             <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr_1fr] gap-10">
                 <div className="flex flex-col gap-5">
-                    <Image onClick={() => router.push("/")} src={AltairaLogo1} alt="altaira logo" className="md:w-[20vw] md:h-[10vh] ipadProImageWidth lg:w-[10vw] lg:h-[10vh] h-[10vh] w-[40vw] cursor-pointer" />
-                    <p className="font-montserrat leading-loose">Altaira is a luxury hilltop resort and residence destination set nearly 2,000 feet above sea level. Designed for stillness, discovery, and elevated living, Altaira blends nature, wellness, and adventure into one timeless experience.</p>
+                    <Link href="/">
+                        <Image src={AltairaLogo1} alt="altaira logo" className="md:w-[20vw] md:h-[10vh] ipadProImageWidth lg:w-[10vw] lg:h-[10vh] h-[10vh] w-[40vw] cursor-pointer" />
+                    </Link>
+                    <p className="font-inter leading-loose">Altaira is a luxury hilltop resort and residence destination set nearly 2,000 feet above sea level. Designed for stillness, discovery, and elevated living, Altaira blends nature, wellness, and adventure into one timeless experience.</p>
                 </div>
                 <div className="flex flex-col gap-3">
-                    <h2 className="font-montserrat font-semibold text-xl">Quick Links</h2>
+                    <h2 className="font-inter font-semibold text-xl">Quick Links</h2>
                     <ul className="flex flex-col gap-3 text-base">
                         <Link href="/" className={linkClasses}>Home</Link>
                         <Link href="/resort" className={linkClasses}>Resort</Link>
@@ -30,13 +30,13 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className="flex flex-col gap-3">
-                    <h2 className="font-montserrat font-semibold text-xl">Contact</h2>
+                    <h2 className="font-inter font-semibold text-xl">Contact</h2>
                     <ul className="flex flex-col gap-3 cursor-pointer">
-                        <li className={contactClasses} onClick={() => window.open("mailto:altaira.lk@fracspace.com")}>Email: altaira.lk@fracspace.com</li>
-                        <li className={contactClasses} onClick={() => window.open("tel:+919880626111")}>Phone: +91 9880626111</li>
-                        <li onClick={() => router.push("/privacypolicy")} className={contactClasses}>Privacy Policy</li>
-                        <li onClick={() => router.push("/terms-and-conditions")} className={contactClasses}>Terms of Service</li>
-                        <li onClick={() => router.push("/refunds")} className={contactClasses}>Refund Policy</li>
+                        <li className={contactClasses}><a href="mailto:altaira.lk@fracspace.com">Email: altaira.lk@fracspace.com</a></li>
+                        <li className={contactClasses}><a href="tel:+919880626111">Phone: +91 9880626111</a></li>
+                        <li className={contactClasses}><Link href="/privacypolicy">Privacy Policy</Link></li>
+                        <li className={contactClasses}><Link href="/terms-and-conditions">Terms of Service</Link></li>
+                        <li className={contactClasses}><Link href="/refunds">Refund Policy</Link></li>
                     </ul>
                 </div>
                 {/* <div className="md:h-[40vh] h-[50vh] responsiveMapWidth responsiveMapHeight lg:h-auto">

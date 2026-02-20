@@ -75,6 +75,7 @@ const Hero = () => {
             alt="Hero background"
             fill
             priority
+            fetchPriority="high"
             className="object-cover"
           />
         )}

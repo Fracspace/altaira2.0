@@ -47,6 +47,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/images/homepage/heroBg.webp"
+          fetchPriority="high"
+        />
+        <link
+          rel="preconnect"
+          href="https://duixj37yn5405.cloudfront.net/hls-videos/b795a08b-216f-4cce-899c-1e9382562d13/1080p/index.m3u8"
+        />
+      </head>
       <body>
         <Suspense fallback={null}>
           <GoogleAnalytics />

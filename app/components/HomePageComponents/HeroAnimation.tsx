@@ -25,6 +25,7 @@ export default function HeroAnimation() {
 
   // ✅ fade video when ready
   useEffect(() => {
+    
     if (!videoRef.current) return;
 
     videoRef.current.oncanplay = () => {
@@ -34,6 +35,7 @@ export default function HeroAnimation() {
         ease: "power2.out"
       });
     };
+    
   }, [showVideo]);
 
   // ✅ GSAP scroll animation

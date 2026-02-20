@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@layer base {
+  /* .para {
+    @apply text-lg text-[#67777E] font-sans font-semibold;
+  } */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-inter: var(--font-inter);
+  --font-cormorant: var(--font-cormorant);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@media (max-width: 380px) {
+  .imageResponsiveHeight {
+    height: 120vh !important;
+  }
+
+  .responsiveMarginTop {
+    margin-top: 20px;
+  }
+}
+/* 
+@media (min-width: 768px) and (max-width: 1030px) {
+  .ipadProImageWidth {
+    width: 20vw !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1030px) {
+  .ipadProHeight {
+    height: 40vh !important;
+  }
+
+  .adventureZoneIpadProheight {
+    height: 50vh !important;
+  }
+} */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter, --font-cormorant);
+}
+
+.residences-carousal .react-multiple-carousel__arrow {
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+@layer utilities {
+  .text-content {
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
+    font-family: var(--font-inter);
+  }
+
+  .text-header {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-family: var(--font-cormorant);
+  }
+
+  .text-subheader {
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
+    font-family: var(--font-inter);
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-500px);
+    opacity: 0;
+  }
+}
+
+.animate-float {
+  animation: floatUp 3s ease-out forwards;
+}

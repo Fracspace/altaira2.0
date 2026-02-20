@@ -1,16 +1,28 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
+import resortBgImg from "../../../public/images/homepage/heroBg.webp";
 import Image from "next/image";
 import resortImg from "../../../public/images/homepage/resort3.webp";
 
 import LiveBanner from "../LiveBanner/LiveBanner";
 
 gsap.registerPlugin(ScrollTrigger);
+
 const Hero = () => {
+  const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowVideo(true);
+    }, 1500); // delay video load
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const heroSectionRef = useRef<HTMLDivElement>(null);
   const cloudSectionRef = useRef<HTMLDivElement>(null);
   const textSectionRef = useRef<HTMLDivElement>(null);
@@ -39,47 +51,41 @@ const Hero = () => {
   }, []);
 
   return (
-    // <div>
-    //   <div
-    //     ref={heroSectionRef}
-    //     className="relative bg-cover bg-center h-[100vh] w-full"
-    //     style={{ backgroundImage: `url(${resortImg.src})` }}
-    //   >
-
-    //     <div className="absolute inset-0 bg-black/30"></div>
-
-    //     <div ref={textSectionRef} className="relative z-10 ">
-    //       <h2 className="font-cormorant text-6xl text-white font-500 text-center w-[60vw] ml-[20vw] mr-[20vw] pt-[40vh] leading-[1.3] ">
-    //         {" "}
-    //         Above The Clouds. Rooted in Nature.
-    //       </h2>
-    //       <h3 className="font-inter text-white text-center italic text-xl pt-4">
-    //         A hilltop destination where nature, stay, and experience come
-    //         together
-    //       </h3>
-    //     </div>
-
-    //     <div
-    //       ref={cloudSectionRef}
-    //       className="absolute bottom-0 bg-gradient-to-t from-white to white/60 w-full h-[25vh]"
-    //     ></div>
-    //   </div>
-    // </div>
-
     <div>
       <div
         ref={heroSectionRef}
         className="relative min-h-[80vh] px-4 md:min-h-[100vh] mx-auto w-full flex items-center justify-center overflow-hidden"
       >
         {/* Background Video */}
-        <video
+
+        {/* Background */}
+
+        {showVideo ? (
+          <video
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            src="https://duixj37yn5405.cloudfront.net/hls-videos/b795a08b-216f-4cce-899c-1e9382562d13/1080p/index.m3u8"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+        ) : (
+          <Image
+            src={resortBgImg}
+            alt="Hero background"
+            fill
+            priority
+            className="object-cover"
+          />
+        )}
+        {/* <video
           className="absolute top-0 left-0 w-full h-full object-cover"
           src="https://duixj37yn5405.cloudfront.net/hls-videos/b795a08b-216f-4cce-899c-1e9382562d13/1080p/index.m3u8"
           autoPlay
           muted
           loop
           playsInline
-        />
+        /> */}
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/30"></div>

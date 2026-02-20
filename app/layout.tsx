@@ -32,6 +32,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "./favicon.png"
+  },
   title: "Altaira",
   description:
     "Altaira luxury resort and private residences offer hilltop villas, wellness experiences, fine dining, and panoramic valley views."

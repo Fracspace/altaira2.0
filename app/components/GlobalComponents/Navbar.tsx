@@ -48,7 +48,7 @@ const Navbar = () => {
           <Image
             src={AltairaLogo1}
             alt="logo"
-            className=" w-40
+            className="w-40
                         sm:w-48
                         md:w-56
                         lg:w-60

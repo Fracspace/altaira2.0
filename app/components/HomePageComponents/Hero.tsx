@@ -79,6 +79,7 @@ const Hero = () => {
             className="object-cover"
           />
         )}
+        
         {/* <video
           className="absolute top-0 left-0 w-full h-full object-cover"
           src="https://duixj37yn5405.cloudfront.net/hls-videos/b795a08b-216f-4cce-899c-1e9382562d13/1080p/index.m3u8"

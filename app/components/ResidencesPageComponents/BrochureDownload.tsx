@@ -10,6 +10,7 @@ import "react-phone-input-2/lib/style.css";
 import { SingleValue } from "react-select";
 import countryList from "react-select-country-list";
 
+import { usePathname } from "next/navigation";
 import { TrackEvent } from "../GlobalComponents/TrackEvent";
 
 interface CountryOption {
@@ -35,12 +36,18 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
   const [otp, setOtp] = useState<string>();
   const [verifyingOtp, setVerifyingOtp] = useState<boolean>(false);
 
+  const pathname = usePathname();
+
   const [formData, setFormData] = useState<FormData>({
     name: "",
     emailId: "",
     phoneNumber: "",
     countryCode: ""
   });
+
+  console.log("pathname is", pathname);
+
+  const isTimeline = pathname === "/timeline/";
 
   const SUBMIT_FORM =
     "https://apitest.fracspace.com/api/v1/webApi/altaira/altairaConceptPlanViewerOTP";
@@ -118,7 +125,12 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
         });
         setOtp("");
         onClose();
-        window.open("/docs/villa.pdf", "_blank");
+
+        if (isTimeline) {
+          window.open("/docs/clearance.pdf", "_blank");
+        } else {
+          window.open("/docs/villa.pdf", "_blank");
+        }
       } else {
         alert("Invalid OTP,Please enter valid otp!");
       }
@@ -135,10 +147,11 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
       {!formSubmit ? (
         <form onSubmit={onSubmit} className="flex flex-col gap-3 pb-4">
           <div className="text-center mt-9 mb-2 text-[#AD9273]">
-            Please Fill This Form To Download Brochure
+            Please Fill This Form To Download{" "}
+            {isTimeline ? "Clearance Letter" : "Brochure"}
           </div>
           <div className="flex flex-row gap-3">
-            <div className="flex flex-col w-[60vw] md:w-[25vw] gap-2">
+            <div className="flex flex-col w-full  gap-2">
               <label className="text-[#AD9273]" htmlFor="firstName">
                 Name
               </label>

@@ -18,6 +18,8 @@ import { Cormorant_Garamond, Inter } from "next/font/google";
 import ScrollTracker from "./components/GlobalComponents/ScrollTracker";
 import AnalyticsLoader from "./components/GlobalComponents/AnalyticsLoader";
 import CookieBanner from "./components/GlobalComponents/CookieBanner";
+import FloatingEnquiryIcon from "./components/GlobalComponents/FloatingEnquiryIcon";
+import LayoutClientWrapper from "./components/GlobalComponents/LayoutClientWrapper";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -65,7 +67,7 @@ export default function RootLayout({
         </Suspense>
         <ScrollTracker />
         <Navbar />
-        {children}
+        <LayoutClientWrapper>{children}</LayoutClientWrapper>
         <AnalyticsLoader />
         <CookieBanner />
 

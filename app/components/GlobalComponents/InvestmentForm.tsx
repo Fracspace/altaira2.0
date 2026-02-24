@@ -175,7 +175,7 @@ const InvestmentForm = () => {
                 onChange={handleInputChange}
                 placeholder="First Name*"
                 required
-                className="w-full px-4 py-2 rounded-md border border-gray-300 placeholder:text-[rgba(0,0,0,0.5)] dark:text-black dark:bg-white dark:placeholder-black"
+                className="w-full bg-white px-4 py-2 rounded-md border border-gray-300 placeholder:text-[rgba(0,0,0,0.5)] dark:text-black dark:bg-white dark:placeholder-black"
               />
             </div>
             <div className="flex flex-col md:w-[50vw] lg:w-[25vw] gap-2">
@@ -188,7 +188,7 @@ const InvestmentForm = () => {
                 onChange={handleInputChange}
                 placeholder="Last Name*"
                 required
-                className="w-full px-4 py-2 rounded-md border border-gray-300 placeholder:text-[rgba(0,0,0,0.5)] dark:text-black dark:bg-white dark:placeholder-black"
+                className="w-full bg-white px-4 py-2 rounded-md border border-gray-300 placeholder:text-[rgba(0,0,0,0.5)] dark:text-black dark:bg-white dark:placeholder-black"
               />
             </div>
           </div>
@@ -202,7 +202,7 @@ const InvestmentForm = () => {
               onChange={handleInputChange}
               placeholder="Email Id*"
               required
-              className="w-full px-4 py-2 rounded-md border border-gray-300 placeholder:text-[rgba(0,0,0,0.5)] dark:text-black dark:bg-white dark:placeholder-black"
+              className="w-full bg-white px-4 py-2 rounded-md border border-gray-300 placeholder:text-[rgba(0,0,0,0.5)] dark:text-black dark:bg-white dark:placeholder-black"
             />
           </div>
           <div className="flex flex-col w-full gap-2">
@@ -357,7 +357,7 @@ const InvestmentForm = () => {
               value={formData.message}
               onChange={handleInputChange}
               placeholder="Tell us about your interest in Altaira..."
-              className="border border-gray-400 placeholder:text-[rgba(0,0,0,0.5)] dark:text-black dark:bg-white dark:placeholder-black rounded-md p-3"
+              className="border border-gray-400 bg-white placeholder:text-[rgba(0,0,0,0.5)] dark:text-black dark:bg-white dark:placeholder-black rounded-md p-3"
             ></textarea>
           </div>
           {isSubmittedInvestmentForm && (

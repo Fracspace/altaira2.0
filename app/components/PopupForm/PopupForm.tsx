@@ -4,7 +4,11 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import InvestmentForm from "../GlobalComponents/InvestmentForm";
 
-function PopupForm({ onClose }) {
+interface PopupFormProps {
+  onClose: () => void;
+}
+
+function PopupForm({ onClose }: PopupFormProps) {
   const popupRef = useRef(null);
 
   // ✅ Slide up on mount

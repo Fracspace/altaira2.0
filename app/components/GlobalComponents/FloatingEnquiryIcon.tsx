@@ -31,7 +31,7 @@ function FloatingEnquiryIcon({ onClick }: FloatingEnquiryIconProps) {
           {/* text */}
           <div
             className="
-            relative text-center text-white font-semibold leading-tight
+            relative  text-center text-white font-semibold leading-tight
             text-[11px] md:text-[14px]
           "
           >

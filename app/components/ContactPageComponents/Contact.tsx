@@ -137,9 +137,7 @@ const Contact = () => {
       //console.log("response",payload);
       // alert("Form data submitted successfully");
       if (response.status === 200 || response.status === 201) {
-        TrackEvent( "General Contact Enquiry",
-      "CTA",
-      "Contact Page")
+        TrackEvent("General Contact Enquiry", "CTA", "Contact Page");
         setIsSubmitted(true);
         setFormData({
           firstName: "",
@@ -171,18 +169,18 @@ const Contact = () => {
             {/* <h2 className="font-inter xl:text-xl text-lg">I'm interested in</h2> */}
             <div className="flex flex-row gap-1 md:gap-3 overflow-x-auto lg:overflow-x-visible">
               <button
+                onClick={() => handleCategoryChange("investment")}
+                className={`rounded-full min-w-[70%] md:min-w-fit px-4 ${selectedCategory === "investment" ? "bg-[#AD9273] text-white" : "dark:text-black bg-[#ffffff]"} cursor-pointer py-2 border`}
+              >
+                <p className="font-inter xl:text-xl text-base">Investment</p>
+              </button>
+              <button
                 onClick={() => handleCategoryChange("general")}
                 className={`rounded-full min-w-[70%] md:min-w-fit  ${selectedCategory !== "general" ? "bg-[#ffffff] text-black border boder-black-200" : "bg-[#AD9273] text-white"} cursor-pointer px-4 py-2`}
               >
                 <p className="font-inter xl:text-xl text-base">
                   General / Agents
                 </p>
-              </button>
-              <button
-                onClick={() => handleCategoryChange("investment")}
-                className={`rounded-full min-w-[70%] md:min-w-fit px-4 ${selectedCategory === "investment" ? "bg-[#AD9273] text-white" : "dark:text-black bg-[#ffffff]"} cursor-pointer py-2 border`}
-              >
-                <p className="font-inter xl:text-xl text-base">Investment</p>
               </button>
               {/* <button
                 onClick={() => handleCategoryChange("agents")}

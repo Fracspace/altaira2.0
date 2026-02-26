@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://www.altaira.lk/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>https://www.altaira.lk/resort/</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.altaira.lk/residences/</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.altaira.lk/timeline/</loc>
+    <priority>0.9</priority>
+  </url>
+
+  
+  <url>
+    <loc>https://www.altaira.lk/faq/</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.altaira.lk/contact/</loc>
+    <priority>0.8</priority>
+  </url>
+
+    <url>
+    <loc>https://www.altaira.lk/privacypolicy/</loc>
+    <priority>0.4</priority>
+  </url>
+
+    <url>
+    <loc>https://www.altaira.lk/terms-and-conditions/</loc>
+    <priority>0.4</priority>
+  </url>
+
+    <url>
+    <loc>https://www.altaira.lk/refunds/</loc>
+    <priority>0.4</priority>
+  </url>
+
+</urlset>

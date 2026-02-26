@@ -5,6 +5,21 @@ import VillaAmenities from "../components/ResidencesPageComponents/VillaAmenitie
 import VillaDimensions from "../components/ResidencesPageComponents/VillaDimensions";
 import VillaOwnership from "../components/ResidencesPageComponents/VillaOwnership";
 
+// app/residences/page.tsx
+
+export const metadata = {
+  title: "Luxury Residences in Sri Lanka | Altaira Hilltop Villas",
+  description:
+    "Explore Altaira’s premium hilltop residences designed for luxury living and high-yield rental income in Sri Lanka.",
+  keywords: [
+    "Altaira residences",
+    "luxury villas Sri Lanka",
+    "hilltop homes Sri Lanka",
+    "buy villa in Sri Lanka",
+    "Altaira villas"
+  ]
+};
+
 function page() {
   return (
     <div>

@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useRouter } from "next/navigation";
+import { TrackEvent } from "../GlobalComponents/TrackEvent";
 
 function OwnVilla() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -30,6 +31,11 @@ function OwnVilla() {
     );
   }, []);
 
+  const knowMore = () => {
+    TrackEvent("Know More button click", "CTA", "Homepage Own a Villa");
+    router.push("/residences");
+  };
+
   return (
     <div className="mt-10" ref={containerRef}>
       <div
@@ -50,7 +56,7 @@ function OwnVilla() {
           </h3>
           <div className="flex items-center justify-center mt-8">
             <button
-              onClick={() => router.push("/residences")}
+              onClick={knowMore}
               className="bg-white text-md px-2 py-1 rounded cursor-pointer
              transition-all duration-300 ease-out
              dark:text-[#AD9273]

@@ -21,6 +21,8 @@ import countryList from "react-select-country-list";
 
 import { useSearchParams } from "next/navigation";
 
+import { TrackEvent } from "../GlobalComponents/TrackEvent";
+
 interface CountryOption {
   label: string;
   value: string;
@@ -67,7 +69,8 @@ const Contact = () => {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const apiUrl = "https://apitest.fracspace.com/api/v1/webApi/altaira/enquiryForm";
+  const apiUrl =
+    "https://apitest.fracspace.com/api/v1/webApi/altaira/enquiryForm";
 
   useEffect(() => {
     if (!source) return;
@@ -125,16 +128,16 @@ const Contact = () => {
         countryCode: formData.countryCode,
         message: formData.message
       };
-      const response = await axios.post(apiUrl,
-        payload, {
+      const response = await axios.post(apiUrl, payload, {
         headers: {
           "Content-Type": "application/json",
-          'x-api-key': 'Fracspace@2024'
+          "x-api-key": "Fracspace@2024"
         }
-      })
+      });
       //console.log("response",payload);
       // alert("Form data submitted successfully");
       if (response.status === 200 || response.status === 201) {
+        TrackEvent("General Contact Enquiry", "CTA", "Contact Page");
         setIsSubmitted(true);
         setFormData({
           firstName: "",
@@ -175,14 +178,10 @@ const Contact = () => {
                 onClick={() => handleCategoryChange("general")}
                 className={`rounded-full min-w-[70%] md:min-w-fit  ${selectedCategory !== "general" ? "bg-[#ffffff] text-black border boder-black-200" : "bg-[#AD9273] text-white"} cursor-pointer px-4 py-2`}
               >
-                <p className="font-inter xl:text-xl text-base">General / Agents</p>
+                <p className="font-inter xl:text-xl text-base">
+                  General / Agents
+                </p>
               </button>
-              {/* <button
-                onClick={() => handleCategoryChange("investment")}
-                className={`rounded-full min-w-[70%] md:min-w-fit px-4 ${selectedCategory === "investment" ? "bg-[#AD9273] text-white" : "dark:text-black bg-[#ffffff]"} cursor-pointer py-2 border`}
-              >
-                <p className="font-inter xl:text-xl text-base">Investment</p>
-              </button> */}
               {/* <button
                 onClick={() => handleCategoryChange("agents")}
                 className={`rounded-full px-4 ${selectedCategory === "agents" ? "bg-[#AD9273] text-white" : "bg-[#ffffff]"} cursor-pointer py-2 border`}
@@ -275,7 +274,9 @@ const Contact = () => {
                       containerClass="w-full"
                       containerStyle={{ width: "100%" }}
                       inputStyle={{
-                        width: "100%", color: "black", backgroundColor: "white"
+                        width: "100%",
+                        color: "black",
+                        backgroundColor: "white"
                       }}
                       buttonClass="bg-white border border-gray-300"
                       dropdownClass="bg-white dark:bg-gray-900 text-black dark:text-white text-sm"
@@ -299,7 +300,10 @@ const Contact = () => {
                     ></textarea>
                   </div>
                   {isSubmitted && (
-                    <div className="mt-4">Thank you for reaching out! We've received your inquiry and our team is already on it.</div>
+                    <div className="mt-4">
+                      Thank you for reaching out! We've received your enquiry
+                      and our team is already on it.
+                    </div>
                   )}
                   <div className="flex items-center justify-center">
                     <button
@@ -345,7 +349,9 @@ const Contact = () => {
                   <Phone style={{ color: "#AD927399" }} />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <h2 className="font-inter xl:text-xl dark:text-white text-gray-500">Phone</h2>
+                  <h2 className="font-inter xl:text-xl dark:text-white text-gray-500">
+                    Phone
+                  </h2>
                   <div className="flex flex-col md:flex-row items-center md:gap-2 gap-1">
                     <p className="font-inter xl:text-xl"> +91 9880626111, </p>
                     <p className="font-inter xl:text-xl">+94-76031 2345</p>
@@ -357,7 +363,9 @@ const Contact = () => {
                   <Mail style={{ color: "#AD927399" }} />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <h2 className="font-inter xl:text-xl dark:text-white text-gray-500">Email</h2>
+                  <h2 className="font-inter xl:text-xl dark:text-white text-gray-500">
+                    Email
+                  </h2>
                   <EmailLink email="altaira.lk@fracspace.com">
                     altaira.lk@fracspace.com
                   </EmailLink>
@@ -368,7 +376,9 @@ const Contact = () => {
                   <Clock style={{ color: "#AD927399" }} />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <h2 className="font-inter xl:text-xl dark:text-white text-gray-500">Hours</h2>
+                  <h2 className="font-inter xl:text-xl dark:text-white text-gray-500">
+                    Hours
+                  </h2>
                   <p className="font-inter xl:text-xl">
                     Mon - Sat: 9:00 AM to 5:30 PM
                   </p>

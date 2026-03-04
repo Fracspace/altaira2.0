@@ -1,21 +1,26 @@
-"use client";
+import HomePageClient from "./components/HomePageComponents/HomePageClient";
 
-import AboutResort from "./components/HomePageComponents/AboutResort";
-import ElevatedArrival from "./components/HomePageComponents/ElevatedArrival";
-import Experiences from "./components/HomePageComponents/Experiences";
-import Hero from "./components/HomePageComponents/Hero";
-import OwnVilla from "./components/HomePageComponents/OwnVilla";
-import Restaurant from "./components/HomePageComponents/Restaurant";
+export const metadata = {
+  title: "Altaira Sri Lanka | Luxury Resort Investment Opportunity",
+  description:
+    "Discover Altaira — a premium hilltop luxury resort in Sri Lanka offering fractional ownership, high rental yields, and world-class hospitality experiences.",
+  keywords: [
+    "Altaira Sri Lanka",
+    "luxury resort investment Sri Lanka",
+    "fractional ownership Sri Lanka",
+    "hilltop villas Sri Lanka",
+    "resort investment opportunity"
+  ],
+  openGraph: {
+    title: "Altaira Sri Lanka | Above the Clouds",
+    description:
+      "Own a share in Altaira’s luxury resort ecosystem with managed rental income and premium hilltop living.",
+    url: "https://altaira.lk/",
+    siteName: "Altaira",
+    type: "website"
+  }
+};
 
 export default function HomePage() {
-  return (
-    <div>
-      <Hero />
-      <AboutResort />
-      <Experiences />
-      <OwnVilla />
-      <Restaurant />
-      <ElevatedArrival />
-    </div>
-  );
+  return <HomePageClient />;
 }

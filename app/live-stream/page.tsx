@@ -7,7 +7,6 @@ import LiveStream from "../components/LiveStream/LiveStream";
 interface Card {
     liveStreamUrl?: string;
     endTime:string|null;
-    enabled:boolean
 }
 
 interface ApiResponse {
@@ -20,7 +19,6 @@ interface ApiResponse {
 const LiveStreamPage = () => {
     const [streamUrl, setStreamUrl] = useState<string | null>(null);
     const [endTime,setEndTime]=useState<string|null>(null);
-    const [enabled,setIsEnabled]=useState(false);
 
     const apiUrl =
         "https://apitest.fracspace.com/api/altaira/promo/ui/getCarouselUi";
@@ -38,17 +36,10 @@ const LiveStreamPage = () => {
                     response.data.success &&
                     response.data.data?.cards[0]?.liveStreamUrl;
 
-                    const enabled = response.data.success &&
-                    response.data.data?.cards[0]?.enabled;
-
                     const endTime =response.data.success && response.data.data?.cards[0]?.endTime
 
                     if(endTime){
                         setEndTime(endTime)
-                    }
-
-                    if(enabled){
-                        setIsEnabled(true);
                     }
 
                 if (streamUrl) {
@@ -65,7 +56,7 @@ const LiveStreamPage = () => {
         return <div className="text-center pt-20">Loading stream...</div>;
     }
 
-    return <LiveStream src={streamUrl} endTime={endTime} enabled={enabled} />;
+    return <LiveStream src={streamUrl} endTime={endTime} />;
 }
 
 export default LiveStreamPage;

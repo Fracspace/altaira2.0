@@ -10,6 +10,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
+import { TrackEvent } from "../GlobalComponents/TrackEvent";
+
 import { useRouter } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -56,6 +58,15 @@ function VillaOwnership() {
     );
   }, []);
 
+  const RegisterInterest = () => {
+    TrackEvent(
+      "Register Interest",
+      "CTA",
+      "Residences Page Register to buy villa"
+    );
+    router.push("/contact?source=buyvilla");
+  };
+
   return (
     <div ref={containerRef} className="mt-14 w-full">
       <div ref={contentRef} className="ml-5 mr-5 md:mx-auto max-w-7xl">
@@ -81,7 +92,7 @@ function VillaOwnership() {
           </h2>
           <div className="flex items-center justify-center">
             <button
-              onClick={() => router.push("/contact?source=buyvilla")}
+              onClick={RegisterInterest}
               className="flex cursor-pointer items-center justify-between text-center mt-8 bg-white px-4 py-2  rounded-lg dark:text-black  transition-all duration-300 ease-out
               hover:text-[#AD9273]
              hover:shadow-md hover:-translate-y-[1px]"
@@ -102,7 +113,9 @@ function VillaOwnership() {
           className="text-2xl font-cormorant xl:text-4xl text-[#67777E] dark:text-white  text-center leading-[1.3]"
         >
           More than a villa. A way of <br></br>
-          <span className="text-gray-400 dark:text-white">living above the valley.</span>
+          <span className="text-gray-400 dark:text-white">
+            living above the valley.
+          </span>
         </h2>
       </div>
     </div>

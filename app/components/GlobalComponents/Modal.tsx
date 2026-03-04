@@ -1,16 +1,23 @@
 "use client";
 import Image from "next/image";
-import AltairaLogo1 from "../../../public/images/logo/AltairaLogo1.webp";
+import AltairaLogo1 from "../../../public/images/logo/Altaira1Logo.webp";
 import { X } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 
 import Link from "next/link";
 
-const navItems = [{ name: "Home", to: "/" }, { name: "Resort", to: "/resort" }, { name: "Residences", to: "/residences" }, { name: "Timeline", to: "/timeline" },  { name: "Faq's", to: "/faq" }, { name: "Contact", to: "/contact" }]
+const navItems = [
+  { name: "Home", to: "/" },
+  { name: "Resort", to: "/resort" },
+  { name: "Residences", to: "/residences" },
+  { name: "Timeline", to: "/timeline" },
+  { name: "FAQ", to: "/faq" },
+  { name: "Contact", to: "/contact" }
+];
 
 type ModalProps = {
   onClose: () => void;
-}
+};
 
 const Modal = ({ onClose }: ModalProps) => {
   const pathname = usePathname();
@@ -24,20 +31,29 @@ const Modal = ({ onClose }: ModalProps) => {
       router.push(href);
       onClose();
     }
-  }
+  };
 
   return (
     <div className="fixed h-20 inset-0 z-50 bg-black/60 backdrop-blur-sm">
       <div className="absolute right-0 top-0 h-screen w-full bg-[#244936]">
         <div className="w-full md:h-[10vh] flex items-center justify-between p-5 md:p-14">
-          <Link onClick={(e) => {
-            e.preventDefault();
-             handleNavigation("/");
-          }} href="/">
+          <Link
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavigation("/");
+            }}
+            href="/"
+          >
             <Image
               src={AltairaLogo1}
               alt="altaira logo"
-              className="w-[40vw] h-[10vh] md:w-[20vw] lg:w-[6vw] cursor-pointer"
+              className=" w-40
+        sm:w-48
+        md:w-56
+        lg:w-60
+        xl:w-64
+        h-auto
+        cursor-pointer"
             />
           </Link>
           <button
@@ -53,9 +69,15 @@ const Modal = ({ onClose }: ModalProps) => {
           {navItems.map(({ to, name }) => {
             return (
               <li key={to}>
-                <Link href={to} className="cursor-pointer" onClick={() => handleNavigation(to)}>{name}</Link>
+                <Link
+                  href={to}
+                  className="cursor-pointer"
+                  onClick={() => handleNavigation(to)}
+                >
+                  {name}
+                </Link>
               </li>
-            )
+            );
           })}
         </ul>
       </div>

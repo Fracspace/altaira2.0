@@ -182,11 +182,10 @@ function AboutResort() {
                   </div>
                 </div>
                 <div className="text-center text-lg sm:text-2xl xl:text-2xl font-semibold text-white font-cormorant mt-2">
-                  Resort 26 Acres
+                  Integrated Destination
                 </div>
                 <div className="text-center text-sm md:text-md text-white  font-inter pb-6">
-                  A 26-acre hilltop resort set within untouched forests and
-                  mist-covered valleys.
+                  Resort living, private villas, and curated nature.
                 </div>
               </div>
 

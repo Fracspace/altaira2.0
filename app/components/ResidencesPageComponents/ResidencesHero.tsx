@@ -4,6 +4,8 @@ import React, { useRef } from "react";
 import carousalImgOne from "../../../public/images/residences/liveAboveValleyImage.webp";
 import carousalImgTwo from "../../../public/images/residences/villaImgOne.webp";
 import carousalImgThree from "../../../public/images/residences/villaImgTwo.webp";
+import carousalImgFour from "../../../public/images/residences/resdenc2.webp";
+
 import Image from "next/image";
 
 import "react-multi-carousel/lib/styles.css";
@@ -13,6 +15,8 @@ import dynamic from "next/dynamic";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
+
+import { useMediaQuery } from "react-responsive";
 
 // Dynamically import carousel only on client
 const Carousel = dynamic(() => import("react-multi-carousel"), { ssr: false });
@@ -42,6 +46,12 @@ gsap.registerPlugin(ScrollTrigger);
 function ResidencesHero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+
+  const isMobile = useMediaQuery({ query: "(max-width:768px)" });
+
+  const mobileImages = [carousalImgFour, carousalImgTwo, carousalImgThree];
+
+  const laptopImages = [carousalImgOne, carousalImgTwo, carousalImgThree];
 
   useGSAP(() => {
     gsap.fromTo(
@@ -82,6 +92,7 @@ function ResidencesHero() {
         <div className="mt-8">
           {/* <Image src={carousalImgOne} alt="carousal image one" /> */}
           <Carousel
+            className="residences-carousal"
             swipeable={true}
             draggable={false}
             showDots={true}
@@ -94,26 +105,23 @@ function ResidencesHero() {
             customTransition="all .5"
             transitionDuration={500}
             containerClass="carousel-container"
-            removeArrowOnDeviceType={["tablet"]}
             // deviceType={this.props.deviceType}
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"
           >
-            {[carousalImgOne, carousalImgTwo, carousalImgThree].map(
-              (img, index) => (
-                <div key={index} className="flex justify-center">
-                  <div className="relative mx-auto max-w-7xl w-[80vw] min-h-[400px] sm:min-h-[600px]">
-                    <Image
-                      src={img}
-                      alt={`Carousel Image ${index + 1}`}
-                      fill
-                      style={{ objectFit: "cover" }}
-                      className=" w-full h-full"
-                    />
-                  </div>
+            {(isMobile ? mobileImages : laptopImages).map((img, index) => (
+              <div key={index} className="flex justify-center">
+                <div className="relative mx-auto max-w-7xl w-[80vw] min-h-[400px] sm:min-h-[600px]">
+                  <Image
+                    src={img}
+                    alt={`Carousel Image ${index + 1}`}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    className=" w-full h-full"
+                  />
                 </div>
-              )
-            )}
+              </div>
+            ))}
           </Carousel>
         </div>
       </div>

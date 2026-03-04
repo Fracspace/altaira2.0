@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import Image from "next/image"
+import Image from "next/image";
 
-import contactImg from "../../../public/images/contact/contactImg.webp"
+import contactImg from "../../../public/images/contact/contactImg.webp";
 // import gsap from "gsap"
 // import ScrollTrigger from "gsap/ScrollTrigger"
 // import { useRef } from "react"
@@ -10,9 +10,8 @@ import contactImg from "../../../public/images/contact/contactImg.webp"
 
 // gsap.registerPlugin(ScrollTrigger)
 
-
 const Contact = () => {
-    // const heroSectionRef = useRef<HTMLDivElement>(null);
+  // const heroSectionRef = useRef<HTMLDivElement>(null);
 
     // useGSAP(()=>{
     //     if(!heroSectionRef.current) return;
@@ -36,7 +35,9 @@ const Contact = () => {
                 </div>
             </div>
         </div>
-    )
-}
+      
 
-export default Contact
+  );
+};
+
+export default Contact;

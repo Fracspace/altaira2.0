@@ -56,25 +56,25 @@ function VillaDimensions() {
             toward light, air, & uninterrupted valley horizons.
           </p>
           <div className="mt-8">
-            <div className="w-full max-w-4xl border border-[#AD9273] rounded-lg overflow-hidden">
-              <div className="grid grid-cols-3">
-                <div className="bg-[#AD9273]/40 border-r border-[#AD9273] border-b p-4 text-center">
+            <div className="w-full md:max-w-5xl border border-[#AD9273] rounded-lg overflow-hidden">
+              <div className="w-full grid grid-cols-3">
+                <div className="bg-[#AD9273]/40 border-r border-[#AD9273] border-b p-2 md:p-4 text-sm md:text-lg text-center">
                   Villa Type
                 </div>
-                <div className="bg-[#AD9273]/40 border-r border-b border-[#AD9273] p-4 text-center">
+                <div className="bg-[#AD9273]/40 border-r border-b border-[#AD9273] p-2 md:p-4 text-sm md:text-lg text-center">
                   Area
                 </div>
-                <div className="bg-[#AD9273]/40 border-b border-[#AD9273] p-4 text-center">
+                <div className="bg-[#AD9273]/40 border-b border-[#AD9273] p-2 pr-2 text-sm md:text-lg md:p-4 text-center">
                   Positioning
                 </div>
 
-                <div className="border-r text-[#67777E] dark:text-white border-[#AD9273] bg-[#AD9273]/10 p-4 text-center">
+                <div className="border-r text-[#67777E] border-[#AD9273] bg-[#AD9273]/10 p-2 md:p-4 text-sm md:text-lg text-center">
                   Valley View Villa
                 </div>
-                <div className="border-r text-[#67777E] dark:text-white border-[#AD9273] bg-[#AD9273]/10 p-4 text-center">
-                  2690 sq.ft
+                <div className="border-r text-[#67777E] border-[#AD9273] bg-[#AD9273]/10 p-2 md:p-4 text-sm md:text-lg text-center">
+                  2400 sq.ft
                 </div>
-                <div className="p-4 text-[#67777E] dark:text-white text-center bg-[#AD9273]/10 ">
+                <div className="md:p-4 text-[#67777E] text-center bg-[#AD9273]/10 p-2 pr-2 text-sm md:text-lg">
                   Elevated & Private
                 </div>
               </div>

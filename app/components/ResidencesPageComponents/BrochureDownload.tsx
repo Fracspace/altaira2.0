@@ -10,6 +10,9 @@ import "react-phone-input-2/lib/style.css";
 import { SingleValue } from "react-select";
 import countryList from "react-select-country-list";
 
+import { usePathname } from "next/navigation";
+import { TrackEvent } from "../GlobalComponents/TrackEvent";
+
 interface CountryOption {
   label: string;
   value: string;
@@ -33,12 +36,18 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
   const [otp, setOtp] = useState<string>();
   const [verifyingOtp, setVerifyingOtp] = useState<boolean>(false);
 
+  const pathname = usePathname();
+
   const [formData, setFormData] = useState<FormData>({
     name: "",
     emailId: "",
     phoneNumber: "",
     countryCode: ""
   });
+
+  console.log("pathname is", pathname);
+
+  const isTimeline = pathname === "/timeline/";
 
   const SUBMIT_FORM =
     "https://apitest.fracspace.com/api/v1/webApi/altaira/altairaConceptPlanViewerOTP";
@@ -59,7 +68,7 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
     setIsLoading(true);
     setError(null);
     try {
-      console.log("form data", formData);
+      // console.log("form data", formData);
 
       const response = await axios.post(
         SUBMIT_FORM,
@@ -77,9 +86,10 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
         }
       );
 
-      console.log("resp is", response);
+      // console.log("resp is", response);
 
       setFormSubmit(true);
+      TrackEvent("Downloaded Brochure", "CTA", "Residences Page");
       alert("Form data submitted successfully");
     } catch (error) {
       console.log(error, "error while submitting form");
@@ -105,7 +115,7 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
         }
       );
 
-      console.log("response is", response);
+      // console.log("response is", response);
       if (response?.data?.success) {
         setFormData({
           name: "",
@@ -115,7 +125,12 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
         });
         setOtp("");
         onClose();
-        window.open("/docs/villa.pdf", "_blank");
+
+        if (isTimeline) {
+          window.open("/docs/clearance.pdf", "_blank");
+        } else {
+          window.open("/docs/villa.pdf", "_blank");
+        }
       } else {
         alert("Invalid OTP,Please enter valid otp!");
       }
@@ -131,11 +146,12 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
     <div className="flex max-w-7xl rounded-lg bg-white">
       {!formSubmit ? (
         <form onSubmit={onSubmit} className="flex flex-col gap-3 pb-4">
-          <div className="text-center mt-6 mb-2 text-[#AD9273]">
-            Please Fill This Form To Download Brochure
+          <div className="text-center mt-9 mb-2 text-[#AD9273]">
+            Please Fill This Form To Download{" "}
+            {isTimeline ? "Clearance Letter" : "Brochure"}
           </div>
           <div className="flex flex-row gap-3">
-            <div className="flex flex-col w-[60vw] md:w-[25vw] gap-2">
+            <div className="flex flex-col w-full  gap-2">
               <label className="text-[#AD9273]" htmlFor="firstName">
                 Name
               </label>
@@ -174,7 +190,7 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
               country="in"
               enableSearch
               searchClass="text-black bg-white dark:text-black dark:bg-gray-800"
-              searchStyle={{color:"black",backgroundColor:"white"}}
+              searchStyle={{ color: "black", backgroundColor: "white" }}
               value={`${formData.countryCode}${formData.phoneNumber}`}
               onChange={(value: string, data: { dialCode?: string }) => {
                 const dialCode = data?.dialCode ?? "91";
@@ -198,8 +214,9 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
               containerClass="w-full"
               containerStyle={{ width: "100%" }}
               inputStyle={{
-                width: "100%"
-                ,color:"black",backgroundColor:"white"
+                width: "100%",
+                color: "black",
+                backgroundColor: "white"
               }}
               buttonClass="bg-white border border-gray-300"
               dropdownClass="dark:bg-gray-900 text-black dark:text-black text-sm"

@@ -13,7 +13,7 @@ function FaqHero() {
           <h2 className="text-3xl text-center lg:text-5xl text-white font-cormorant">
             Frequently Asked Questions?
           </h2>
-          <p className="max-w-5xl text-center font-inter text-md md:text-xl text-white mt-4">
+          <p className="italic max-w-5xl text-center font-inter text-md md:text-lg 2xl:text-2xl text-white mt-4">
             Understanding Altaira, At a Glance
           </p>
         </div>

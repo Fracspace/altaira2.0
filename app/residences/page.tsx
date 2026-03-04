@@ -5,19 +5,34 @@ import VillaAmenities from "../components/ResidencesPageComponents/VillaAmenitie
 import VillaDimensions from "../components/ResidencesPageComponents/VillaDimensions";
 import VillaOwnership from "../components/ResidencesPageComponents/VillaOwnership";
 
+// app/residences/page.tsx
+
+export const metadata = {
+  title: "Luxury Residences in Sri Lanka | Altaira Hilltop Villas",
+  description:
+    "Explore Altaira’s premium hilltop residences designed for luxury living and high-yield rental income in Sri Lanka.",
+  keywords: [
+    "Altaira residences",
+    "luxury villas Sri Lanka",
+    "hilltop homes Sri Lanka",
+    "buy villa in Sri Lanka",
+    "Altaira villas"
+  ]
+};
+
 function page() {
   return (
     <div>
       <div
-        className="w-full min-h-[80vh] lg:min-h-[100vh] bg-cover bg-center"
+        className="w-full min-h-[80vh] lg:min-h-[100vh] bg-cover bg-center flex items-center justify-center"
         style={{ backgroundImage: `url(${heroImg.src})` }}
       >
         <div className="absolute inset-0 h-[80vh] lg:h-[100vh] lg:flex items-center justify-center bg-black/20 "></div>
-        <div className="pt-[65%] lg:pt-[25%]">
-          <h2 className="absolute w-full text-center font-cormorant text-3xl md:text-4xl lg:text-5xl text-white  left-1/2 -translate-x-1/2  z-10">
+        <div className="relative z-10 w-full md:max-w-5xl md:w-[60vw] mx-auto">
+          <h2 className=" w-full text-center font-cormorant text-3xl md:text-4xl lg:text-5xl text-white z-10">
             Altaira Private Residences
           </h2>
-          <h3 className="absolute w-full max-w-5xl text-center font-inter text-md  md:mt-0 md:text-xl text-white  pt-14 lg:pt-18 left-1/2 -translate-x-1/2  z-10">
+          <h3 className="italic w-full max-w-5xl text-center font-inter text-md  md:mt-0 md:text-lg 2xl:text-2xl text-white  pt-4 z-10">
             A limited collection of private ridge villas, where ownership meets
             elevation, privacy, and uninterrupted views.
           </h3>

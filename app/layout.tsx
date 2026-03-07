@@ -70,7 +70,6 @@ export default function RootLayout({
         <LayoutClientWrapper>{children}</LayoutClientWrapper>
         <AnalyticsLoader />
         <CookieBanner />
-
         <Footer />
       </body>
     </html>

@@ -65,6 +65,21 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    
+    const {countryCode,phoneNumber}=formData;
+
+    let updatedPhoneNumber = phoneNumber;
+
+    if (countryCode === "91" && phoneNumber.startsWith("0")) {
+     updatedPhoneNumber = phoneNumber.replace(/^0+/, "");
+      setFormData((prev) => ({
+        ...prev,
+        phoneNumber: updatedPhoneNumber,
+      }))
+      alert("Enter 10 digit mobile number");
+      return;
+    }
+
     setIsLoading(true);
     setError(null);
     try {

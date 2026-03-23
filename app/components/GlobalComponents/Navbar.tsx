@@ -89,9 +89,9 @@ const Navbar = () => {
           <Link href="/contact">
             <span className={navItem("/contact/")}>Contact</span>
           </Link>
-          <Link href="/altaira-club">
+          {/* <Link href="/altaira-club">
             <span className={navItem("/altaira-club/")}>Altaira Club</span>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </nav>

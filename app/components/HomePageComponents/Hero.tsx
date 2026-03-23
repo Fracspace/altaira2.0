@@ -10,10 +10,18 @@ import resortImg from "../../../public/images/homepage/resort3.webp";
 
 import LiveBanner from "../LiveBanner/LiveBanner";
 
+import Hls from "hls.js";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const [showVideo, setShowVideo] = useState(false);
+  const heroSectionRef = useRef<HTMLDivElement>(null);
+  const cloudSectionRef = useRef<HTMLDivElement>(null);
+  const textSectionRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoUrl =
+    "https://duixj37yn5405.cloudfront.net/hls-videos/b795a08b-216f-4cce-899c-1e9382562d13/1080p/index.m3u8";
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -23,9 +31,26 @@ const Hero = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const heroSectionRef = useRef<HTMLDivElement>(null);
-  const cloudSectionRef = useRef<HTMLDivElement>(null);
-  const textSectionRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!showVideo || !videoRef.current) return;
+
+    const video = videoRef.current;
+    const videoSrc = videoUrl;
+
+    if (video.canPlayType("application/vnd.apple.mpegurl")) {
+      // Safari
+      video.src = videoSrc;
+      video.play().catch(() => {});
+    } else if (Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(videoSrc);
+      hls.attachMedia(video);
+
+      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        video.play().catch(() => {});
+      });
+    }
+  }, [showVideo]);
 
   useGSAP(() => {
     gsap.to(textSectionRef.current, {
@@ -62,8 +87,9 @@ const Hero = () => {
 
         {showVideo ? (
           <video
+            ref={videoRef}
             className="absolute top-0 left-0 w-full h-full object-cover"
-            src="https://duixj37yn5405.cloudfront.net/hls-videos/b795a08b-216f-4cce-899c-1e9382562d13/1080p/index.m3u8"
+            // src={videoUrl}
             autoPlay
             muted
             loop
@@ -79,7 +105,7 @@ const Hero = () => {
             className="object-cover"
           />
         )}
-        
+
         {/* <video
           className="absolute top-0 left-0 w-full h-full object-cover"
           src="https://duixj37yn5405.cloudfront.net/hls-videos/b795a08b-216f-4cce-899c-1e9382562d13/1080p/index.m3u8"

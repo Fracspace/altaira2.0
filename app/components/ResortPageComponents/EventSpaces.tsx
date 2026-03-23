@@ -138,11 +138,11 @@ const EventSpaces = () => {
                     </div>
                     <div className="min-w-[300px] min-h-[220px] md:min-h-[300px] lg:min-h-[350px] lg:w-1/2">
                         <Image src={eventSpacesImg2} alt="event space img2" placeholder="blur" className="w-full h-full eventSpaceImage object-cover" />
-                        <Image src={eventSpacesImg1} alt="event space img1" className="w-full h-full eventSpaceImage object-cover" />
+                        {/* <Image src={eventSpacesImg1} alt="event space img1" className="w-full h-full eventSpaceImage object-cover" /> */}
                     </div>
-                    <div className="min-w-[300px] min-h-[220px] md:min-h-[300px] lg:min-h-[350px] lg:w-1/2">
+                    {/* <div className="min-w-[300px] min-h-[220px] md:min-h-[300px] lg:min-h-[350px] lg:w-1/2">
                         <Image src={eventSpacesImg2} alt="event space img2" className="w-full h-full eventSpaceImage object-cover" />
-                    </div>
+                    </div> */}
                 </div>
                 <div>
                     <div className="p-10 shadow-md">

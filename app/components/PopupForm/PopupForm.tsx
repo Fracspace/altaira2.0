@@ -57,7 +57,7 @@ function PopupForm({ onClose }: PopupFormProps) {
 
           <button
             onClick={handleClose}
-            className="w-9 h-9 cursor-pointer flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition"
+            className="w-9 h-9 cursor-pointer flex items-center dark:text-black justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition"
           >
             ✕
           </button>

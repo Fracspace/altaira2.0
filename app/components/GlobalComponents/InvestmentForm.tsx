@@ -183,7 +183,7 @@ const InvestmentForm = () => {
         <div className="flex flex-col gap-3">
           <div className="flex flex-row gap-3">
             <div className="flex flex-col md:w-[50vw] lg:w-[25vw] gap-2">
-              <label htmlFor="firstName">First Name</label>
+              <label className="dark:text-black" htmlFor="firstName">First Name</label>
               <input
                 name="firstName"
                 type="text"
@@ -196,7 +196,7 @@ const InvestmentForm = () => {
               />
             </div>
             <div className="flex flex-col md:w-[50vw] lg:w-[25vw] gap-2">
-              <label htmlFor="lastName">Last Name</label>
+              <label className="dark:text-black" htmlFor="lastName">Last Name</label>
               <input
                 name="lastName"
                 type="text"
@@ -210,7 +210,7 @@ const InvestmentForm = () => {
             </div>
           </div>
           <div className="flex flex-col w-full gap-2">
-            <label htmlFor="emailId">Email ID</label>
+            <label className="dark:text-black" htmlFor="emailId">Email ID</label>
             <input
               name="emailId"
               type="email"
@@ -223,7 +223,7 @@ const InvestmentForm = () => {
             />
           </div>
           <div className="flex flex-col w-full gap-2">
-            <label htmlFor="phone">Phone</label>
+            <label className="dark:text-black" htmlFor="phone">Phone</label>
             <PhoneInput
               country="in"
               enableSearch
@@ -287,7 +287,7 @@ const InvestmentForm = () => {
                         </select>
                     </div> */}
 
-          <label htmlFor="investmentBudget">Investment Budget Ranges</label>
+          <label className="dark:text-black" htmlFor="investmentBudget">Investment Budget Ranges</label>
 
           <Select<{ label: string; value: InvestmentBudget }>
             options={budgetRanges}
@@ -337,7 +337,7 @@ const InvestmentForm = () => {
                         </select>
                     </div> */}
 
-          <label htmlFor="purpose">Explore Investment Options</label>
+          <label className="dark:text-black" htmlFor="purpose">Explore Investment Options</label>
 
           <Select<{ label: string; value: EnquiryPurpose }>
             options={purposeOptions}
@@ -365,7 +365,7 @@ const InvestmentForm = () => {
             }}
           />
           <div className="flex flex-col w-full gap-2">
-            <label htmlFor="message">Message/Query</label>
+            <label className="dark:text-black" htmlFor="message">Message/Query</label>
             <textarea
               name="message"
               rows={4}

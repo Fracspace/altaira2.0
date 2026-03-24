@@ -45,7 +45,7 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
     countryCode: ""
   });
 
-  console.log("pathname is", pathname);
+  //console.log("pathname is", pathname);
 
   const isTimeline = pathname === "/timeline/";
 
@@ -160,7 +160,7 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
   return (
     <div className="flex max-w-7xl rounded-lg bg-white">
       {!formSubmit ? (
-        <form onSubmit={onSubmit} className="flex flex-col gap-3 pb-4">
+        <form onSubmit={onSubmit} className="flex w-[70vw] md:w-auto flex-col gap-3 pb-4">
           <div className="text-center mt-9 mb-2 text-[#AD9273]">
             Please Fill This Form To Download{" "}
             {isTimeline ? "Clearance Letter" : "Brochure"}

@@ -42,6 +42,8 @@ function PopupForm({ onClose }: PopupFormProps) {
           pointer-events-auto
           w-full max-w-xl mx-4 mb-6
           rounded-2xl bg-white
+          dark:text-black
+          border border-red-200
           max-h-[60dvh]
           md:max-h-[80dvh]
           flex flex-col

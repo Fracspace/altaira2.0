@@ -112,15 +112,15 @@ const AboveNoise = () => {
               adventure - all shaped by elevation, forest, and sky.
             </p>
           </div>
-          <div className="flex flex-col pt-15 xl:flex-row gap-10">
-            <div className="overflow-hidden xl:w-1/2">
+          <div className="flex flex-col pt-15 lg:flex-row gap-10">
+            <div className="overflow-hidden lg:w-1/2">
               <Image
                 src={ridgeSuites1}
                 alt="ridge suites"
                 className="w-full experience-image object-cover min-h-[400px] md:min-h-[500px] lg:h-full"
               />
             </div>
-            <div className="flex flex-col gap-5 xl:w-1/2">
+            <div className="flex flex-col gap-5 lg:w-1/2">
               <p className="text-[#AD9273] font-inter text-lg xl:text-xl">
                 PRIVATE, ELEVATED, IMMERSED IN THE VIEW
               </p>
@@ -142,12 +142,12 @@ const AboveNoise = () => {
                 Highlights
               </p>
               <div className="rounded-md w-full flex flex-col justify-center md:gap-10 md:flex-row shadow-md">
-                <div className="flex flex-col md:flex-row items-center">
+                <div className="flex flex-col md:flex-row lg:gap-x-5 xl:gap-0 items-center">
                   <div className="flex flex-col items-center gap-2 p-5">
                     <Image
                       src={valleyFacing}
                       alt="Valley Facing"
-                      className="w-[20vw] h-[15vh] md:w-[10vw] xl:w-[3vw] xl:h-[10vh] object-contain rounded-xl"
+                      className="w-[20vw] h-[15vh] lg:h-[5vh] md:w-[10vw] xl:w-[3vw] xl:h-[10vh] object-contain rounded-xl"
                     />
                     <p className="text-xl md:text-base text-[#67777E] dark:text-white">
                       Valley-facing
@@ -157,7 +157,7 @@ const AboveNoise = () => {
                     <Image
                       src={plungePool}
                       alt="Plunge Pool"
-                      className="w-[20vw] h-[15vh] md:w-[10vw] xl:w-[3vw] xl:h-[10vh] object-contain rounded-xl"
+                      className="w-[20vw] h-[15vh] lg:h-[5vh] md:w-[10vw] xl:w-[3vw] xl:h-[10vh] object-contain rounded-xl"
                     />
                     <p className="text-xl md:text-base text-[#67777E] dark:text-white">
                       {" "}
@@ -168,7 +168,7 @@ const AboveNoise = () => {
                     <Image
                       src={fullyServiced}
                       alt="Fully Serviced"
-                      className="w-[20vw] h-[15vh] md:w-[10vw] xl:w-[3vw] xl:h-[10vh] object-contain rounded-xl"
+                      className="w-[20vw] h-[15vh] lg:h-[5vh] md:w-[10vw] xl:w-[3vw] xl:h-[10vh] object-contain rounded-xl"
                     />
                     <p className="text-xl md:text-base text-[#67777E] dark:text-white">
                       Fully Serviced
@@ -178,7 +178,7 @@ const AboveNoise = () => {
                     <Image
                       src={resortAccess}
                       alt="Resort Access"
-                      className="w-[20vw] h-[15vh] md:w-[10vw] xl:w-[3vw] xl:h-[10vh] object-contain rounded-xl"
+                      className="w-[20vw] h-[15vh] lg:h-[5vh] md:w-[10vw] xl:w-[3vw] xl:h-[10vh] object-contain rounded-xl"
                     />
                     <p className="text-xl md:text-base text-[#67777E] dark:text-white">
                       Resort Access

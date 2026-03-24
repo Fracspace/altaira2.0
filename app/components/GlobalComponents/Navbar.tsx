@@ -27,7 +27,7 @@ const Navbar = () => {
     pathname === "/refunds/";
 
   const handleMobileMenu = () => {
-    setMobileMenu(!mobileMenu);
+    setMobileMenu(prevIsOpen=>!prevIsOpen);
   };
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const Navbar = () => {
         <Link href="/">
           <Image
             src={AltairaLogo1}
-            alt="logo"
+            alt="Altaira logo"
             className="w-40
                         sm:w-48
                         md:w-56

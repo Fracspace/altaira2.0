@@ -68,13 +68,13 @@ function VillaDimensions() {
                   Positioning
                 </div>
 
-                <div className="border-r text-[#67777E] border-[#AD9273] bg-[#AD9273]/10 p-2 md:p-4 text-sm md:text-lg text-center">
+                <div className="border-r text-[#67777E] dark:text-white border-[#AD9273] bg-[#AD9273]/10 p-2 md:p-4 text-sm md:text-lg text-center">
                   Valley View Villa
                 </div>
-                <div className="border-r text-[#67777E] border-[#AD9273] bg-[#AD9273]/10 p-2 md:p-4 text-sm md:text-lg text-center">
+                <div className="border-r text-[#67777E] dark:text-white border-[#AD9273] bg-[#AD9273]/10 p-2 md:p-4 text-sm md:text-lg text-center">
                   2400 sq.ft
                 </div>
-                <div className="md:p-4 text-[#67777E] text-center bg-[#AD9273]/10 p-2 pr-2 text-sm md:text-lg">
+                <div className="md:p-4 text-[#67777E] dark:text-white text-center bg-[#AD9273]/10 p-2 pr-2 text-sm md:text-lg">
                   Elevated & Private
                 </div>
               </div>

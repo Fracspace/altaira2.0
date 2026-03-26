@@ -74,7 +74,7 @@ function VillaOwnership() {
         <h3 className="text-center mt-2 text-3xl md:text-4xl  font-cormorant">
           Villa Ownership at Altaira
         </h3>
-        <p className="text-center px-4 mx-auto max-w-5xl  text-md lg:text-lg mt-4">
+        <p className="text-center px-4 mx-auto max-w-5xl  text-base lg:text-lg mt-4">
           A rare opportunity to own a private villa within a fully integrated
           luxury hilltop resort. Altaira Private Residences combine the
           independence of ownership with lifetime access to resort experiences,

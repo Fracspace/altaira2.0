@@ -49,7 +49,7 @@ function VillaDimensions() {
           <h2 className="text-3xl lg:text-4xl font-cormorant mt-4">
             A Higher Way Of Living
           </h2>
-          <p className="mt-4 text-md xl:text-lg leading-[2]">
+          <p className="mt-4 text-base xl:text-lg leading-[2]">
             Set apart from the resort’s active zones, the villas enjoy a sense
             of calm & seclusion, while remaining deeply connected to the
             surrounding landscape. The positioning ensures that every home opens
@@ -102,7 +102,7 @@ function VillaDimensions() {
           </div> */}
           <div
             onClick={() => setOpenRegForm(false)}
-            className="absolute top-0 right-0 mr-4 mt-2 px-4 py-2 mb-4 bg-[#AD9273] text-white text-md rounded-[50%] cursor-pointer"
+            className="absolute top-0 right-0 mr-4 mt-2 px-4 py-2 mb-4 bg-[#AD9273] text-white text-base rounded-[50%] cursor-pointer"
           >
             x
           </div>

@@ -48,7 +48,7 @@ function VillaAmenities() {
                 alt="pool icon"
                 className=" border-2 border-[#AD9273] p-4"
               />
-              <p className="mt-2 text-md dark:text-white  text-gray-500 text-center">
+              <p className="mt-2 text-base dark:text-white  text-gray-500 text-center">
                 Valley Facing Plunge Pool
               </p>
             </div>
@@ -59,7 +59,7 @@ function VillaAmenities() {
                 alt="pool icon"
                 className=" border-2 border-[#AD9273] p-4"
               />
-              <p className="  text-md dark:text-white  mt-2 text-gray-500 text-center">
+              <p className="  text-base dark:text-white  mt-2 text-gray-500 text-center">
                 Fully Furnished Homes
               </p>
             </div>
@@ -71,7 +71,7 @@ function VillaAmenities() {
                 alt="pool icon"
                 className="  border-2 border-[#AD9273] p-4"
               />
-              <p className=" text-md dark:text-white  mt-2 text-gray-500 text-center">
+              <p className=" text-base dark:text-white  mt-2 text-gray-500 text-center">
                 Fully Automated Smart Homes
               </p>
             </div>
@@ -82,7 +82,7 @@ function VillaAmenities() {
                 alt="pool icon"
                 className="border-2 border-[#AD9273] p-4"
               />
-              <p className="text-md dark:text-white  mt-2 text-gray-500 text-center">
+              <p className="text-base dark:text-white  mt-2 text-gray-500 text-center">
                 2 Dedicated Car Parks
               </p>
             </div>

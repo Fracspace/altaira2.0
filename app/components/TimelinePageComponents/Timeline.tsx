@@ -210,7 +210,7 @@ const Timeline = () => {
           </div> */}
             <div
               onClick={() => setOpenRegForm(false)}
-              className="absolute top-0 right-0 mr-4 mt-2 px-4 py-2 mb-4 bg-[#AD9273] text-white text-md rounded-[50%] cursor-pointer"
+              className="absolute top-0 right-0 mr-4 mt-2 px-4 py-2 mb-4 bg-[#AD9273] text-white text-base rounded-[50%] cursor-pointer"
             >
               x
             </div>

@@ -42,7 +42,7 @@ const Hero = () => {
           <h2 className="font-cormorant md:text-5xl lg:text-5xl text-3xl">
             Project Timeline
           </h2>
-          <i className="block pt-4 text-md md:text-lg font-inter 2xl:text-2xl">
+          <i className="block pt-4 text-base md:text-lg font-inter 2xl:text-2xl">
             Watch Altaira rise from vision to reality
           </i>
         </div>

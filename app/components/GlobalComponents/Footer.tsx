@@ -23,8 +23,7 @@ const Footer = () => {
         md:w-56
         lg:w-60
         xl:w-64
-        h-auto
-        cursor-pointer"
+        h-auto"
               />
             </Link>
             <p className="font-inter leading-loose">

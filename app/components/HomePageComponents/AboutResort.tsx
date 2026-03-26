@@ -184,7 +184,7 @@ function AboutResort() {
                 <div className="text-center text-lg sm:text-2xl xl:text-2xl font-semibold text-white font-cormorant mt-2">
                   Integrated Destination
                 </div>
-                <div className="text-center text-sm md:text-md text-white  font-inter pb-6">
+                <div className="text-center text-sm md:text-base text-white  font-inter pb-6">
                   Resort living, private villas, and curated nature.
                 </div>
               </div>
@@ -201,7 +201,7 @@ function AboutResort() {
                 <div className="text-center font-semibold text-lg sm:text-2xl text-white font-cormorant mt-2">
                   Exclusive Villa
                 </div>
-                <div className="text-center text-white text-sm sm:text-md font-inter pb-6">
+                <div className="text-center text-white text-sm sm:text-base font-inter pb-6">
                   Private luxury villas crafted for elevated hilltop living.
                 </div>
               </div>
@@ -218,7 +218,7 @@ function AboutResort() {
                 <div className="text-center font-semibold sm:text-2xl text-white text-lg font-cormorant mt-2">
                   World Class Dining
                 </div>
-                <div className="text-center text-white text-sm  md:text-md font-inter pb-6">
+                <div className="text-center text-white text-sm  md:text-base font-inter pb-6">
                   Curated dining experiences rooted in fresh, seasonal
                   ingredients.
                 </div>
@@ -236,7 +236,7 @@ function AboutResort() {
                 <div className="text-center font-semibold text-white sm:text-2xl text-lg font-cormorant mt-2">
                   Curated Experiences
                 </div>
-                <div className="text-center text-white text-sm  md:text-md font-inter pb-6">
+                <div className="text-center text-white text-sm  md:text-base font-inter pb-6">
                   A collection of nature, wellness, and adventure-led
                   experiences.
                 </div>

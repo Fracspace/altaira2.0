@@ -57,7 +57,7 @@ function OwnVilla() {
           <div className="flex items-center justify-center mt-8">
             <button
               onClick={knowMore}
-              className="bg-white text-md px-2 py-1 rounded cursor-pointer
+              className="bg-white text-base px-2 py-1 rounded cursor-pointer
              transition-all duration-300 ease-out
              dark:text-[#AD9273]
               hover:text-[#AD9273]

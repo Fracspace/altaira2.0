@@ -190,7 +190,7 @@ const Contact = () => {
               </button>
               <button
                 onClick={() => handleCategoryChange("general")}
-                className={`rounded-full min-w-[70%] md:min-w-fit  ${selectedCategory !== "general" ? "bg-[#ffffff] text-black border boder-black-200" : "bg-[#AD9273] text-white"} cursor-pointer px-4 py-2`}
+                className={`rounded-full min-w-[70%] md:min-w-fit  ${selectedCategory !== "general" ? "bg-[#ffffff] text-black border border-black-200" : "bg-[#AD9273] text-white"} cursor-pointer px-4 py-2`}
               >
                 <p className="font-inter xl:text-xl text-base">
                   General / Agents

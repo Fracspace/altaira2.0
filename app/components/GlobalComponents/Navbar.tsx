@@ -27,7 +27,7 @@ const Navbar = () => {
     pathname === "/refunds/";
 
   const handleMobileMenu = () => {
-    setMobileMenu(prevIsOpen=>!prevIsOpen);
+    setMobileMenu(prev=>!prev);
   };
 
   useEffect(() => {
@@ -53,8 +53,7 @@ const Navbar = () => {
                         md:w-56
                         lg:w-60
                         xl:w-64
-                        h-auto
-                        cursor-pointer"
+                        h-auto"
           />
         </Link>
       </div>

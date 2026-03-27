@@ -8,6 +8,15 @@ const linkClasses = "cursor-pointer hover:text-[#AD9273]";
 
 const contactClasses = "hover:text-[#AD9273]";
 
+const links=[
+  {label:"Home",to:"/"},
+  {label:"Resort",to:"/resort"},
+  {label:"Residences",to:"/residences"},
+  {label:"Timeline",to:"/timeline"},
+  {label:"FAQ",to:"/faq"},
+  {label:"Contact",to:"/contact"}
+]
+
 const Footer = () => {
   return (
     <div className="bg-[#221E1F] text-white py-10 px-10">
@@ -36,29 +45,16 @@ const Footer = () => {
           <div className="flex flex-col gap-3">
             <h2 className="font-inter font-semibold text-xl">Quick Links</h2>
             <ul className="flex flex-col gap-3 text-base">
-              <Link href="/" className={linkClasses}>
-                Home
-              </Link>
-              <Link href="/resort" className={linkClasses}>
-                Resort
-              </Link>
-              <Link href="/residences" className={linkClasses}>
-                Residences
-              </Link>
-              <Link href="/timeline" className={linkClasses}>
-                Timeline
-              </Link>
-              <Link href="/faq" className={linkClasses}>
-                FAQ
-              </Link>
-              <Link href="/contact" className={linkClasses}>
-                Contact
-              </Link>
+              {links.map((link)=>(
+                <li key={link.label}>
+                  <Link className={linkClasses} href={link.to}>{link.label}</Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div className="flex flex-col gap-3">
             <h2 className="font-inter font-semibold text-xl">Contact</h2>
-            <ul className="flex flex-col gap-3 cursor-pointer">
+            <ul className="flex flex-col gap-3">
               <li className={contactClasses}>
                 <a href="mailto:altaira.lk@fracspace.com">
                   Email: altaira.lk@fracspace.com

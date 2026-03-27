@@ -141,10 +141,10 @@ function AboutResort() {
   return (
     <div ref={containerRef} className="mt-10 sm:ml-5 sm:mr-5 ">
       <div className="ml-5 mr-5 lg:ml-0 lg:mr-0">
-        <h2 className=" md:max-w-5xl mx-auto text-center text-3xl lg:text-4xl xl:text-4xl font-cormorant">
+        <h2 className=" md:max-w-5xl mx-auto text-center text-3xl lg:text-4xl font-cormorant">
           A Hilltop Destination Close to Nature
         </h2>
-        <div className="max-w-5xl mx-auto text-center text-lg xl:text-lg  mt-5 ">
+        <div className="max-w-5xl mx-auto text-center text-lg mt-5">
           Altaira unfolds as a complete hilltop retreat. A 5-acre luxury resort
           with ridge-facing suites, wellness spaces, and a limited collection of
           private villas, all connected by nature trails, open skies, and
@@ -181,7 +181,7 @@ function AboutResort() {
                     <Image src={Icon1} alt="resort icon" />
                   </div>
                 </div>
-                <div className="text-center text-lg sm:text-2xl xl:text-2xl font-semibold text-white font-cormorant mt-2">
+                <div className="text-center text-lg sm:text-2xl font-semibold text-white font-cormorant mt-2">
                   Integrated Destination
                 </div>
                 <div className="text-center text-sm md:text-base text-white  font-inter pb-6">

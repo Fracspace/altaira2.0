@@ -11,7 +11,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Select, { SingleValue } from "react-select";
 import countryList from "react-select-country-list";
-import { TrackEvent } from "./TrackEvent";
+import { TrackEvent } from "../GlobalComponents/TrackEvent";
 
 const apiUrl =
   "https://apitest.fracspace.com/api/v1/webApi/altaira/enquiryFormWithInvestmentOptions";
@@ -52,6 +52,8 @@ const InvestmentForm = () => {
   //     "$250,000 - $500,000",
   //     "$500,000+"
   // ]
+
+  
 
   const budgetRanges: { label: string; value: InvestmentBudget }[] = [
     { label: "$100,000 - $250,000", value: "$100,000 - $250,000" },
@@ -107,6 +109,21 @@ const InvestmentForm = () => {
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    
+    const {countryCode,phoneNumber}=formData;
+
+    let updatedPhoneNumber = phoneNumber;
+
+    if (countryCode === "91" && phoneNumber.startsWith("0")) {
+     updatedPhoneNumber = phoneNumber.replace(/^0+/, "");
+      setFormData((prev) => ({
+        ...prev,
+        phoneNumber: updatedPhoneNumber,
+      }))
+      alert("Enter 10 digit mobile number");
+      return;
+    }
+
     setIsLoading(true);
     setError(null);
     try {

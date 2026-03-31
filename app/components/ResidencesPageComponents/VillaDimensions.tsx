@@ -49,7 +49,7 @@ function VillaDimensions() {
           <h2 className="text-3xl lg:text-4xl font-cormorant mt-4">
             A Higher Way Of Living
           </h2>
-          <p className="mt-4 text-md xl:text-lg leading-[2]">
+          <p className="mt-4 text-base xl:text-lg leading-[2]">
             Set apart from the resort’s active zones, the villas enjoy a sense
             of calm & seclusion, while remaining deeply connected to the
             surrounding landscape. The positioning ensures that every home opens
@@ -68,13 +68,13 @@ function VillaDimensions() {
                   Positioning
                 </div>
 
-                <div className="border-r text-[#67777E] border-[#AD9273] bg-[#AD9273]/10 p-2 md:p-4 text-sm md:text-lg text-center">
+                <div className="border-r text-[#67777E] dark:text-white border-[#AD9273] bg-[#AD9273]/10 p-2 md:p-4 text-sm md:text-lg text-center">
                   Valley View Villa
                 </div>
-                <div className="border-r text-[#67777E] border-[#AD9273] bg-[#AD9273]/10 p-2 md:p-4 text-sm md:text-lg text-center">
+                <div className="border-r text-[#67777E] dark:text-white border-[#AD9273] bg-[#AD9273]/10 p-2 md:p-4 text-sm md:text-lg text-center">
                   2400 sq.ft
                 </div>
-                <div className="md:p-4 text-[#67777E] text-center bg-[#AD9273]/10 p-2 pr-2 text-sm md:text-lg">
+                <div className="md:p-4 text-[#67777E] dark:text-white text-center bg-[#AD9273]/10 p-2 pr-2 text-sm md:text-lg">
                   Elevated & Private
                 </div>
               </div>
@@ -102,7 +102,7 @@ function VillaDimensions() {
           </div> */}
           <div
             onClick={() => setOpenRegForm(false)}
-            className="absolute top-0 right-0 mr-4 mt-2 px-4 py-2 mb-4 bg-[#AD9273] text-white text-md rounded-[50%] cursor-pointer"
+            className="absolute top-0 right-0 mr-4 mt-2 px-4 py-2 mb-4 bg-[#AD9273] text-white text-base rounded-[50%] cursor-pointer"
           >
             x
           </div>

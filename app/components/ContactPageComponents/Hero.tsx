@@ -31,7 +31,7 @@ const Contact = () => {
             <div className="absolute inset-0 z-20 w-full flex items-center justify-center text-center px-5">
                 <div className="text-white flex flex-col items-center justify-center max-w-4xl">
                     <h2 className="hero-text font-cormorant text-3xl md:text-6xl lg:text-5xl"><span className="mr-1">Get</span> <span className="mr-1">in</span> Touch</h2>
-                    <i className="hero-text pt-4 text-md md:text-lg 2xl:text-2xl font-inter">Begin your journey to Altaira</i>
+                    <i className="hero-text pt-4 text-base md:text-lg 2xl:text-2xl font-inter">Begin your journey to Altaira</i>
                 </div>
             </div>
         </div>

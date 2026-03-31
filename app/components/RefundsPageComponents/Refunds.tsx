@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+// import Link from "next/link";
 
 const Refunds = () => {
   return (
@@ -158,7 +158,7 @@ const Refunds = () => {
               </li>
               <li>
                 Refunds of duplicate or failed payments will be processed within{" "}
-                <b>7–15 working days</b>, after bank confirmation.
+                <b>7-15 working days</b>, after bank confirmation.
               </li>
             </ul>
           </div>

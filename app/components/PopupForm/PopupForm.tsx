@@ -9,10 +9,11 @@ interface PopupFormProps {
 }
 
 function PopupForm({ onClose }: PopupFormProps) {
-  const popupRef = useRef(null);
+  const popupRef = useRef<HTMLDivElement|null>(null);
 
   // ✅ Slide up on mount
   useEffect(() => {
+    if(!popupRef.current) return;
     gsap.fromTo(
       popupRef.current,
       { y: "180%" }, // start fully below screen
@@ -26,6 +27,7 @@ function PopupForm({ onClose }: PopupFormProps) {
 
   // ✅ Slide down on close
   const handleClose = () => {
+    if(!popupRef.current) return;
     gsap.to(popupRef.current, {
       y: "100%",
       duration: 0.6,
@@ -38,10 +40,13 @@ function PopupForm({ onClose }: PopupFormProps) {
     <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
       <div
         ref={popupRef}
+        role="dialog"
+        aria-modal="true"
         className="
           pointer-events-auto
           w-full max-w-xl mx-4 mb-6
           rounded-2xl bg-white
+          dark:text-black
           max-h-[60dvh]
           md:max-h-[80dvh]
           flex flex-col
@@ -57,7 +62,7 @@ function PopupForm({ onClose }: PopupFormProps) {
 
           <button
             onClick={handleClose}
-            className="w-9 h-9 cursor-pointer flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition"
+            className="w-9 h-9 cursor-pointer flex items-center dark:text-black justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition"
           >
             ✕
           </button>

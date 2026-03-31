@@ -45,7 +45,7 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
     countryCode: ""
   });
 
-  console.log("pathname is", pathname);
+  //console.log("pathname is", pathname);
 
   const isTimeline = pathname === "/timeline/";
 
@@ -65,6 +65,21 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    
+    const {countryCode,phoneNumber}=formData;
+
+    let updatedPhoneNumber = phoneNumber;
+
+    if (countryCode === "91" && phoneNumber.startsWith("0")) {
+     updatedPhoneNumber = phoneNumber.replace(/^0+/, "");
+      setFormData((prev) => ({
+        ...prev,
+        phoneNumber: updatedPhoneNumber,
+      }))
+      alert("Enter 10 digit mobile number");
+      return;
+    }
+
     setIsLoading(true);
     setError(null);
     try {
@@ -145,7 +160,7 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
   return (
     <div className="flex max-w-7xl rounded-lg bg-white">
       {!formSubmit ? (
-        <form onSubmit={onSubmit} className="flex flex-col gap-3 pb-4">
+        <form onSubmit={onSubmit} className="flex w-[70vw] md:w-auto flex-col gap-3 pb-4">
           <div className="text-center mt-9 mb-2 text-[#AD9273]">
             Please Fill This Form To Download{" "}
             {isTimeline ? "Clearance Letter" : "Brochure"}
@@ -182,7 +197,6 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
               className="w-full px-4 py-2 rounded-md border border-gray-300 text-black"
             />
           </div>
-
           <div className="flex flex-col w-full gap-2">
             <label className="text-[#AD9273]" htmlFor="phone">
               Phone

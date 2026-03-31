@@ -52,8 +52,7 @@ const Modal = ({ onClose }: ModalProps) => {
         md:w-56
         lg:w-60
         xl:w-64
-        h-auto
-        cursor-pointer"
+        h-auto"
             />
           </Link>
           <button
@@ -71,7 +70,6 @@ const Modal = ({ onClose }: ModalProps) => {
               <li key={to}>
                 <Link
                   href={to}
-                  className="cursor-pointer"
                   onClick={() => handleNavigation(to)}
                 >
                   {name}

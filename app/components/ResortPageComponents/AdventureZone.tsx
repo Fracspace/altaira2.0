@@ -100,17 +100,17 @@ const AdventureZone = () => {
                         <div className="adventure-card bg-black/20 p-3 md:p-5 flex flex-col gap-3 md:gap-5 rounded-md">
                             <Image src={bungeeJump} alt="bungee jump" className="w-[8vw] md:w-[8vw] xl:w-[4vw] object-cover" />
                             <p className="text-white font-inter text-lg xl:text-xl">Bungee Jump</p>
-                            <p className="font-inter text-base md:text-base xl:text-lg text-white">Leap from a purpose-built platform suspended over a dramatic valley, with the forest unfolding beneath you.</p>
+                            <p className="font-inter text-sm md:text-base xl:text-lg text-white">Leap from a purpose-built platform suspended over a dramatic valley, with the forest unfolding beneath you.</p>
                         </div>
                         <div className="adventure-card bg-black/20 p-3 md:p-5 flex flex-col gap-3 md:gap-5 rounded-md ">
                             <Image src={atvTrails} alt="atv trails" className="w-[8vw] md:w-[8vw] xl:w-[4vw] object-cover" />
                             <p className="text-white font-inter text-lg xl:text-xl">ATV Trails</p>
-                            <p className="font-inter text-base md:text-base xl:text-lg text-white">Navigate winding forest trails, mud paths, and open clearings on guided ATV routes.</p>
+                            <p className="font-inter text-sm md:text-base xl:text-lg text-white">Navigate winding forest trails, mud paths, and open clearings on guided ATV routes.</p>
                         </div>
                         <div className="adventure-card bg-black/20 p-3 md:p-5 flex flex-col gap-3 md:gap-5 rounded-md">
                             <Image src={ziplineRuns} alt="zipline runs" className="w-[8vw] md:w-[8vw] xl:w-[4vw] object-cover" />
                             <p className="text-white font-inter text-lg xl:text-xl">Zipline Runs</p>
-                            <p className="font-inter text-base md:text-base xl:text-lg text-white">Soar across the valley on high-tension zip lines, suspended above treetops and flowing streams.</p>
+                            <p className="font-inter text-sm md:text-base xl:text-lg text-white">Soar across the valley on high-tension zip lines, suspended above treetops and flowing streams.</p>
                         </div>
                     </div>
                 </div>

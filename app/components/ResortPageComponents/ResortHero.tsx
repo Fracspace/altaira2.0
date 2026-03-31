@@ -45,7 +45,7 @@ const Resort = () => {
       <div className="absolute z-20 w-full flex items-center justify-center text-center px-5 inset-0">
         <div className="text-white flex flex-col items-center justify-center max-w-4xl">
           <h2 className="font-cormorant md:text-5xl lg:text-4xl xl:text-5xl text-3xl">A Resort Carved Into the Hills</h2>
-          <i className="block pt-4 font-inter text-md md:text-lg 2xl:text-2xl">A Hilltop World, Thoughtfully Composed</i>
+          <i className="block pt-4 font-inter text-base md:text-lg 2xl:text-2xl">A Hilltop World, Thoughtfully Composed</i>
         </div>
       </div>
     </div>

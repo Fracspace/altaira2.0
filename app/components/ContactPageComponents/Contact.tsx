@@ -118,6 +118,20 @@ const Contact = () => {
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const {countryCode,phoneNumber}=formData;
+
+    let updatedPhoneNumber = phoneNumber;
+
+    if (countryCode === "91" && phoneNumber.startsWith("0")) {
+     updatedPhoneNumber = phoneNumber.replace(/^0+/, "");
+      setFormData((prev) => ({
+        ...prev,
+        phoneNumber: updatedPhoneNumber,
+      }))
+      alert("Enter 10 digit mobile number");
+      return;
+    }
+    
     setIsLoading(true);
     setError(null);
     try {
@@ -176,7 +190,7 @@ const Contact = () => {
               </button>
               <button
                 onClick={() => handleCategoryChange("general")}
-                className={`rounded-full min-w-[70%] md:min-w-fit  ${selectedCategory !== "general" ? "bg-[#ffffff] text-black border boder-black-200" : "bg-[#AD9273] text-white"} cursor-pointer px-4 py-2`}
+                className={`rounded-full min-w-[70%] md:min-w-fit  ${selectedCategory !== "general" ? "bg-[#ffffff] text-black border border-black-200" : "bg-[#AD9273] text-white"} cursor-pointer px-4 py-2`}
               >
                 <p className="font-inter xl:text-xl text-base">
                   General / Agents
@@ -198,7 +212,7 @@ const Contact = () => {
                 )}
                 <div className="flex flex-col gap-3">
                   <div className="flex flex-row gap-3">
-                    <div className="flex flex-col md:w-[50vw] gap-2">
+                    <div className="flex flex-col w-full md:w-[50vw] gap-2">
                       <label htmlFor="firstName">First Name</label>
                       <input
                         name="firstName"
@@ -211,7 +225,7 @@ const Contact = () => {
                         className="w-full px-4 py-2 rounded-md border border-gray-300 placeholder:text-[rgba(0,0,0,0.5)] dark:text-black dark:bg-white dark:placeholder-black"
                       />
                     </div>
-                    <div className="flex flex-col md:w-[50vw] gap-2">
+                    <div className="flex flex-col w-full md:w-[50vw] gap-2">
                       <label htmlFor="lastName">Last Name</label>
                       <input
                         name="lastName"
@@ -320,7 +334,7 @@ const Contact = () => {
               <InvestmentForm />
             )}
           </div>
-          <div ref={contactUsRef} className="lg:w-1/2 flex flex-col gap-5">
+          <div ref={contactUsRef} className="w-full lg:w-1/2 flex flex-col gap-5">
             <h2 className="font-inter xl:text-xl text-[#AD9273]">CONTACT US</h2>
             <p className="font-cormorant text-xl md:text-3xl lg:text-4xl">
               We'd Love to Hear From You
@@ -336,7 +350,7 @@ const Contact = () => {
                   <MapPin style={{ color: "#AD927399" }} />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <h2 className="font-inter font-normal dark:text-white xl:text-xl text-gray-500">
+                  <h2 className="font-inter dark:text-white xl:text-xl text-gray-500">
                     Location
                   </h2>
                   <p className="font-inter xl:text-xl">

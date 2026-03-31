@@ -80,7 +80,7 @@ function ResidencesHero() {
         <h2 className=" text-center font-cormorant  text-3xl md:text-4xl mt-6">
           Private Villas, Thoughtfully Positioned
         </h2>
-        <p className="text-center text-md md:text-lg mt-4">
+        <p className="text-center text-base md:text-lg mt-4">
           A limited collection of private villas set along the ridge - designed
           for ownership, privacy, and uninterrupted views. Altaira Private
           Residences are not standalone homes. They are fully integrated into a

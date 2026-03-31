@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
-    "@next/bundle-analyzer": "^16.1.6",
     "@radix-ui/react-accordion": "^1.2.12",
     "@tailwindcss/vite": "^4.1.18",
     "axios": "^1.13.4",
@@ -30,7 +29,9 @@
     "react-select-country-list": "^2.2.3"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^16.1.6",
     "@tailwindcss/postcss": "^4",
+    "@types/hls.js": "^0.13.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

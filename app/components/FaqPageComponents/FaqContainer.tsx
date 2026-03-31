@@ -217,8 +217,8 @@ function FaqContainer() {
 
               <Accordion.Content className="mt-2  bg-[#EEE9E2] rounded-lg px-6 py-4 text-sm">
                 <ul className="list-disc pl-5 space-y-2">
-                  {item.answer.split("\n").map((line, i) => (
-                    <li className="dark:text-black" key={i}>{line.replace("•", "").trim()}</li>
+                  {item.answer.split("\n").map((line,i) => (
+                    <li className="dark:text-black" key={`${item.id}-${i}`}>{line.replace("•", "").trim()}</li>
                   ))}
                 </ul>
               </Accordion.Content>
@@ -278,7 +278,7 @@ function FaqContainer() {
               <Accordion.Content className="mt-2  bg-[#EEE9E2] rounded-lg px-6 py-4 text-sm">
                 <ul className="list-disc pl-5 space-y-2">
                   {item.answer.split("\n").map((line, i) => (
-                    <li className="dark:text-black" key={i}>{line.replace("•", "").trim()}</li>
+                    <li className="dark:text-black" key={`${item.id}-${i}`}>{line.replace("•", "").trim()}</li>
                   ))}
                 </ul>
               </Accordion.Content>

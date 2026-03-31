@@ -110,7 +110,7 @@ const LiveBanner = () => {
       {showCountDown &&
         (isLive ? (
           <div
-            onClick={() => router.push(`/live-stream`)}
+            onClick={() => router.push('/live-stream')}
             className="cursor-pointer bg-red-600 hover:bg-red-700 text-white px-6 py-3 flex items-center gap-3 shadow-lg transition rounded-md"
           >
             <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-white opacity-75"></span>

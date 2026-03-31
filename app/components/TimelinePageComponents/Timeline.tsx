@@ -210,7 +210,7 @@ const Timeline = () => {
           </div> */}
             <div
               onClick={() => setOpenRegForm(false)}
-              className="absolute top-0 right-0 mr-4 mt-2 px-4 py-2 mb-4 bg-[#AD9273] text-white text-md rounded-[50%] cursor-pointer"
+              className="absolute top-0 right-0 mr-4 mt-2 px-4 py-2 mb-4 bg-[#AD9273] text-white text-base rounded-[50%] cursor-pointer"
             >
               x
             </div>
@@ -431,10 +431,7 @@ const Timeline = () => {
                   Unveiling of Altaira
                 </h4>
                 <p className="text-gray-500 dark:text-white xl:text-lg font-inter">
-                  Altaira is scheduled to be officially unveiled on 14 February
-                  2026, when the vision, masterplan, and overall experience will
-                  be introduced to early partners, stakeholders, and prospective
-                  investors.
+                  Altaira was officially unveiled on 14 February 2026, where the vision, masterplan, and overall experience were introduced to early partners, stakeholders, and prospective investors.
                 </p>
                 {/* <button className='text-left rounded-md px-6 py-2 hover:scale-105 transition-transform duration-150 ease-in-out hover:shadow-[0_0_8px_rgba(173,146,115,0.2)] hover:border-none border border-[#AD9273]/60 w-fit cursor-pointer'>Read More</button> */}
               </div>

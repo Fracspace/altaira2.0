@@ -21,6 +21,8 @@ import CookieBanner from "./components/GlobalComponents/CookieBanner";
 import FloatingEnquiryIcon from "./components/GlobalComponents/FloatingEnquiryIcon";
 import LayoutClientWrapper from "./components/GlobalComponents/LayoutClientWrapper";
 
+import PopupForm from "./components/PopupForm/PopupForm";
+
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
   weight: ["300", "400", "500", "600", "700"],

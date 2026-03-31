@@ -1,13 +1,21 @@
-import React from "react";
+import {useState} from "react";
+import { TrackEvent } from "../GlobalComponents/TrackEvent";
+import PopupForm from "../PopupForm/PopupForm";
 
 interface FloatingEnquiryIconProps {
   onClick?: () => void;
 }
 
 function FloatingEnquiryIcon({ onClick }: FloatingEnquiryIconProps) {
+  const [showPopupForm,setShowPopupForm]=useState(false);
+  const enquireNowFloatingIcon=()=>{
+    TrackEvent("Enquire Now button click", "CTA", "Floating Enquiry Icon");
+    //console.log("Enquire Now button clicked");
+    setShowPopupForm(true);
+  }
   return (
     <div
-      onClick={onClick}
+      onClick={enquireNowFloatingIcon}
       className="fixed bottom-5 right-4 md:bottom-6 md:right-6 z-50"
     >
       {/* outer ring */}
@@ -34,11 +42,13 @@ function FloatingEnquiryIcon({ onClick }: FloatingEnquiryIconProps) {
             relative  text-center text-white font-semibold leading-tight
             text-[11px] md:text-[14px]
           "
+          // onClick={enquireNowFloatingIcon}
           >
             Enquire <br /> Now
           </div>
         </div>
       </div>
+      {showPopupForm && <PopupForm onClose={()=>setShowPopupForm(false)}/>}
     </div>
   );
 }

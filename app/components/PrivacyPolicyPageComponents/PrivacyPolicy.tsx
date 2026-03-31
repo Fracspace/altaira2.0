@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
           <h2 className="font-inter text-lg">
             <span className="font-bold">Last Updated:</span> December 2025
           </h2>
-          <p className="font-inter text-base leading-relaxed ">
+          <p className="font-inter text-base leading-relaxed">
             We are committed to protecting your personal information and
             respecting your privacy. This Privacy Policy explains how we
             collect, use, store, share, and protect your data when you interact

@@ -108,7 +108,7 @@ export default function ShapedByLand() {
         <div ref={shapedByLandRef} className="mx-auto max-w-7xl">
           <div className="flex flex-col gap-5 items-center text-center">
             <p className="text-[#AD9273] text-lg xl:text-xl font-inter">EXPERIENCES</p>
-            <h2 className="font-cormorant dark:text-[#67777E] text-3xl md:text-3xl lg:text-4xl xl:text-3xl">
+            <h2 className="font-cormorant dark:text-[#67777E] text-3xl lg:text-4xl xl:text-3xl">
               Shaped by Land, Elevation, and Time
             </h2>
             <p className="font-inter text-[#67777E] max-w-5xl text-lg xl:text-xl">
@@ -119,17 +119,18 @@ export default function ShapedByLand() {
           </div>
 
           <div className="flex flex-col pt-15 gap-10">
-            <div className="experience-row flex flex-col xl:flex-row gap-2 md:gap-10">
-              <div className="overflow-hidden hidden xl:block xl:w-[50vw] h-[50vh]">
+            <div className="experience-row flex flex-col lg:flex-row gap-2 md:gap-10">
+              <div className="overflow-hidden hidden lg:block lg:w-[90vw] xl:w-[50vw] h-[50vh]">
                 <Image
                   src={teaEstateImg}
                   alt="Tea Estate"
+                  placeholder="blur"
                   className="experience-image hidden lg:block w-full h-full object-cover"
                 />
               </div>
               <div className="experience-content flex flex-col xl:max-w-[720px] mx-auto gap-5">
                 <p className="text-[#AD9273] font-inter text-lg xl:text-xl">PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
-                <h2 className="font-cormorant dark:text-[#67777E] text-3xl xl:text-3xl font-bold">Tea Estate Trails</h2>
+                <h2 className="font-cormorant dark:text-[#67777E] text-3xl font-bold">Tea Estate Trails</h2>
                 <p className="dark:text-[#67777E] xl:text-xl text-lg leading-relaxed">
                   Walk through living tea landscapes, where mist, elevation, and heritage meet under open skies.
                   Each step reveals the rhythm of the land, shaped by seasons, slopes, and generations of craft.
@@ -143,13 +144,14 @@ export default function ShapedByLand() {
                 <Image
                   src={teaEstateImg}
                   alt="Tea Estate"
-                  className="block xl:hidden w-full h-[50vh] object-cover"
+                  placeholder="blur"
+                  className="block lg:hidden w-full h-[50vh] object-cover"
                 />
               </div>
             </div>
 
             {/* ROW 2 */}
-            <div className="experience-row flex flex-col xl:flex-row gap-2 items-stretch md:gap-10">
+            <div className="experience-row flex flex-col lg:flex-row gap-2 items-stretch md:gap-10">
               <div className="experience-content flex flex-col xl:max-w-[720px] mx-auto gap-5">
                 <p className="text-[#AD9273] text-lg xl:text-2xl font-inter">PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
                 <h2 className="font-cormorant dark:text-[#67777E] text-3xl xl:text-3xl font-bold">Cloud Walkways</h2>
@@ -163,9 +165,10 @@ export default function ShapedByLand() {
                   <i className="text-lg dark:text-[#67777E] xl:text-xl">Walk among the clouds</i>
                 </div>
               </div>
-              <div className="overflow-hidden mt-3 xl:w-[50vw] h-[50vh]">
+              <div className="overflow-hidden mt-3 lg:w-[90vw] xl:w-[50vw] h-[50vh]">
                 <Image
                   src={cloudWalkwaysImage}
+                  placeholder="blur"
                   alt="Cloud Walkways"
                   className="experience-image w-full h-full object-cover"
                 />
@@ -173,12 +176,13 @@ export default function ShapedByLand() {
             </div>
 
             {/* ROW 3 */}
-            <div className="experience-row flex flex-col xl:flex-row md:items-stretch gap-2 md:gap-10">
-              <div className="overflow-hidden hidden xl:block h-[50vh]">
+            <div className="experience-row flex flex-col lg:flex-row md:items-stretch gap-2 md:gap-10">
+              <div className="overflow-hidden hidden lg:block h-[50vh] lg:w-[90vw] xl:w-[50vw]">
                 <Image
                   src={infinityPoolImage}
                   alt="Infinity Pool"
-                  className="experience-image md:hidden xl:block w-full h-full object-cover"
+                  placeholder="blur"
+                  className="experience-image md:hidden lg:block w-full h-full object-cover"
                 />
               </div>
               <div className="experience-content flex flex-col gap-5 xl:max-w-[720px] mx-auto">
@@ -194,12 +198,13 @@ export default function ShapedByLand() {
                 <Image
                   src={infinityPoolImage}
                   alt="Infinity Pool"
-                  className="block xl:hidden w-full object-cover h-[50vh]"
+                  placeholder="blur"
+                  className="block lg:hidden w-full object-cover h-[50vh]"
                 />
               </div>
             </div>
 
-            <div className="experience-row flex flex-col xl:flex-row items-stretch gap-2 md:gap-10">
+            <div className="experience-row flex flex-col lg:flex-row items-stretch gap-2 md:gap-10">
               <div className="experience-content flex flex-col gap-5 xl:max-w-[720px] mx-auto">
                 <p className="text-[#AD9273] font-inter text-lg xl:text-xl">PRIVATE, ELEVATED, IMMERSED IN THE VIEW</p>
                 <h2 className="font-cormorant dark:text-[#67777E] text-3xl xl:text-3xl font-bold">Rainforest Spa & Onsen</h2>
@@ -212,10 +217,11 @@ export default function ShapedByLand() {
                   <i className="text-lg dark:text-[#67777E] xl:text-xl">Wellness in its purest form</i>
                 </div>
               </div>
-              <div className="overflow-hidden mt-3 xl:w-[50vw] h-[50vh] lg:h-[50vh]">
+              <div className="overflow-hidden mt-3 xl:w-[50vw] lg:w-[90vw] h-[50vh]">
                 <Image
                   src={spaImg}
                   alt="Rainforest Spa"
+                  placeholder="blur"
                   className="w-full experience-image h-full object-cover"
                 />
               </div>

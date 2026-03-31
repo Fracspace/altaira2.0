@@ -28,7 +28,7 @@ export default function MainHero() {
         <h2 className="font-cormorant text-3xl lg:text-5xl text-white leading-[1.3]">
           Above The Clouds. Rooted in Nature.
         </h2>
-        <h3 className="font-inter text-md md:text-lg 2xl:text-2xl text-white italic pt-4">
+        <h3 className="font-inter text-base md:text-lg 2xl:text-2xl text-white italic pt-4">
           A hilltop destination where nature, stay, and experience come together
         </h3>
       </div>

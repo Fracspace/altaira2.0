@@ -27,7 +27,7 @@ const Navbar = () => {
     pathname === "/refunds/";
 
   const handleMobileMenu = () => {
-    setMobileMenu(!mobileMenu);
+    setMobileMenu(prev=>!prev);
   };
 
   useEffect(() => {
@@ -47,14 +47,13 @@ const Navbar = () => {
         <Link href="/">
           <Image
             src={AltairaLogo1}
-            alt="logo"
+            alt="Altaira logo"
             className="w-40
                         sm:w-48
                         md:w-56
                         lg:w-60
                         xl:w-64
-                        h-auto
-                        cursor-pointer"
+                        h-auto"
           />
         </Link>
       </div>
@@ -89,6 +88,9 @@ const Navbar = () => {
           <Link href="/contact">
             <span className={navItem("/contact/")}>Contact</span>
           </Link>
+          {/* <Link href="/altaira-club">
+            <span className={navItem("/altaira-club/")}>Altaira Club</span>
+          </Link> */}
         </div>
       </div>
     </nav>

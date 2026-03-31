@@ -61,10 +61,9 @@ export default function HeroAnimation() {
       if (hls) hls.destroy();
     };
   }, [showVideo]);
+
   // useEffect(() => {
-
   //   if (!videoRef.current) return;
-
   //   videoRef.current.oncanplay = () => {
   //     gsap.to(videoRef.current, {
   //       opacity: 1,
@@ -72,7 +71,6 @@ export default function HeroAnimation() {
   //       ease: "power2.out"
   //     });
   //   };
-
   // }, [showVideo]);
 
   // ✅ GSAP scroll animation

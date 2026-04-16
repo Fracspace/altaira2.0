@@ -6,6 +6,7 @@ import Script from "next/script";
 
 import type { Metadata } from "next";
 import "./globals.css";
+import "react-phone-input-2/lib/style.css";
 
 import { Suspense } from "react";
 

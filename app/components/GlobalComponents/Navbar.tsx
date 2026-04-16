@@ -82,6 +82,9 @@ const Navbar = () => {
           <Link href="/timeline">
             <span className={navItem("/timeline/")}>Timeline</span>
           </Link>
+          <Link href="/yurt">
+            <span className={navItem("/yurt/")}>Yurt</span>
+          </Link>
           <Link href="/faq">
             <span className={navItem("/faq/")}>FAQ</span>
           </Link>

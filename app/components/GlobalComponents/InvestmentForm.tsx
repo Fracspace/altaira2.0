@@ -8,7 +8,6 @@ import {
 } from "react";
 import axios from "axios";
 import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
 import Select, { SingleValue } from "react-select";
 import countryList from "react-select-country-list";
 import { TrackEvent } from "../GlobalComponents/TrackEvent";

@@ -87,9 +87,12 @@ const InvestmentForm = () => {
   ];
 
   const yurtPurposeOptions: { label: string; value: EnquiryPurpose }[] = [
-    { label: `Co-own Yurt - ₹6,00,000 ( $ ${coOwnUsd})`, value: "CO_OWN_YURT" },
     {
-      label: `Full Own Yurt - ₹50,00,000 ($ ${fullOwnUsd})`,
+      label: `Co-Ownership Yurt - ₹6,00,000 ( $ ${coOwnUsd})`,
+      value: "CO_OWN_YURT"
+    },
+    {
+      label: `Full Ownership Yurt - ₹50,00,000 ($ ${fullOwnUsd})`,
       value: "FULL_OWN_YURT"
     }
   ];

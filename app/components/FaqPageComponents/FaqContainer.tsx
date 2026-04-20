@@ -7,7 +7,7 @@ const altairaFaq = [
     id: "faq-1",
     question: "What is Altaira – Above The Clouds?",
     answer:
-      "Altaira is a 26-acre, ultra-luxury hilltop development in Bulathkohupitiya, Sri Lanka, offering villas, sky-residences, a boutique hotel, adventure valley, tea estate, wellness retreat, and curated hospitality experiences. It is positioned as a first-of-its-kind UHNI destination in South Asia."
+      "Altaira is a 26-acre, ultra-luxury hilltop development in Bulathkohupitiya, Sri Lanka, offering villas, sky-residences, a boutique hotel, luxury yurts, adventure valley, tea estate, wellness retreat, and curated hospitality experiences. It is positioned as a first-of-its-kind UHNI destination in South Asia."
   },
   {
     id: "faq-2",
@@ -19,7 +19,7 @@ const altairaFaq = [
     id: "faq-3",
     question: "What makes Altaira unique?",
     answer:
-      "• 26 acres at 2,000+ ft elevation\n• Low-density development\n• Curated UHNI experiences (choppers, private chefs, wellness)\n• Only 60–90 exclusive keys (final master plan dependent)\n• USD 20 million+ project scale\n• “Above the clouds” year-round ambience\n• Indo–Lanka cultural and investment bridge"
+      "• 26 acres at 3200+ meters elevation\n• Low-density development\n• Curated UHNI experiences (choppers, private chefs, wellness)\n• Only 60–90 exclusive keys (final master plan dependent)\n• USD 20 million+ project scale\n• “Above the clouds” year-round ambience\n• Indo–Lanka cultural and investment bridge"
   },
   {
     id: "faq-4",

@@ -8,14 +8,15 @@ const linkClasses = "cursor-pointer hover:text-[#AD9273]";
 
 const contactClasses = "hover:text-[#AD9273]";
 
-const links=[
-  {label:"Home",to:"/"},
-  {label:"Resort",to:"/resort"},
-  {label:"Residences",to:"/residences"},
-  {label:"Timeline",to:"/timeline"},
-  {label:"FAQ",to:"/faq"},
-  {label:"Contact",to:"/contact"}
-]
+const links = [
+  { label: "Home", to: "/" },
+  { label: "Resort", to: "/resort" },
+  { label: "Residences", to: "/residences" },
+  { label: "Timeline", to: "/timeline" },
+  { label: "FAQ", to: "/faq" },
+  { label: "Contact", to: "/contact" },
+  { label: "Elite Yurt", to: "/yurt" }
+];
 
 const Footer = () => {
   return (
@@ -37,7 +38,7 @@ const Footer = () => {
             </Link>
             <p className="font-inter leading-loose">
               Altaira is a luxury hilltop resort and residence destination set
-              nearly 3,200 mts above sea level. Designed for stillness,
+              nearly 3,200 meters above sea level. Designed for stillness,
               discovery, and elevated living, Altaira blends nature, wellness,
               and adventure into one timeless experience.
             </p>
@@ -45,9 +46,11 @@ const Footer = () => {
           <div className="flex flex-col gap-3">
             <h2 className="font-inter font-semibold text-xl">Quick Links</h2>
             <ul className="flex flex-col gap-3 text-base">
-              {links.map((link)=>(
+              {links.map((link) => (
                 <li key={link.label}>
-                  <Link className={linkClasses} href={link.to}>{link.label}</Link>
+                  <Link className={linkClasses} href={link.to}>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>

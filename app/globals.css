@@ -57,6 +57,44 @@ body {
   background: rgba(0, 0, 0, 0.4);
 }
 
+.shimmer {
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 70%
+  );
+  width: 200%;
+  height: 100%;
+  transform: translateX(-100%);
+  animation: shimmerMove 3s ease-in-out infinite;
+}
+
+@keyframes shimmerMove {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.5) 50%,
+    /* white shine for metallic feel */ transparent 70%
+  );
+  width: 200%;
+  height: 100%;
+  transform: translateX(-100%);
+  animation: shimmerMove 3s ease-in-out infinite;
+}
+
+@keyframes shimmerMove {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 @layer utilities {
   .text-content {
     font-size: clamp(1.2rem, 2vw, 1.4rem);

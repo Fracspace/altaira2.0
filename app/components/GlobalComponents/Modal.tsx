@@ -12,7 +12,8 @@ const navItems = [
   { name: "Residences", to: "/residences" },
   { name: "Timeline", to: "/timeline" },
   { name: "FAQ", to: "/faq" },
-  { name: "Contact", to: "/contact" }
+  { name: "Contact", to: "/contact" },
+  { name: "Elite Yurt", to: "/yurt", highlight: true }
 ];
 
 type ModalProps = {
@@ -64,7 +65,7 @@ const Modal = ({ onClose }: ModalProps) => {
           </button>
         </div>
 
-        <ul className="px-5 md:px-14 pt-5 space-y-8 text-white text-lg">
+        {/* <ul className="px-5 md:px-14 pt-5 space-y-8 text-white text-lg">
           {navItems.map(({ to, name }) => {
             return (
               <li key={to}>
@@ -73,6 +74,34 @@ const Modal = ({ onClose }: ModalProps) => {
                   onClick={() => handleNavigation(to)}
                 >
                   {name}
+                </Link>
+              </li>
+            );
+          })}
+        </ul> */}
+        <ul className="px-5 md:px-14 pt-5 space-y-8 text-white text-lg">
+          {navItems.map(({ to, name, highlight }) => {
+            return (
+              <li key={to}>
+                <Link
+                  href={to}
+                  onClick={() => handleNavigation(to)}
+                  className={`inline-block ${highlight ? "w-fit" : ""}`}
+                >
+                  {highlight ? (
+                    <span className="relative inline-block px-4 py-2 rounded-full text-sm font-medium text-black overflow-hidden">
+                      {/* Gold base */}
+                      <span className="absolute inset-0 bg-gradient-to-r from-[#C6A769] to-[#AD9273]" />
+
+                      {/* Shimmer */}
+                      <span className="shimmer absolute inset-0" />
+
+                      {/* Text */}
+                      <span className="relative z-10">{name}</span>
+                    </span>
+                  ) : (
+                    name
+                  )}
                 </Link>
               </li>
             );

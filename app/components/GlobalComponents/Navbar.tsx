@@ -27,7 +27,7 @@ const Navbar = () => {
     pathname === "/refunds/";
 
   const handleMobileMenu = () => {
-    setMobileMenu(prev=>!prev);
+    setMobileMenu((prev) => !prev);
   };
 
   useEffect(() => {
@@ -82,14 +82,26 @@ const Navbar = () => {
           <Link href="/timeline">
             <span className={navItem("/timeline/")}>Timeline</span>
           </Link>
-          <Link href="/yurt">
-            <span className={navItem("/yurt/")}>Yurt</span>
-          </Link>
           <Link href="/faq">
             <span className={navItem("/faq/")}>FAQ</span>
           </Link>
           <Link href="/contact">
             <span className={navItem("/contact/")}>Contact</span>
+          </Link>
+          <Link href="/yurt">
+            <span
+              className="relative inline-block px-5 py-2 rounded-full text-sm font-medium
+    text-white overflow-hidden"
+            >
+              {/* Base gold fill */}
+              <span className="absolute inset-0 bg-gradient-to-r from-[#C6A769] to-[#AD9273]" />
+
+              {/* Shimmer layer */}
+              <span className="shimmer absolute inset-0" />
+
+              {/* Text */}
+              <span className="relative z-10">Elite Yurt</span>
+            </span>
           </Link>
           {/* <Link href="/altaira-club">
             <span className={navItem("/altaira-club/")}>Altaira Club</span>

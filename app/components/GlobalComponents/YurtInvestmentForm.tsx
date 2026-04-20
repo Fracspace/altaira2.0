@@ -1,4 +1,5 @@
 "use client";
+
 import {
   useState,
   useEffect,
@@ -6,13 +7,14 @@ import {
   ChangeEvent,
   FormEvent
 } from "react";
+
 import axios from "axios";
 import PhoneInput from "react-phone-input-2";
 import Select, { SingleValue } from "react-select";
 import countryList from "react-select-country-list";
 import { TrackEvent } from "../GlobalComponents/TrackEvent";
-import { usePathname } from "next/navigation";
-import { useExchange } from "@/app/context/ExchangeContext";
+
+import React from "react";
 
 const apiUrl =
   "https://apitest.fracspace.com/api/v1/webApi/altaira/enquiryFormWithInvestmentOptions";
@@ -27,11 +29,7 @@ type InvestmentBudget =
   | "$250,000 - $500,000"
   | "$500,000+";
 
-type EnquiryPurpose =
-  | "BUY_VILLA"
-  | "INVEST_IN_RESORT"
-  | "CO_OWN_YURT"
-  | "FULL_OWN_YURT";
+type EnquiryPurpose = "CO_OWN" | "FULL_OWN";
 
 interface FormData {
   firstName: string;
@@ -40,22 +38,10 @@ interface FormData {
   phoneNumber: string;
   countryCode: string;
   message: string;
-  investmentBudget: InvestmentBudget;
   purpose: EnquiryPurpose;
 }
 
-const InvestmentForm = () => {
-  const exchange = useExchange();
-
-  const usdRate = exchange?.usdRate ?? 0.012;
-
-  const coOwnUsd = (600000 * usdRate).toLocaleString();
-  const fullOwnUsd = (5000000 * usdRate).toLocaleString();
-
-  const pathname = usePathname();
-
-  const isYurtPage = pathname.includes("yurt");
-
+const YurtInvestmentForm = () => {
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [value, setValue] = useState<CountryOption | null>(null);
@@ -81,22 +67,11 @@ const InvestmentForm = () => {
   //     "Invest in Resort"
   // ]
 
-  const defaultPurposeOptions: { label: string; value: EnquiryPurpose }[] = [
-    { label: "Buy a Villa", value: "BUY_VILLA" },
-    { label: "Invest in Resort", value: "INVEST_IN_RESORT" }
+  const purposeOptions: { label: string; value: EnquiryPurpose }[] = [
+    // { label: "Explore Investment Options", value: "EXPLORE_INVESTMENT" },
+    { label: "Full Ownership Of Yurt", value: "FULL_OWN" },
+    { label: "Co-Own Yurt", value: "CO_OWN" }
   ];
-
-  const yurtPurposeOptions: { label: string; value: EnquiryPurpose }[] = [
-    { label: `Co-own Yurt - ₹6,00,000 ( $ ${coOwnUsd})`, value: "CO_OWN_YURT" },
-    {
-      label: `Full Own Yurt - ₹50,00,000 ($ ${fullOwnUsd})`,
-      value: "FULL_OWN_YURT"
-    }
-  ];
-
-  const purposeOptions = isYurtPage
-    ? yurtPurposeOptions
-    : defaultPurposeOptions;
 
   useEffect(() => {
     const countryOptions = countryList().getData() as CountryOption[];
@@ -110,8 +85,7 @@ const InvestmentForm = () => {
     phoneNumber: "",
     countryCode: "",
     message: "",
-    investmentBudget: "$100,000 - $250,000",
-    purpose: isYurtPage ? "CO_OWN_YURT" : "BUY_VILLA"
+    purpose: "FULL_OWN"
   });
 
   const changeHandler = useCallback((selected: SingleValue<CountryOption>) => {
@@ -157,7 +131,6 @@ const InvestmentForm = () => {
         email: formData.emailId,
         countryCode: formData.countryCode,
         phoneNumber: formData.phoneNumber,
-        budget: isYurtPage ? "-" : formData.investmentBudget,
         option: formData.purpose,
         message: formData.message
       };
@@ -169,7 +142,7 @@ const InvestmentForm = () => {
         }
       });
 
-      // console.log("form data", payload);
+      //console.log("form data", payload);
       // alert("Form data submitted successfully");
       if (response.status === 200 || response.status === 201) {
         TrackEvent(
@@ -184,8 +157,7 @@ const InvestmentForm = () => {
           emailId: "",
           phoneNumber: "",
           countryCode: "",
-          investmentBudget: "$100,000 - $250,000",
-          purpose: isYurtPage ? "CO_OWN_YURT" : "BUY_VILLA",
+          purpose: "FULL_OWN",
           message: ""
         });
       }
@@ -293,77 +265,74 @@ const InvestmentForm = () => {
             />
           </div>
           {/* <div className="flex flex-col w-full gap-2">
-                        <label htmlFor="investmentBudget">Investment Budget Range</label>
-                        <select
-                            name="investmentBudget"
-                            required
-                            value={formData.investmentBudget}
-                            onChange={handleInputChange}
-                            className="!w-full px-4 py-2 rounded-md border border-gray-300 text-black"
-                        >
-                            <option value="" disabled>
-                                Investment Budget Range
-                            </option>
-                            {budgetRanges.map((range) => (
-                                <option key={range.value} value={range.value}>
-                                    {range.label}
-                                </option>
-                            ))}
-                        </select>
-                    </div> */}
-          {!isYurtPage && (
-            <>
-              <label htmlFor="investmentBudget">Investment Budget Ranges</label>
+                                <label htmlFor="investmentBudget">Investment Budget Range</label>
+                                <select
+                                    name="investmentBudget"
+                                    required
+                                    value={formData.investmentBudget}
+                                    onChange={handleInputChange}
+                                    className="!w-full px-4 py-2 rounded-md border border-gray-300 text-black"
+                                >
+                                    <option value="" disabled>
+                                        Investment Budget Range
+                                    </option>
+                                    {budgetRanges.map((range) => (
+                                        <option key={range.value} value={range.value}>
+                                            {range.label}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div> */}
 
-              <Select<{ label: string; value: InvestmentBudget }>
-                options={budgetRanges}
-                required
-                value={budgetRanges.find(
-                  (opt) => opt.value === formData.investmentBudget
-                )}
-                onChange={(option) =>
-                  setFormData((prev) => ({
-                    ...prev,
-                    investmentBudget: option?.value ?? "$100,000 - $250,000"
-                  }))
-                }
-                className="react-select-container w-full text-sm"
-                classNamePrefix="react-select"
-                placeholder="Select Budget Range*"
-                styles={{
-                  placeholder: (base) => ({ ...base, color: "black" }),
-                  input: (base) => ({
-                    ...base,
-                    color: "black"
-                  }),
-                  menu: (base) => ({
-                    ...base,
-                    color: "black"
-                  })
-                }}
-              />
-            </>
-          )}
+          {/* <label htmlFor="investmentBudget">Investment Budget Ranges</label> */}
+
+          {/* <Select<{ label: string; value: InvestmentBudget }>
+            options={budgetRanges}
+            required
+            value={budgetRanges.find(
+              (opt) => opt.value === formData.investmentBudget
+            )}
+            onChange={(option) =>
+              setFormData((prev) => ({
+                ...prev,
+                investmentBudget: option?.value ?? "$100,000 - $250,000"
+              }))
+            }
+            className="react-select-container w-full text-sm"
+            classNamePrefix="react-select"
+            placeholder="Select Budget Range*"
+            styles={{
+              placeholder: (base) => ({ ...base, color: "black" }),
+              input: (base) => ({
+                ...base,
+                color: "black"
+              }),
+              menu: (base) => ({
+                ...base,
+                color: "black"
+              })
+            }}
+          /> */}
 
           {/* <div className="flex flex-col w-full gap-2">
-                        <label htmlFor="investmentOptions">Explore Investment Options</label>
-                        <select
-                            name="investmentOptions"
-                            required
-                            value={formData.purpose}
-                            onChange={handleInputChange}
-                            className="!w-full px-4 py-2 rounded-md border border-gray-300 text-black"
-                        >
-                            <option value="" disabled>
-                                Investment Purpose
-                            </option>
-                            {purposeOptions.map((investmentOption) => (
-                                <option key={investmentOption} value={investmentOption}>
-                                    {investmentOption}
-                                </option>
-                            ))}
-                        </select>
-                    </div> */}
+                                <label htmlFor="investmentOptions">Explore Investment Options</label>
+                                <select
+                                    name="investmentOptions"
+                                    required
+                                    value={formData.purpose}
+                                    onChange={handleInputChange}
+                                    className="!w-full px-4 py-2 rounded-md border border-gray-300 text-black"
+                                >
+                                    <option value="" disabled>
+                                        Investment Purpose
+                                    </option>
+                                    {purposeOptions.map((investmentOption) => (
+                                        <option key={investmentOption} value={investmentOption}>
+                                            {investmentOption}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div> */}
 
           <label htmlFor="purpose">Explore Investment Options</label>
 
@@ -374,9 +343,7 @@ const InvestmentForm = () => {
             onChange={(option) =>
               setFormData((prev) => ({
                 ...prev,
-                purpose:
-                  option?.value ??
-                  (isYurtPage ? "CO_OWN_YURT" : "INVEST_IN_RESORT")
+                purpose: option?.value ?? "FULL_OWN"
               }))
             }
             className="react-select-container w-full text-sm"
@@ -428,4 +395,4 @@ const InvestmentForm = () => {
   );
 };
 
-export default InvestmentForm;
+export default YurtInvestmentForm;

@@ -6,6 +6,7 @@ import Script from "next/script";
 
 import type { Metadata } from "next";
 import "./globals.css";
+import "react-phone-input-2/lib/style.css";
 
 import { Suspense } from "react";
 
@@ -21,7 +22,8 @@ import CookieBanner from "./components/GlobalComponents/CookieBanner";
 import FloatingEnquiryIcon from "./components/GlobalComponents/FloatingEnquiryIcon";
 import LayoutClientWrapper from "./components/GlobalComponents/LayoutClientWrapper";
 
-import PopupForm from "./components/PopupForm/PopupForm";
+import { asyncWrapProviders } from "async_hooks";
+import { getExchangeRate } from "./lib/getExchangeRate";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -44,11 +46,15 @@ export const metadata: Metadata = {
     "Altaira luxury resort and private residences offer hilltop villas, wellness experiences, fine dining, and panoramic valley views."
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const usdRate = await getExchangeRate();
+  
+
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
       <head>
@@ -92,7 +98,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </Suspense>
         <ScrollTracker />
         <Navbar />
-        <LayoutClientWrapper>{children}</LayoutClientWrapper>
+        <LayoutClientWrapper usdRate={usdRate}>{children}</LayoutClientWrapper>
         <AnalyticsLoader />
         <CookieBanner />
         <Footer />

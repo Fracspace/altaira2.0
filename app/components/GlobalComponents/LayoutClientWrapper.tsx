@@ -2,20 +2,22 @@
 
 import React, { ReactNode, useState } from "react";
 import FloatingEnquiryIcon from "./FloatingEnquiryIcon";
-import PopupForm from "../PopupForm/PopupForm";
+
+import PopupProvider from "./PopupProvider";
+import { ExchangeProvider } from "../../context/ExchangeContext";
 
 interface LayoutClientWrapperProps {
   children: ReactNode;
+  usdRate: number;
 }
 
-function LayoutClientWrapper({ children }: LayoutClientWrapperProps) {
-  const [showPopup, setShowPopup] = useState(false);
+function LayoutClientWrapper({ children ,usdRate}: LayoutClientWrapperProps) {
   return (
-    <div>
-      <FloatingEnquiryIcon onClick={() => setShowPopup(true)} />
-      {showPopup && <PopupForm onClose={() => setShowPopup(false)} />}
-      {children}
-    </div>
+    <>
+      <ExchangeProvider usdRate={usdRate}>
+        <PopupProvider>{children}</PopupProvider>
+      </ExchangeProvider>
+    </>
   );
 }
 

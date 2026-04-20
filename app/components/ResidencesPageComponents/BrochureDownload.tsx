@@ -5,7 +5,6 @@ import React from "react";
 import { useState, useCallback, ChangeEvent, FormEvent } from "react";
 
 import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
 
 import { SingleValue } from "react-select";
 import countryList from "react-select-country-list";

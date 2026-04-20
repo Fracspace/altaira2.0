@@ -37,7 +37,7 @@ const Footer = () => {
             </Link>
             <p className="font-inter leading-loose">
               Altaira is a luxury hilltop resort and residence destination set
-              nearly 2,000 feet above sea level. Designed for stillness,
+              nearly 3,200 mts above sea level. Designed for stillness,
               discovery, and elevated living, Altaira blends nature, wellness,
               and adventure into one timeless experience.
             </p>

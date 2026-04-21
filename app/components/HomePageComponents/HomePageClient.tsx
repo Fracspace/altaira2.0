@@ -67,17 +67,13 @@ export default function HomePageClient() {
     <div>
       {/* <Hero /> */}
       <MainHero />
-
       {/* <AboutResort />
       <Experiences />
       <OwnVilla />
       <Restaurant />
       <ElevatedArrival /> */}
-
       <AboutHeroSection />
-
       {/* <FloatingEnquiryIcon /> */}
-
       <ExperiencesSection />
       <OwnVillaSection />
       <RestaurantSection />

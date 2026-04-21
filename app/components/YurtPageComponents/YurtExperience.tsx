@@ -7,7 +7,9 @@ import yurtExperience from "../../../public/images/yurt/yurtExperience.webp";
 import { usePopup } from "../GlobalComponents/PopupContext";
 
 const YurtExperience = () => {
+
   const { openPopup } = usePopup();
+  
   return (
     <div className="ml-10 mr-10">
       <div className="max-w-7xl mx-auto">

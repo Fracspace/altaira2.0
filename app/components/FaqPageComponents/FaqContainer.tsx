@@ -25,13 +25,13 @@ const altairaFaq = [
     id: "faq-4",
     question: "What types of units are available?",
     answer:
-      "• Sky Villas\n• Cliffside Cottages\n• Tea Estate Residences\n• Hotel Suites (Investment Model)\n• Adventure & Wellness Pods (Phase II)\nUnit mix will be released at launch after architectural approvals."
+      "• Sky Villas\n• Cliffside Cottages\n• Tea Estate Residences\n• Hotel Suites (Investment Model)\n• Adventure & Wellness Pods (Phase II)\nLuxury Yurts\nUnit mix will be released at launch after architectural approvals."
   },
   {
     id: "faq-5",
     question: "When does the project launch?",
     answer:
-      "The grand private black-tie global launch is scheduled for 14th February 2026 at an undisclosed venue in Colombo. Entry is by invite only."
+      "The grand private black-tie global launch was held on 14th February 2026 at an undisclosed venue in Colombo. Entry was by invite only"
   },
   {
     id: "faq-6",
@@ -67,7 +67,7 @@ const altairaFaq = [
     id: "faq-11",
     question: "When will construction begin?",
     answer:
-      "Construction is expected to begin in February 2026, post the global launch."
+      "Construction is expected to begin in May 2026, post the global launch."
   },
   {
     id: "faq-12",
@@ -115,7 +115,7 @@ const altairaFaq = [
     id: "faq-19",
     question: "What is the timeline for delivery?",
     answer:
-      "Altaira Resort: December 2027\nAltaira Residences: June 2028\nAn additional 12 months leniency applies in case of unfavourable weather conditions."
+      "Altaira Resort: December 2027\nAltaira Residences: June 2028\nAltaira Luxury Yurts: March 2027\nAn additional 12 months leniency applies in case of unfavourable weather conditions."
   },
   {
     id: "faq-20",

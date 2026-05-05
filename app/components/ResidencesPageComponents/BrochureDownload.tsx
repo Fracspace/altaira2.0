@@ -11,6 +11,7 @@ import countryList from "react-select-country-list";
 
 import { usePathname } from "next/navigation";
 import { TrackEvent } from "../GlobalComponents/TrackEvent";
+import { CountryCode, parsePhoneNumberFromString } from "libphonenumber-js";
 
 interface CountryOption {
   label: string;
@@ -22,6 +23,7 @@ interface FormData {
   emailId: string;
   phoneNumber: string;
   countryCode: string;
+  dialCode: string;
 }
 
 interface BrochureDownloadProps {
@@ -41,10 +43,9 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
     name: "",
     emailId: "",
     phoneNumber: "",
+    dialCode: "",
     countryCode: ""
   });
-
-  //console.log("pathname is", pathname);
 
   const isTimeline = pathname === "/timeline/";
 
@@ -64,32 +65,33 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    
-    const {countryCode,phoneNumber}=formData;
 
-    let updatedPhoneNumber = phoneNumber;
+    const { dialCode, countryCode, phoneNumber } = formData;
 
-    if (countryCode === "91" && phoneNumber.startsWith("0")) {
-     updatedPhoneNumber = phoneNumber.replace(/^0+/, "");
-      setFormData((prev) => ({
-        ...prev,
-        phoneNumber: updatedPhoneNumber,
-      }))
-      alert("Enter 10 digit mobile number");
+    const validPhoneNumber = parsePhoneNumberFromString(
+      phoneNumber,
+      countryCode.toUpperCase() as CountryCode
+    );
+
+    if (!validPhoneNumber || !validPhoneNumber.isValid()) {
+      alert("please enter a valid phone number!");
+      return;
+    }
+
+    if (dialCode === "+91" && phoneNumber.startsWith("0")) {
+      alert("please enter a valid phone number!");
       return;
     }
 
     setIsLoading(true);
     setError(null);
     try {
-      // console.log("form data", formData);
-
       const response = await axios.post(
         SUBMIT_FORM,
         {
           email: formData.emailId,
           phoneNumber: formData.phoneNumber,
-          countryCode: formData.countryCode,
+          countryCode: formData.dialCode,
           fullName: formData.name
         },
         {
@@ -104,7 +106,7 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
 
       setFormSubmit(true);
       TrackEvent("Downloaded Brochure", "CTA", "Residences Page");
-      alert("Form data submitted successfully");
+      // alert("Form data submitted successfully");
     } catch (error) {
       console.log(error, "error while submitting form");
     } finally {
@@ -135,6 +137,7 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
           name: "",
           emailId: "",
           phoneNumber: "",
+          dialCode: "",
           countryCode: ""
         });
         setOtp("");
@@ -159,7 +162,10 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
   return (
     <div className="flex max-w-7xl rounded-lg bg-white">
       {!formSubmit ? (
-        <form onSubmit={onSubmit} className="flex w-[70vw] md:w-auto flex-col gap-3 pb-4">
+        <form
+          onSubmit={onSubmit}
+          className="flex w-[70vw] md:w-auto flex-col gap-3 pb-4"
+        >
           <div className="text-center mt-9 mb-2 text-[#AD9273]">
             Please Fill This Form To Download{" "}
             {isTimeline ? "Clearance Letter" : "Brochure"}
@@ -205,10 +211,11 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
               enableSearch
               searchClass="text-black bg-white dark:text-black dark:bg-gray-800"
               searchStyle={{ color: "black", backgroundColor: "white" }}
-              value={`${formData.countryCode}${formData.phoneNumber}`}
-              onChange={(value: string, data: { dialCode?: string }) => {
+              value={`${formData.dialCode}${formData.phoneNumber}`}
+              onChange={(value: string, data: any) => {
                 const dialCode = data?.dialCode ?? "91";
                 const digitsOnly = value.replace(/\D/g, "");
+                const countryISO = data?.countryCode?.toUpperCase();
                 const phoneNumber = digitsOnly.startsWith(dialCode)
                   ? digitsOnly.slice(dialCode.length)
                   : digitsOnly;
@@ -216,7 +223,8 @@ function BrochureDownload({ onClose }: BrochureDownloadProps) {
                 setFormData((prev) => ({
                   ...prev,
                   phoneNumber,
-                  countryCode: `+${dialCode}`
+                  dialCode: `+${dialCode}`,
+                  countryCode: countryISO
                 }));
               }}
               placeholder="Mobile*"
